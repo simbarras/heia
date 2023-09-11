@@ -1,0 +1,23 @@
+image: python:3.9
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"
+  PLATFORMIO_CACHE_DIR: "$CI_PROJECT_DIR/.platformio-cache"
+
+cache:
+  paths:
+    - .pip-cache/
+    - .platformio-cache/
+
+stages:
+ - test
+
+before_script:
+  - pip install -U platformio
+  - pio lib --global install https://:${DISCOLIB_TOKEN}@gitlab.forge.hefr.ch/ado/2021-2022/classe-supcik/groupe-B-01/discolib.git
+
+test-job:
+  stage: test
+  script: 
+    - pio run -e disco_f412zg
+    - pio check --skip-packages

@@ -1,0 +1,17 @@
+<?xml version="1"?>
+<mapper>
+	<lookup>
+		<service name="cockpitservice" type="ch.epfl.javancox.experiments.builder.web_gui.ConfigurationCockpitService" />	
+		<service name="guiservice" type="ch.epfl.javancox.results_manager.web.ResultVisualisationService" />	
+		<service name="chartservice" type="ch.epfl.javancox.results_manager.web.ResultVisualisationImageService" />
+	    <service name="files" type="ch.epfl.general_libraries.webserver.FileService" />
+	</lookup>
+	
+	<resolve>
+		<match path="/*"                       name="files" />
+		<match path="/*/*"                     name="files" />
+		<match path="/cockpit"                 name="cockpitservice"/>
+		<match path="/gui"                     name="guiservice"/>	
+		<match path="/chart"                   name="chartservice"/>			
+	</resolve>
+</mapper>

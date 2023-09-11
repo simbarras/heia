@@ -1,0 +1,15 @@
+<?xml version="1"?>
+<mapper>
+	<lookup>
+		<service name="topogenservice" type="ch.epfl.javancox.topogen_webapp.TopoGenWebInterface" />	
+		<service name="histService" type="ch.epfl.general_libraries.webserver.HistogrammService" />		
+	    <service name="files" type="ch.epfl.general_libraries.webserver.FileService" />
+	</lookup>
+	
+	<resolve>
+		<match path="/*"                       name="files" />
+		<match path="/*/*"                     name="files" />
+		<match path="/topogen"                 name="topogenservice"/>
+		<match path="/histogram"               name="histService"/>		
+	</resolve>
+</mapper>

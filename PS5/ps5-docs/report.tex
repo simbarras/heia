@@ -1,0 +1,144 @@
+% Copyright 2022 Haute école d'ingénierie et d'architecture de Fribourg
+%
+% Licensed under the Apache License, Version 2.0 (the "License");
+% you may not use this file except in compliance with the License.
+% You may obtain a copy of the License at
+%
+% http://www.apache.org/licenses/LICENSE-2.0
+%
+% Unless required by applicable law or agreed to in writing, software
+% distributed under the License is distributed on an "AS IS" BASIS,
+% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+% See the License for the specific language governing permissions and
+% limitations under the License.
+
+% =============================================================================
+% | HES-SO//Master - Thesis project report template                           |
+% |                                                                           |
+% | Originally based on the EPFL template, with many adjustments             |
+% =============================================================================
+
+% Document settings
+\documentclass[a4paper,11pt,fleqn]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} 
+\usepackage[french]{babel}
+
+
+
+% -----------------------------------------------------------------------------
+% Preamble
+% -----------------------------------------------------------------------------
+\input{00-settings/metadata}         % your project data
+\input{00-settings/settings_base}    % template settings
+\input{00-settings/codestyles}       % code styles for minted
+\input{00-settings/settings_custom}  % your custom packages etc
+
+% Glossary
+% --------
+
+% \usepackage[toc]{glossaries}
+% \makeglossaries
+% \input{hesso-latextemplate-thesis-master-3/glossary}
+
+\begin{document}
+
+
+% -----------------------------------------------------------------------------
+% Front matter
+% -----------------------------------------------------------------------------
+\frontmatter
+
+\dominitoc
+
+\input{01-head/titlepage_report}
+
+% Page for student info and signatures
+% \cleardoublepage
+% \input{hesso-latextemplate-thesis-master-3/01-head/reportinfo}
+
+% Acknowledgments (your dedication etc)
+% \cleardoublepage
+% \input{hesso-latextemplate-thesis-master-3/01-head/acknowledgments}
+
+% Preface (to be written by someone else)
+% \cleardoublepage
+% \input{hesso-latextemplate-thesis-master-3/01-head/preface}
+
+% French + English abstracts
+%\cleardoublepage
+%\input{01-head/abstracts}
+
+% Table of contents
+\phantomsection
+\include{01-head/versions_report.tex}
+\addcontentsline{toc}{chapter}{Table des matières}
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+% List of tables
+% \cleardoublepage
+% \phantomsection
+% \addcontentsline{toc}{chapter}{Liste des tables}
+% \listoftables
+
+% List of listings
+% \cleardoublepage
+% \phantomsection
+% \addcontentsline{toc}{chapter}{List of Listings}
+% \listoflistings
+
+% Restore paragraphs
+\setlength{\parskip}{1em}
+
+% Bold fonts for sections in minitoc
+\renewcommand{\cftsecfont}{\sffamily\bfseries}
+\renewcommand{\cftsecleader}{\sffamily\bfseries\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecpagefont}{\sffamily\bfseries}
+
+
+% -----------------------------------------------------------------------------
+% Main matter
+% -----------------------------------------------------------------------------
+\mainmatter
+
+% Chapters
+\setcounter{mtc}{4} % Help minitoc skip the front matter chapters
+\include{02-principal/ch1_introduction}
+\include{02-principal/ch2_stateoftheart}
+\include{02-principal/ch3_analyse}
+\include{02-principal/ch4_conception}
+\include{02-principal/ch5_implementation}
+\include{02-principal/ch6_resultats}
+\include{02-principal/ch7_conclusion}
+\include{02-principal/ch8_others}
+
+% Appendices
+% \appendix
+
+% -----------------------------------------------------------------------------
+% Back matter
+% -----------------------------------------------------------------------------
+% \backmatter
+
+% List of figures
+%\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Table des figures}
+\listoffigures
+\addcontentsline{toc}{chapter}{Table des tableaux}
+\listoftables
+
+% Bibliography
+%\cleardoublepage
+\printbibliography[title={Références}, heading=bibintoc]
+
+% Glossary
+\glsaddall
+\printglossary[type=\acronymtype, nonumberlist]
+% TODO: Add index
+
+% Add your CV here if you want
+
+\end{document}
+

@@ -1,0 +1,244 @@
+<project name="javanco" default="build" basedir=".">
+
+    <property name="javanco_home" location="."/>
+    <import file="default_build.xml"/>
+    <property name="documentation_copyright" value="&lt;i&gt;Copyright &amp;#169; 2012 EPFL &amp; S. Rumley&lt;/i&gt;"/>
+    <property name="DEFAULT_CLASS" value="ch.epfl.JavancoGUI"/>
+
+    <!-- set some configuration parameters -->
+    <property name="deploy_port" value="8080"/>
+
+    <!-- Set created files locations -->
+    <property name="javanco_embedded_jar" location="${bin}/${ant.project.name}_embedded.jar"/>
+
+	<target name="dist_bat" depends="dist" >
+		<echo file="${dist}/JavancoGui.bat">
+javaw -DJAVANCO_HOME=. -classpath ${win.batch.classpath} -Djava.library.path="%CD%\lib" -jar Javanco.jar
+     </echo>
+		<echo file="${dist}/JavancoGui.sh">#!/bin/sh
+javaw -DJAVANCO_HOME=. -classpath ${unix.batch.classpath} -Djava.library.path="$PWD/lib" -jar Javanco.jar
+     </echo>
+		<echo file="${dist}/JavancoServer.bat">
+javaw -DJAVANCO_HOME=. -classpath ${win.batch.classpath};Javanco.jar -Djava.security.manager -Djava.security.policy=div/webserver.policy ch.epfl.JavancoRemote -m rmiweb
+     </echo>
+		<echo file="${dist}/JavancoServer.sh">#!/bin/sh
+javaw -DJAVANCO_HOME=. -classpath ${unix.batch.classpath}:Javanco.jar -Djava.security.manager -Djava.security.policy=div/webserver.policy ch.epfl.JavancoRemote -m rmiweb
+     </echo>
+	</target>
+
+    <target name="prepare_dist_embedded" depends="init" description="Prepare file for build of jar embedded file">
+        <mkdir dir="${temp}/bin_temp"/>
+        <unjar dest="${temp}/bin_temp">
+            <fileset dir="${lib}">
+                <include name="**/*.jar"/>
+            </fileset>
+        </unjar>
+        <mkdir dir="${temp}/bin_temp/div"/>
+        <copy todir="${temp}/bin_temp/div">
+            <fileset dir="${dist_div}">
+                <exclude name="**/*svn"/>
+            </fileset>
+        </copy>
+        <delete>
+            <fileset dir="${temp}/bin_temp/META-INF">
+                <include name="*.RSA"/>
+                <include name="*.RF"/>
+            </fileset>
+            <fileset dir="${temp}/bin_temp">
+                <include name="**/*.exe"/>
+                <include name="**/*.html"/>
+                <include name="**/*.java"/>
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="dist_embedded" depends="init"
+            description="Pack all Javanco required files inside one executable jar file">
+        <mkdir dir="${temp}/bin_temp"/>
+        <jar destfile="${Javanco_embedded_jar}">
+            <fileset dir="${classes}"/>
+            <fileset dir="${temp}/bin_temp"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="ch.epfl.javanco.base.JavancoJarStarter"/>
+                <attribute name="Class-Path" value="Javanco.jar ${manifest.classpath}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run_tui" depends="init" description="Run text version of Javanco">
+        <java classname="ch.epfl.JavancoTUI" classpath="${standard.classpath};${classes}" fork="true" dir="${output}">
+            <jvmarg value="-DJAVANCO_HOME=${basedir}"/>
+        </java>
+    </target>
+
+    <target name="run_mixed" depends="init" description="Run Javanco in the mixed mode (RMI + web + GUI)">
+        <java classname="ch.epfl.JavancoRemote" classpath="${standard.classpath};${classes}" fork="true"
+              dir="${output}">
+            <arg value="-m"/>
+            <arg value="mixed"/>
+            <jvmarg value="-DJAVANCO_HOME=${basedir}"/>
+            <sysproperty key="java.library.path" value="${library_path}"/>
+        </java>
+    </target>
+
+    <target name="run_rmi" depends="init" description="Run Javanco in the web mode (web only)">
+        <java classname="ch.epfl.JavancoRemote" classpath="${standard.classpath};${classes}" fork="true"
+              dir="${output}">
+            <arg value="-m"/>
+            <arg value="rmi"/>
+            <jvmarg value="-DJAVANCO_HOME=${basedir}"/>
+        </java>
+    </target>
+
+    <target name="run_web" depends="init" description="Run Javanco in the web mode (web only)">
+        <java classname="ch.epfl.JavancoRemote" classpath="${standard.classpath};${classes}" fork="true"
+              dir="${output}">
+            <arg value="-m"/>
+            <arg value="web"/>
+            <jvmarg value="-DJAVANCO_HOME=${basedir}"/>
+        </java>
+    </target>
+
+    <target name="run_rmiweb" depends="init" description="Run Javanco in the server mode (RMI + web)">
+        <java classname="ch.epfl.JavancoRemote" classpath="${standard.classpath};${classes}" fork="true"
+              dir="${output}">
+            <arg value="-m"/>
+            <arg value="rmiweb"/>
+            <jvmarg value="-DJAVANCO_HOME=${basedir}"/>
+        </java>
+    </target>
+
+    <target name="run_cockpit_web" depends="init"
+            description="Run the cockpit in the web mode">
+        <java classname="ch.epfl.JavancoRemote" classpath="${standard.classpath};${classes}" fork="true"
+              dir="${output}">
+            <arg value="-m"/>
+            <arg value="web"/>
+            <arg value="-port"/>
+            <arg value="${deploy_port}"/>
+            <arg value="-site"/>
+            <arg value="web/cockpit_online"/>
+            <jvmarg value="-DJAVANCO_HOME=${basedir}"/>
+        </java>
+    </target>
+
+    <target name="run_deploy" depends="init, checkServerRunning"
+            description="Run Javanco in the server mode (RMI + web) on port the deploy_port and in spawn mode">
+        <java classname="ch.epfl.JavancoRemote" classpath="${dist.classpath};${dist}/${ant.project.name}.jar"
+              spawn="true" fork="true" dir="${dist}">
+            <arg value="-m"/>
+            <arg value="rmiweb"/>
+            <arg value="-port"/>
+            <arg value="${deploy_port}"/>
+            <jvmarg value="-DJAVANCO_HOME=${dist}"/>
+            <jvmarg value="-Djava.security.manager=ch.epfl.javanco.remote.JavancoRemoteSecurityManager"/>
+            <jvmarg value="-Djava.security.policy=jar:file:${dist}/${ant.project.name}.jar!/div/webserver.policy"/>
+        </java>
+    </target>
+
+    <target name="run_deploy_topo" depends="init"
+            description="Run Javanco in the server mode (RMI + web) on port the deploy_port and in spawn mode">
+        <java classname="ch.epfl.javancox.topogen_webapp.RunTopoServer"
+              classpath="${dist.classpath};${dist}/${ant.project.name}.jar" spawn="true" fork="true" dir="${dist}">
+            <arg value="${deploy_port}"/>
+            <jvmarg value="-DJAVANCO_HOME=${dist}"/>
+            <jvmarg value="-Djava.security.manager=ch.epfl.javanco.remote.JavancoRemoteSecurityManager"/>
+            <jvmarg value="-Djava.security.policy=jar:file:${dist}/Javanco.jar!/div/webserver.policy"/>
+        </java>
+    </target>
+
+
+    <target name="run_fake_deploy" depends="init, checkServerRunning"
+            description="Run Javanco in the server mode (RMI + web) on port the deploy_port BUT NOT IN SPAWN">
+        <java classname="ch.epfl.JavancoRemote" classpath="${dist.classpath};${dist}/${ant.project.name}.jar"
+              fork="true" dir="${dist}">
+            <arg value="-m"/>
+            <arg value="rmiweb"/>
+            <arg value="-port"/>
+            <arg value="${deploy_port}"/>
+            <jvmarg value="-DJAVANCO_HOME=${dist}"/>
+            <jvmarg value="-Djava.security.manager=ch.epfl.javanco.remote.JavancoRemoteSecurityManager"/>
+            <jvmarg value="-Djava.security.policy=jar:file:${dist}/${ant.project.name}.jar!/div/webserver.policy"/>
+        </java>
+    </target>
+
+    <target name="run_fake_deploy_topo" depends="init"
+            description="Run Javanco in the server mode (RMI + web) on port the deploy_port and in spawn mode">
+        <echo message="${dist.classpath};${dist}/${ant.project.name}.jar"/>
+        <java classname="ch.epfl.javancox.topogen_webapp.RunTopoServer"
+              classpath="${dist.classpath};${dist}/${ant.project.name}.jar" spawn="false" fork="true" dir="${dist}">
+            <arg value="${deploy_port}"/>
+            <jvmarg value="-DJAVANCO_HOME=${dist}"/>
+            <jvmarg value="-Djava.security.manager=ch.epfl.javanco.remote.JavancoRemoteSecurityManager"/>
+            <jvmarg value="-Djava.security.policy=jar:file:${dist}/${ant.project.name}.jar!/div/webserver.policy"/>
+        </java>
+    </target>
+
+    <target name="run_list_generators" depends="init" description="Updates the list of web generators">
+        <java classname="ch.epfl.javancox.topogen_webapp.TopoGenWebInterface"
+              classpath="${standard.classpath};${classes}" fork="true">
+            <jvmarg value="-DJAVANCO_HOME=${javanco_home}"/>
+            <arg value="ch.epfl"/>
+        </java>
+    </target>
+
+    <target name="jar_generators" depends="init, compile"
+            description="(Default) Packs all generators classes in one jar">
+        <jar destfile="${DEFAULT_JAR_PREFIX}_generators.jar">
+            <fileset dir="${classes}">
+                <include name="ch/epfl/javancox/inputs/**"/>
+            </fileset>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Class-Path" value="${ant.project.name}.jar ${manifest.classpath}"/>
+                <attribute name="Main-Class" value="${DEFAULT_MAIN}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="kill_deploy" depends="init"
+            description="Kill the web application deployed">
+        <taskdef name="groovy" classname="org.codehaus.groovy.ant.Groovy">
+            <classpath>
+                <fileset file="${GROOVY.JAR}"/>
+                <fileset file="${GROOVY_ANT.JAR}"/>
+            </classpath>
+        </taskdef>
+        <groovy>
+            java.net.Socket s = new Socket("localhost",15555);
+        </groovy>
+    </target>
+
+    <target name="test" depends="dist, run_deploy_topo">
+        <ant antfile="${default_ant}" target="test_int" inheritAll="true"/>
+        <ant target="kill_deploy"/>
+    </target>
+
+    <target name="run_embedded" depends="init, prepare_dist_embedded, dist_embedded"
+            description="Run Javanco using the embedded version">
+        <java jar="${Javanco_embedded_jar}" dir="${bin}" fork="true">
+        </java>
+    </target>
+
+    <target name="dist_cockpit" depends="jar"
+            description="Creates a directory including all required java files for ATAG">
+        <ant target="default.dist"/>
+        <echo file="${dist}/Cockpit.bat">
+            java -DJAVANCO_HOME=. -classpath ${win.batch.classpath};${ant.project.name}.jar
+            -Djava.library.path="%CD%\lib" ch.epfl.javancox.results_manager.standalone.StandaloneReader %1
+        </echo>
+        <echo file="${dist}/Cockipt.sh">#!/bin/sh
+            java -DJAVANCO_HOME=. -classpath ${unix.batch.classpath}:${ant.project.name}.jar
+            -Djava.library.path="$PWD/lib" ch.epfl.javancox.results_manager.standalone.StandaloneReader $1
+        </echo>
+        <echo file="${dist}/Agent.bat">
+            java -DJAVANCO_HOME=. -classpath ${win.batch.classpath};${ant.project.name}.jar
+            -Djava.library.path="%CD%\lib" ch.epfl.javancox.results_manager.agent.CockpitAgent
+        </echo>
+        <echo file="${dist}/Agent.sh">#!/bin/sh
+            java -DJAVANCO_HOME=. -classpath ${unix.batch.classpath}:${ant.project.name}.jar
+            -Djava.library.path="$PWD/lib" ch.epfl.javancox.results_manager.agent.CockpitAgent
+        </echo>
+    </target>
+</project>

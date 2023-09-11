@@ -1,0 +1,473 @@
+<project name="default" default="build" basedir=".">
+
+	<!-- set external modules home dir property -->
+	<property environment="env"/>
+	<property name="env.JAVANCO_HOME" location="${javanco_home}"/>
+	<property name="javanco_home" location="${javanco_home}"/>
+	<property name="default_ant" location="${javanco_home}/default_build.xml"/>
+
+	<!-- set main folders locations -->
+	<property name="src" location="src"/>
+	<property name="test" location="test"/>
+	<property name="javanco_lib" location="${javanco_home}/lib"/>
+	<property name="javanco_lib_jni" location="${javanco_home}/lib_jni"/>
+	<property name="output" location="output"/>
+	<property name="classes" location="${output}/classes"/>
+	<property name="doc" location="${output}/doc"/>
+	<property name="reports" location="${output}/reports"/>
+	<property name="temp" location="${output}/temp"/>
+	<property name="dist" location="${output}/dist"/>
+	<property name="jar" location="${output}/jar"/>
+	<property name="dist" location="${output}/dist"/>
+	<property name="div" location="div"/>
+	<property name="dist_div" location="dist_div"/>
+	<property name="web" location="web"/>
+	<property name="default_graphs" location="${javanco_home}/default_graphs"/>
+
+	<property name="DEFAULT_JAR_" location="${jar}/${ant.project.name}.jar"/>
+	<property name="DEFAULT_JAR_PREFIX" location="${jar}/${ant.project.name}"/>
+
+	<!-- This line is required to execute the init target with groovy in it -->
+	<property name="GROOVY_ANT.JAR" location="lib/groovy-ant-3.0.9.jar"/>
+	<property name="GROOVY.JAR" location="lib/groovy-3.0.9.jar"/>
+	<property name="DEFAULT.JARDIR" location="${javanco_lib}"/>
+	<property name="DEFAULT.LIBDIR" location="${javanco_lib_jni}"/>
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+	<taskdef name="groovy" classname="org.codehaus.groovy.ant.Groovy">
+		<classpath>
+			<fileset file="${GROOVY_ANT.JAR}"/>
+			<fileset file="${GROOVY.JAR}"/>
+		</classpath>
+	</taskdef>
+
+	<property name="DEFAULT_DEFAULT_CLASS" value="ch.epfl.JavancoGUI"/>
+
+	<target name="init" description="(Default) Prepare classpaths, creates directories, etc. Should be executed before any other target">
+		<!-- processing dependencies -->
+		<groovy>
+			println "RESOLVING DEPENDENCIES for project " + properties.get("ant.project.name")
+			dependencies = new StringBuffer();
+			properties.each {
+				if (it.getKey().startsWith("DEPENDENCY_")) {
+					dependencyName = it.getKey().replaceAll("DEPENDENCY_","")
+					dependencyJar = "../" + dependencyName + "/output/jar/" + dependencyName + ".jar";
+					println "Dependency found : " + dependencyName + "  - Jar : " + dependencyJar;
+					properties.put(dependencyName + ".JAR", dependencyJar)
+					dependencies.append(dependencyName + ";");
+				}
+			}
+			properties.put("all_dependencies", dependencies.toString());
+		</groovy>
+		<mkdir dir="${src}"/>
+		<mkdir dir="${output}"/>
+		<mkdir dir="${temp}"/>
+		<if>
+			<isset property="class"/>
+			<then>
+				<echo message="class property detected"/>
+			</then>
+			<else>
+				<if>
+					<isset property="DEFAULT_CLASS"/>
+					<then>
+						<property name="class" value="${DEFAULT_CLASS}"/>
+					</then>
+					<else>
+						<property name="class" value="${DEFAULT_DEFAULT_CLASS}"/>
+					</else>
+				</if>
+			</else>
+		</if>
+		<if>
+			<isset property="JAVA_EXEC"/>
+			<then>
+			</then>
+			<else>
+				<echo message="Set JAVA_EXEC property to default javaw"/>
+				<property name="JAVA_EXEC" value="javaw"/>
+			</else>
+		</if>
+		<groovy>
+			import java.util.regex.*
+			normalClassPathBuffer = new StringBuffer()
+			normalClassPathBuffer.append((new java.io.File(".")).getAbsolutePath())
+			normalClassPathBuffer.append(";")
+			manifestClassPathBuffer = new StringBuffer()
+			winBatchClassPathBuffer = new StringBuffer()
+			unixBatchClassPathBuffer = new StringBuffer()
+
+			properties.each {
+				if (it.getKey().matches(".*JAR")) {
+					normalClassPathBuffer.append(it.getValue().toString() + ";")
+					p = Pattern.compile(".*[\\\\/]{1}([^\\\\/]+)")
+					m = p.matcher(it.getValue().toString())
+					if (m.matches()) {
+						try {
+					//		ant.copy( file:it.getValue(), tofile: properties.get("lib") + "/" + m.group(1))
+							winBatchClassPathBuffer.append("lib/" + m.group(1) + ";")
+							unixBatchClassPathBuffer.append("lib/" + m.group(1) + ":")
+							manifestClassPathBuffer.append("lib/" + m.group(1) + " ")
+						} catch (Exception e) {}
+					}
+				}
+				if (it.getKey().matches(".*JARDIR")) {
+					new File(it.getValue().toString()).eachFileMatch(~/.*.jar/) {
+						normalClassPathBuffer.append(it.toString() + ";")
+						p = Pattern.compile(".*[\\\\/]{1}([^\\\\/]+)")
+						m = p.matcher(it.toString())
+						if (m.matches()) {
+							try {
+					//			ant.copy( file:it, tofile: properties.get("lib") + "/" + m.group(1))
+								manifestClassPathBuffer.append("lib/" + m.group(1) + " ")
+								winBatchClassPathBuffer.append("lib/" + m.group(1) + ";")
+								unixBatchClassPathBuffer.append("lib/" + m.group(1) + ":")
+							} catch (Exception e) {}
+						}
+					}
+				}
+				if (it.getKey().matches(".*LIBDIR")) {
+					new File(it.getValue().toString()).eachFileMatch(~/(.*.dll)|(.*.so)|(.*.jnilib)/) {
+						p = Pattern.compile(".*[\\\\/]{1}([^\\\\/]+)")
+						m = p.matcher(it.toString())
+						if (m.matches()) {
+					//		ant.copy( file:it, tofile: properties.get("lib_jni") + "/" + m.group(1))
+						}
+					}
+				}
+			}
+			winBatchClassPathBuffer.append(".")
+			unixBatchClassPathBuffer.append(".")
+			properties.put("win.batch.classpath", winBatchClassPathBuffer.toString())
+			properties.put("unix.batch.classpath", unixBatchClassPathBuffer.toString())
+			properties.put("standard.classpath", normalClassPathBuffer.toString())
+			properties.put("manifest.classpath", manifestClassPathBuffer.toString())
+			print unixBatchClassPathBuffer
+		</groovy>
+	</target>
+
+	<target name="compile" depends="init" description="(Default) Compiles the classes">
+		<groovy>
+			if (properties.get("all_dependencies").length() > 0) {
+				properties.get("all_dependencies").split(";").each {
+					println "    Calling \"jar\" target on project " + it
+					ant.ant(target:"jar", antfile:"../" + it + "/build.xml", inheritAll:false)
+				}
+			}
+		</groovy>
+		<mkdir dir="${classes}"/>
+		<javac srcdir="${src}" encoding="utf-8" destdir="${classes}" debug="on" deprecation="on" includeantruntime="false" classpath="${standard.classpath}">
+			<compilerarg value="-g"/>
+		</javac>
+		<if>
+			<available file="${test}/src" type="dir"/>
+			<then>
+				<echo message="Compiling also test classes"/>
+				<javac srcdir="${test}/src" destdir="${classes}" includeantruntime="false" debug="on" deprecation="on" classpath="${standard.classpath};${classes}">
+					<compilerarg value="-g"/>
+				</javac>
+			</then>
+		</if>
+	</target>
+
+	<target name="run" depends="init" description="Run default class (can be provided with -Dclass=...">
+		<echo message="Running class ${class}"/>
+		<java classname="${class}" classpath="${standard.classpath};${classes}" fork="true" dir=".">
+			<jvmarg value="-DJAVANCO_HOME=${javanco_home}"/>
+			<sysproperty key="java.library.path" value="${library_path}"/>
+		</java>
+	</target>
+
+	<target name="doc" depends="init" description="(Default) Generate javadoc documentation">
+		<mkdir dir="${doc}"/>
+		<if>
+			<isset property="documentation_copyright"/>
+			<then/>
+			<else>
+				<property name="documentation_copyright" value="--"/>
+			</else>
+		</if>
+		<groovy>
+			sb = new StringBuilder();
+			if (properties.get("all_dependencies").length() > 0) {
+				properties.get("all_dependencies").split(";").each {
+					s = "../" + it +"/src";
+					sb.append(s + ";");
+				}
+			}
+			sb.append("./src/main/java");
+
+			println properties.get("excludepackagenames")
+
+
+			ant.javadoc(destdir:properties.get("doc"), author:"true", version:"true", package:"true",
+		         classpath:properties.get("standard.classpath"), verbose:"false", useexternalfile:"true", sourcepath:sb.toString(),
+				 excludepackagenames:properties.get("excludepackagenames"),
+				 doctitle:properties.get("ant.project.name"), bottom:properties.get("documentation_copyright"))	{
+					link(href:"http://java.sun.com/javase/6/docs/api/")
+
+				 }
+		</groovy>
+	</target>
+
+	<target name="jar" depends="init, compile" description="(Default) Packs all classes in one jar">
+		<mkdir dir="${jar}"/>
+		<delete includeemptydirs="true" failonerror="false" dir="${temp}/divdiv/div"/>
+		<mkdir dir="${temp}/divdiv/div"/>
+		<copy todir="${temp}/divdiv/div" failonerror="false">
+			<fileset dir="${div}"/>
+		</copy>
+		<jar destfile="${DEFAULT_JAR_}">
+			<fileset dir="${classes}"/>
+			<fileset erroronmissingdir="false" dir="${temp}/divdiv/"/>
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Class-Path" value="${ant.project.name}.jar ${manifest.classpath}"/>
+				<attribute name="Main-Class" value="${class}"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="run_cockpit" depends="init" description="Run the cockpit">
+		<if>
+			<isset property="prefixes"/>
+			<then/>
+			<else>
+				<property name="prefixes" value="edu;ch"/>
+			</else>
+		</if>
+		<java classname="ch.epfl.javancox.experiments.builder.ExperimentConfigurationCockpit" classpath="${standard.classpath};${classes}" spawn="false" fork="true">
+			<jvmarg value="-DJAVANCO_HOME=${javanco_home}"/>
+			<arg value="-p"/>
+			<arg value="${prefixes}"/>
+			<arg value="-l"/>
+			<arg value="div/log4j.properties"/>
+		</java>
+	</target>
+
+	<target name="run_visualizer" depends="init" description="Run the cockpit">
+		<java classname="ch.epfl.javancox.results_manager.gui.DefaultResultDisplayingGUI" classpath="${standard.classpath};${classes}" spawn="false" fork="true">
+			<jvmarg value="-DJAVANCO_HOME=${javanco_home}"/>
+		</java>
+	</target>
+
+	<target name="run_cockpit_console" depends="init" description="Run the cockpit in console">
+		<java classname="ch.epfl.javancox.experiments.builder.ConsoleBasedBuilder" classpath="${standard.classpath};${classes}" spawn="false" fork="false" dir=".">
+			<jvmarg value="-DJAVANCO_HOME=${javanco_home}"/>
+			<jvmarg value="-Xmx1000m"/>
+			<arg value="${arg0}"/>
+		</java>
+	</target>
+
+	<target name="run_specified" depends="init" description="(Default) Run a given class (-Dclass=class-name) with all Javanco env">
+		<java classname="${class}" classpath="${standard.classpath};${classes}" fork="true" dir=".">
+			<jvmarg value="-DJAVANCO_HOME=${javanco_home}"/>
+			<jvmarg value="-Xmx500m"/>
+			<arg value="${arg0}"/>
+			<sysproperty key="java.library.path" value="${library_path}"/>
+		</java>
+	</target>
+
+	<target name="run_specified_top" depends="init" description="(Default) Run a given class (-Dclass=class-name) with all Javanco env">
+		<java classname="${class}" classpath="${standard.classpath};${classes}" fork="true" dir=".">
+			<jvmarg value="-DJAVANCO_HOME=${javanco_home}"/>
+			<jvmarg value="-Xmx500m"/>
+			<arg value="${arg0}"/>
+			<sysproperty key="java.library.path" value="${library_path}"/>
+		</java>
+	</target>
+
+	<target name="test" depends="init, dist" description="(Default) Run JUNIT tests">
+		<ant target="test_int"/>
+	</target>
+
+
+	<target name="test_int" depends="init" description="(Default) Run JUNIT tests">
+		<!-- COMMENT : this target requires an instance of Javanco running on the current machine -->
+		<mkdir dir="${output}/test/reports"/>
+		<junit dir="${output}/test" fork="yes" haltonerror="no" showoutput="yes" printsummary="yes">
+			<sysproperty key="testMachineIP" value="127.0.0.1"/>
+			<sysproperty key="testMachinePort" value="${deploy_port}"/>
+			<sysproperty key="JAVANCO_HOME" value="${javanco_home}"/>
+			<formatter type="plain"/>
+			<classpath>
+				<pathelement path="${standard.classpath};${classes}"/>
+			</classpath>
+			<batchtest todir="${output}/test/reports">
+				<fileset dir="test/src">
+					<include name="**/*.java"/>
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
+	<target name="checkServerRunning" depends="init" description="Checks if a server is runnin on the deploy-port">
+		<taskdef name="groovy" classname="org.codehaus.groovy.ant.Groovy">
+			<classpath>
+				<fileset file="${GROOVY.JAR}"/>
+				<fileset file="${GROOVY_ANT.JAR}"/>
+			</classpath>
+		</taskdef>
+		<groovy>
+        java.net.URL url = new URL("http://localhost:"+properties.get("deploy_port") + "/");
+	java.net.HttpURLConnection con = (HttpURLConnection)url.openConnection();
+	con.setRequestMethod("GET");
+	try {
+		con.connect();
+		if (con.getResponseCode() == 200) throw new Exception("Server response is 200, server already running");
+	}
+	catch (java.net.ConnectException e) {}
+		</groovy>
+	</target>
+
+
+	<target name="dist" depends="init, compile, jar" description="Creates a directory including all required java files, with batch files. A given class can be specified using -Dclass=$name$">
+		<mkdir dir="${dist}"/>
+		<echo message="Trying to delete the previous dist directory. if it fails, this means that the distribution is running"/>
+		<echo message="However, especially under linux, being to remove the file does not guarantee that the server is not running"/>
+		<delete includeemptydirs="true" failonerror="true">
+			<fileset dir="${dist}" includes="**/*"/>
+		</delete>
+		<mkdir dir="${dist}"/>
+		<delete file="${dist}/${ant.project.name}.jar"/>
+		<copy file="${DEFAULT_JAR_}" todir="${dist}"/>
+		<delete dir="${temp}/div"/>
+
+		<groovy>
+			if (properties.get("all_dependencies").length() > 0) {
+				properties.get("all_dependencies").split(";").each {
+					folder = "div"
+					path = "../" + it + "/" + folder
+					println "Copying " + folder + " folder from " + it
+					try {
+						ant.copy( todir:properties.get("temp") + "/" + folder ) {
+							fileset( dir: path )
+						}
+					}
+					catch (Exception e) {}
+
+					folder = "dist_div"
+					path = "../" + it + "/" + folder
+					println "Copying " + folder + " folder from " + it
+					try {
+						ant.copy( todir:properties.get("temp") + "/" + folder ) {
+							fileset( dir: path )
+						}
+					}
+					catch (Exception e) {}
+
+					folder = "web"
+					path = "../" + it + "/" + folder
+					println "Copying " + folder + " folder from " + it
+
+					try {
+						ant.copy( todir:properties.get("dist") + "/" + folder ) {
+							fileset( dir: path )
+						}
+					}
+					catch (Exception e) {}
+
+				}
+			}
+		</groovy>
+
+		<copy todir="${temp}/div">
+			<fileset dir="${div}" erroronmissingdir="false">
+				<exclude name="**/*svn"/>
+			</fileset>
+		</copy>
+
+		<copy todir="${temp}/div" overwrite="true">
+			<fileset dir="${dist_div}" erroronmissingdir="false">
+				<exclude name="**/*svn"/>
+				<exclude name="**/*bak"/>
+			</fileset>
+		</copy>
+
+		<jar destfile="${dist}/${ant.project.name}.jar" update="true">
+			<fileset dir="${temp}">
+				<include name="div/**"/>
+			</fileset>
+		</jar>
+
+		<groovy>
+			import java.util.regex.*
+			properties.each {
+				if (it.getKey().matches(".*JAR")) {
+					p = Pattern.compile(".*[\\\\/]{1}([^\\\\/]+)")
+					m = p.matcher(it.getValue().toString())
+					if (m.matches()) {
+						try {
+							ant.copy( file:it.getValue(), tofile: properties.get("dist") + "/lib/" + m.group(1))
+						} catch (Exception e) {}
+					}
+				}
+				if (it.getKey().matches(".*JARDIR")) {
+					new File(it.getValue().toString()).eachFileMatch(~/.*.jar/) {
+						p = Pattern.compile(".*[\\\\/]{1}([^\\\\/]+)")
+						m = p.matcher(it.toString())
+						if (m.matches()) {
+							try {
+								ant.copy( file:it, tofile: properties.get("dist") + "/lib/" + m.group(1))
+							} catch (Exception e) {}
+						}
+					}
+				}
+				if (it.getKey().matches(".*LIBDIR")) {
+					new File(it.getValue().toString()).eachFileMatch(~/(.*.dll)|(.*.so)|(.*.jnilib)/) {
+						p = Pattern.compile(".*[\\\\/]{1}([^\\\\/]+)")
+						m = p.matcher(it.toString())
+						if (m.matches()) {
+							ant.copy( file:it, tofile: properties.get("dist") + "/lib/" + m.group(1))
+						}
+					}
+				}
+			}
+		</groovy>
+
+		<copy todir="${dist}/web" failonerror="false">
+			<fileset dir="${web}">
+				<exclude name="**/*svn"/>
+			</fileset>
+		</copy>
+
+		<copy todir="${dist}" failonerror="false">
+			<fileset dir=".">
+				<include name="tree.conf*"/>
+			</fileset>
+		</copy>
+
+		<echo file="${dist}/${ant.project.name}.bat">
+${JAVA_EXEC} -DJAVANCO_HOME=. -classpath ${win.batch.classpath} -Djava.library.path="%CD%\lib" -jar ${ant.project.name}.jar ${arg0} ${arg1}
+		</echo>
+		<echo file="${dist}/${ant.project.name}.sh">#!/bin/sh
+${JAVA_EXEC} -DJAVANCO_HOME=. -classpath ${unix.batch.classpath} -Djava.library.path="$PWD/lib" -jar ${ant.project.name}.jar ${arg0} ${arg1}
+		</echo>
+	</target>
+
+	<target name="build" depends="init, compile, doc, jar" description="(Default) Makes all except run"/>
+
+	<target name="clean" description="(Default) Clean up">
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<echo message="${output}"/>
+		<delete includeemptydirs="true" failonerror="false">
+			<fileset dir="${output}" includes="**/*"/>
+		</delete>
+	</target>
+
+	<available file=".git" type="dir" property="git.present"/>
+
+	<target name=".git.info" description="Store git state in ${repository.branch}" if="git.present">
+		<exec executable="git" outputproperty="git.branch" failifexecutionfails="false" errorproperty="">
+			<arg value="rev-parse"/>
+			<arg value="--abbrev-ref"/>
+			<arg value="HEAD"/>
+		</exec>
+		<exec executable="git" outputproperty="git.commit" failifexecutionfails="false" errorproperty="">
+			<arg value="rev-parse"/>
+			<arg value="--short"/>
+			<arg value="HEAD"/>
+		</exec>
+	</target>
+</project>

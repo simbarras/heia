@@ -1,0 +1,50 @@
+stages:
+  - build
+  - deploy
+
+compile_CDC_pdf:
+  stage: build
+  image: texlive/texlive:latest  # use a Docker image for LaTeX from https://hub.docker.com/
+  script:
+    - pdflatex -interaction=nonstopmode -file-line-error -shell-escape cdc.tex  # build the pdf just as you would on your computer
+    - biber cdc
+    - makeglossaries-lite cdc
+    - pdflatex -interaction=nonstopmode -file-line-error -shell-escape cdc.tex
+    - pdflatex -interaction=nonstopmode -file-line-error -shell-escape cdc.tex
+  artifacts:
+    paths: 
+      - cdc.pdf  # instruct GitLab to keep the main.pdf file
+
+compile_report_pdf:
+  stage: build
+  image: texlive/texlive:latest  # use a Docker image for LaTeX from https://hub.docker.com/
+  script:
+    - pdflatex -interaction=nonstopmode -file-line-error -shell-escape report.tex  # build the pdf just as you would on your computer
+    - biber report
+    - makeglossaries-lite report
+    - pdflatex -interaction=nonstopmode -file-line-error -shell-escape report.tex
+    - pdflatex -interaction=nonstopmode -file-line-error -shell-escape report.tex
+  artifacts:
+    paths: 
+      - report.pdf  # instruct GitLab to keep the main.pdf file
+
+pages:
+  stage: deploy
+  image: alpine:latest
+  script:
+    # Get the previous GitLab Pages content
+    - "$(wget --no-check-certificate --header 'JOB-TOKEN: $CI_JOB_TOKEN' $CI_PAGES_URL/content.tar.gz -O prev_content.tar.gz || exit 0;);"
+    - '[ -f prev_content.tar.gz ] && tar -xzf prev_content.tar.gz'
+    - mkdir -p "public/$CI_COMMIT_REF_NAME"
+    # Add/update CDC
+    - cp cdc.pdf public/$CI_COMMIT_REF_NAME/CDC_PS5_2223_FusionPrediction.pdf  # copy the pdf file into the public folder
+    # Add/update report
+    - cp report.pdf public/$CI_COMMIT_REF_NAME/Report_PS5_2223_FusionPrediction.pdf  # copy the pdf file into the public folder
+    # Zip the content and publish the zip again
+    - tar -zcf public/content.tar.gz public/
+    # Add/update ressources
+    - mkdir -p "public/resources"
+    - cp -r 05-resources/* public/resources/  # copy the ressources folder into the public folder
+  artifacts:
+    paths: 
+      - public  # instruct GitLab to keep the public folder

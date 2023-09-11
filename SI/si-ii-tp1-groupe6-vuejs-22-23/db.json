@@ -1,0 +1,479 @@
+{
+  "leagues": [
+    {
+      "id": 1,
+      "name": "Premier League",
+      "games": [
+        {
+          "id": 1,
+          "homeTeam": "Liverpool",
+          "awayTeam": "Manchester City",
+          "location": "Anfield",
+          "date": "2021-05-08T20:00:00.000Z",
+          "leagueid": 1
+        },
+        {
+          "id": 2,
+          "homeTeam": "Liverpool",
+          "awayTeam": "Manchester United",
+          "location": "Anfield",
+          "date": "2021-05-15T20:00:00.000Z",
+          "leagueid": 1
+        },
+        {
+          "id": 3,
+          "homeTeam": "Liverpool",
+          "awayTeam": "Chelsea",
+          "location": "Anfield",
+          "date": "2021-05-22T20:00:00.000Z",
+          "leagueid": 1
+        },
+        {
+          "id": 20,
+          "homeTeam": "Arsenal",
+          "awayTeam": "Chelsea",
+          "location": "Stanford Bridge",
+          "date": "2021-05-22T20:00:00.000Z",
+          "leagueid": 1
+        }
+      ],
+      "players": [
+        {
+          "id": 1,
+          "firstname": "Mohamed",
+          "lastname": "Salah",
+          "birthdate": "2001-05-08T20:00:00.000Z",
+          "favoriteTeam": "Liverpool"
+        },
+        {
+          "id": 2,
+          "firstname": "Sadio",
+          "lastname": "Mane",
+          "birthdate": "2000-01-08T20:00:00.000Z",
+          "favoriteTeam": "Liverpool"
+        },
+        {
+          "id": 3,
+          "firstname": "Roberto",
+          "lastname": "Firmino",
+          "birthdate": "2002-07-08T20:00:00.000Z",
+          "favoriteTeam": "Liverpool"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bundesliga",
+      "games": [
+        {
+          "id": 4,
+          "homeTeam": "Bayern Munich",
+          "awayTeam": "Borussia Dortmund",
+          "location": "Allianz Arena",
+          "date": "2021-05-08T20:00:00.000Z",
+          "leagueid": 2
+        },
+        {
+          "id": 5,
+          "homeTeam": "Bayern Munich",
+          "awayTeam": "RB Leipzig",
+          "location": "Allianz Arena",
+          "date": "2021-05-15T20:00:00.000Z",
+          "leagueid": 2
+        },
+        {
+          "id": 6,
+          "homeTeam": "Bayern Munich",
+          "awayTeam": "Bayer Leverkusen",
+          "location": "Allianz Arena",
+          "date": "2021-05-22T20:00:00.000Z",
+          "leagueid": 2
+        }
+      ],
+      "players": [
+        {
+          "id": 4,
+          "firstname": "Robert",
+          "lastname": "Lewandowski",
+          "birthdate": "1985-02-03T20:00:00.000Z",
+          "favoriteTeam": "Bayern Munich"
+        },
+        {
+          "id": 5,
+          "firstname": "Thomas",
+          "lastname": "Muller",
+          "birthdate": "1989-01-01T20:00:00.000Z",
+          "favoriteTeam": "Bayern Munich"
+        },
+        {
+          "id": 6,
+          "firstname": "Manuel",
+          "lastname": "Neuer",
+          "birthdate": "1986-03-27T20:00:00.000Z",
+          "favoriteTeam": "Bayern Munich"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Serie A",
+      "games": [
+        {
+          "id": 7,
+          "homeTeam": "Juventus",
+          "awayTeam": "AC Milan",
+          "location": "Allianz Stadium",
+          "date": "2021-05-08T20:00:00.000Z",
+          "leagueid": 3
+        },
+        {
+          "id": 8,
+          "homeTeam": "Juventus",
+          "awayTeam": "Inter Milan",
+          "location": "Allianz Stadium",
+          "date": "2021-05-15T20:00:00.000Z",
+          "leagueid": 3
+        },
+        {
+          "id": 9,
+          "homeTeam": "Juventus",
+          "awayTeam": "AS Roma",
+          "location": "Allianz Stadium",
+          "date": "2021-05-22T20:00:00.000Z",
+          "leagueid": 3
+        }
+      ],
+      "players": [
+        {
+          "id": 7,
+          "firstname": "Cristiano",
+          "lastname": "Ronaldo",
+          "birthdate": "1985-02-05T20:00:00.000Z",
+          "favoriteTeam": "Juventus"
+        },
+        {
+          "id": 8,
+          "firstname": "Paulo",
+          "lastname": "Dybala",
+          "birthdate": "1993-11-15T20:00:00.000Z",
+          "favoriteTeam": "Juventus"
+        },
+        {
+          "id": 9,
+          "firstname": "Leonardo",
+          "lastname": "Bonucci",
+          "birthdate": "1987-05-01T20:00:00.000Z",
+          "favoriteTeam": "Juventus"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Ligue 1",
+      "games": [
+        {
+          "id": 10,
+          "homeTeam": "Paris Saint-Germain",
+          "awayTeam": "Lyon",
+          "location": "Parc des Princes",
+          "date": "2021-05-08T20:00:00.000Z",
+          "leagueid": 4
+        },
+        {
+          "id": 11,
+          "homeTeam": "Paris Saint-Germain",
+          "awayTeam": "Marseille",
+          "location": "Parc des Princes",
+          "date": "2021-05-15T20:00:00.000Z",
+          "leagueid": 4
+        },
+        {
+          "id": 12,
+          "homeTeam": "Paris Saint-Germain",
+          "awayTeam": "Lille",
+          "location": "Parc des Princes",
+          "date": "2021-05-22T20:00:00.000Z",
+          "leagueid": 4
+        }
+      ],
+      "players": [
+        {
+          "id": 10,
+          "firstname": "Kylian",
+          "lastname": "Mbappe",
+          "birthdate": "1998-12-20T20:00:00.000Z",
+          "favoriteTeam": "Paris Saint-Germain"
+        },
+        {
+          "id": 11,
+          "firstname": "Neymar",
+          "lastname": "Jr",
+          "birthdate": "1992-02-05T20:00:00.000Z",
+          "favoriteTeam": "Paris Saint-Germain"
+        }
+      ]
+    }
+  ],
+  "players": [
+    {
+      "id": 1,
+      "firstname": "Mohamed",
+      "lastname": "Salah",
+      "birthdate": "2001-05-08T20:00:00.000Z",
+      "favoriteTeam": "Liverpool"
+    },
+    {
+      "id": 2,
+      "firstname": "Sadio",
+      "lastname": "Mane",
+      "birthdate": "2000-01-08T20:00:00.000Z",
+      "favoriteTeam": "Liverpool"
+    },
+    {
+      "id": 3,
+      "firstname": "Roberto",
+      "lastname": "Firmino",
+      "birthdate": "2002-07-08T20:00:00.000Z",
+      "favoriteTeam": "Liverpool"
+    },
+    {
+      "id": 4,
+      "firstname": "Robert",
+      "lastname": "Lewandowski",
+      "birthdate": "1985-02-03T20:00:00.000Z",
+      "favoriteTeam": "Bayern Munich"
+    },
+    {
+      "id": 5,
+      "firstname": "Thomas",
+      "lastname": "Muller",
+      "birthdate": "1989-01-01T20:00:00.000Z",
+      "favoriteTeam": "Bayern Munich"
+    },
+    {
+      "id": 6,
+      "firstname": "Manuel",
+      "lastname": "Neuer",
+      "birthdate": "1986-03-27T20:00:00.000Z",
+      "favoriteTeam": "Bayern Munich"
+    },
+    {
+      "id": 7,
+      "firstname": "Cristiano",
+      "lastname": "Ronaldo",
+      "birthdate": "1985-02-05T20:00:00.000Z",
+      "favoriteTeam": "Juventus"
+    },
+    {
+      "id": 8,
+      "firstname": "Paulo",
+      "lastname": "Dybala",
+      "birthdate": "1993-11-15T20:00:00.000Z",
+      "favoriteTeam": "Juventus"
+    },
+    {
+      "id": 9,
+      "firstname": "Leonardo",
+      "lastname": "Bonucci",
+      "birthdate": "1987-05-01T20:00:00.000Z",
+      "favoriteTeam": "Juventus"
+    },
+    {
+      "id": 10,
+      "firstname": "Kylian",
+      "lastname": "Mbappe",
+      "birthdate": "1998-12-20T20:00:00.000Z",
+      "favoriteTeam": "Paris Saint-Germain"
+    },
+    {
+      "id": 11,
+      "firstname": "Neymar",
+      "lastname": "Jr",
+      "birthdate": "1992-02-05T20:00:00.000Z",
+      "favoriteTeam": "Paris Saint-Germain"
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "homeTeam": "Liverpool",
+      "awayTeam": "Manchester City",
+      "location": "Anfield",
+      "date": "2021-05-08T20:00:00.000Z",
+      "leagueid": 1
+    },
+    {
+      "id": 2,
+      "homeTeam": "Liverpool",
+      "awayTeam": "Manchester United",
+      "location": "Anfield",
+      "date": "2021-05-15T20:00:00.000Z",
+      "leagueid": 1
+    },
+    {
+      "id": 3,
+      "homeTeam": "Liverpool",
+      "awayTeam": "Chelsea",
+      "location": "Anfield",
+      "date": "2021-05-22T20:00:00.000Z",
+      "leagueid": 1
+    },
+    {
+      "id": 20,
+      "homeTeam": "Arsenal",
+      "awayTeam": "Chelsea",
+      "location": "Stanford Bridge",
+      "date": "2021-05-22T20:00:00.000Z",
+      "leagueid": 1
+    },
+    {
+      "id": 4,
+      "homeTeam": "Bayern Munich",
+      "awayTeam": "Borussia Dortmund",
+      "location": "Allianz Arena",
+      "date": "2021-05-08T20:00:00.000Z",
+      "leagueid": 2
+    },
+    {
+      "id": 5,
+      "homeTeam": "Bayern Munich",
+      "awayTeam": "RB Leipzig",
+      "location": "Allianz Arena",
+      "date": "2021-05-15T20:00:00.000Z",
+      "leagueid": 2
+    },
+    {
+      "id": 6,
+      "homeTeam": "Bayern Munich",
+      "awayTeam": "Bayer Leverkusen",
+      "location": "Allianz Arena",
+      "date": "2021-05-22T20:00:00.000Z",
+      "leagueid": 2
+    },
+    {
+      "id": 7,
+      "homeTeam": "Juventus",
+      "awayTeam": "AC Milan",
+      "location": "Allianz Stadium",
+      "date": "2021-05-08T20:00:00.000Z",
+      "leagueid": 3
+    },
+    {
+      "id": 8,
+      "homeTeam": "Juventus",
+      "awayTeam": "Inter Milan",
+      "location": "Allianz Stadium",
+      "date": "2021-05-15T20:00:00.000Z",
+      "leagueid": 3
+    },
+    {
+      "id": 9,
+      "homeTeam": "Juventus",
+      "awayTeam": "AS Roma",
+      "location": "Allianz Stadium",
+      "date": "2021-05-22T20:00:00.000Z",
+      "leagueid": 3
+    },
+    {
+      "id": 10,
+      "homeTeam": "Paris Saint-Germain",
+      "awayTeam": "Lyon",
+      "location": "Parc des Princes",
+      "date": "2021-05-08T20:00:00.000Z",
+      "leagueid": 4
+    },
+    {
+      "id": 11,
+      "homeTeam": "Paris Saint-Germain",
+      "awayTeam": "Marseille",
+      "location": "Parc des Princes",
+      "date": "2021-05-15T20:00:00.000Z",
+      "leagueid": 4
+    },
+    {
+      "id": 12,
+      "homeTeam": "Paris Saint-Germain",
+      "awayTeam": "Lille",
+      "location": "Parc des Princes",
+      "date": "2021-05-22T20:00:00.000Z",
+      "leagueid": 4
+    },
+    {
+      "id": 13,
+      "homeTeam": "Real Madrid",
+      "awayTeam": "Barcelona",
+      "location": "Santiago Bernabeu",
+      "date": "2021-05-08T20:00:00.000Z",
+      "leagueid": 5
+    },
+    {
+      "id": 14,
+      "homeTeam": "Real Madrid",
+      "awayTeam": "Atletico Madrid",
+      "location": "Santiago Bernabeu",
+      "date": "2021-05-15T20:00:00.000Z",
+      "leagueid": 5
+    },
+    {
+      "id": 15,
+      "homeTeam": "Real Madrid",
+      "awayTeam": "Sevilla",
+      "location": "Santiago Bernabeu",
+      "date": "2021-05-22T20:00:00.000Z",
+      "leagueid": 5
+    }
+  ],
+  "league": {
+    "id": 1,
+    "name": "Premier League",
+    "games": [
+      {
+        "id": 1,
+        "homeTeam": "Liverpool",
+        "awayTeam": "Manchester City",
+        "location": "Anfield",
+        "date": "2021-05-08T20:00:00.000Z",
+        "leagueid": 1
+      },
+      {
+        "id": 2,
+        "homeTeam": "Liverpool",
+        "awayTeam": "Manchester United",
+        "location": "Anfield",
+        "date": "2021-05-15T20:00:00.000Z",
+        "leagueid": 1
+      },
+      {
+        "id": 3,
+        "homeTeam": "Liverpool",
+        "awayTeam": "Chelsea",
+        "location": "Anfield",
+        "date": "2021-05-22T20:00:00.000Z",
+        "leagueid": 1
+      }
+    ],
+    "players": [
+      {
+        "id": 1,
+        "firstname": "Mohamed",
+        "lastname": "Salah",
+        "birthdate": "2001-05-08T20:00:00.000Z",
+        "favoriteTeam": "Liverpool"
+      },
+      {
+        "id": 2,
+        "firstname": "Sadio",
+        "lastname": "Mane",
+        "birthdate": "2000-01-08T20:00:00.000Z",
+        "favoriteTeam": "Liverpool"
+      },
+      {
+        "id": 3,
+        "firstname": "Roberto",
+        "lastname": "Firmino",
+        "birthdate": "2002-07-08T20:00:00.000Z",
+        "favoriteTeam": "Liverpool"
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app.kubernetes.io/component: db
+  name: db
+  namespace: pi-gr4
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    app.kubernetes.io/component: db
+  name: db
+  namespace: pi-gr4
+spec:
+    accessModes:
+        - ReadWriteOnce
+    capacity:
+        storage: 10Gi
+    hostPath:
+        path: /mnt/data
+    persistentVolumeReclaimPolicy: Retain
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app.kubernetes.io/component: db
+  name: db
+  namespace: pi-gr4
+spec:
+  serviceName: db
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: db
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: db
+    spec:
+      containers:
+        - env:
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: wafonsadp
+            - name: POSTGRES_DB
+              value: postgres-db
+            - name: TZ
+              value: Europe/Zurich
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          image: postgres:15-alpine
+          name: postgresql
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data/
+              name: db
+          livenessProbe:
+            exec:
+              command:
+                - CMD-SHELL PGUSER=postgres pg_isready
+            initialDelaySeconds: 600
+            periodSeconds: 10
+      imagePullSecrets:
+        - name: registry-secret
+      restartPolicy: Always
+      volumes:
+        - name: db
+          persistentVolumeClaim:
+            claimName: db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/component: db
+  name: db
+  namespace: pi-gr4
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5432
+  selector:
+    app.kubernetes.io/component: db

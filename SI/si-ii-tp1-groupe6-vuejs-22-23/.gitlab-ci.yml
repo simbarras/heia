@@ -1,0 +1,31 @@
+stages:
+  - build
+  - deploy
+
+services:
+  - docker:19-dind
+
+build:
+  stage: build
+  image: docker:latest
+  script:
+    - echo 'Publishing VueJS Docker image' $CI_REGISTRY
+    - docker build . -t ${CI_REGISTRY_IMAGE}:latest --network=host
+    - docker login -u roman.collaud -p ${CI_BUILD_TOKEN} ${CI_REGISTRY}
+    - docker push ${CI_REGISTRY_IMAGE}:latest
+
+production:
+  image: node:latest
+  stage: deploy
+  before_script:
+    - apt-get update -qq
+    - apt-get install -qq git
+    # Setup SSH deploy key
+    - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh
+  script:
+    - ssh -o StrictHostKeyChecking=no ${SSH_CREDENTIALS} "cd ${SSH_PATH} && sudo docker compose pull && sudo docker-compose up -d"
+  only:
+    - main

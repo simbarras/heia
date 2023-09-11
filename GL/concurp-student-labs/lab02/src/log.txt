@@ -1,0 +1,304 @@
+Lab02 - Babybird simulation
+     5 Thread-1 Chick Josie is sleeping
+     6 Thread-2 Chick Sandra is sleeping
+     6 Thread-3 Chick Arthur is sleeping
+     7 Thread-4 Chick Myrtle is sleeping
+     7 Thread-5 Chick Mary is sleeping
+     8 Thread-6 Chick Pamela is sleeping
+     8 Thread-7 Chick Belinda is sleeping
+     9 Thread-8 Chick John is sleeping
+     9 Thread-9 Chick Corey is sleeping
+     9 Thread-10 Chick David is sleeping
+    10 Thread-11 Parent Karen is hunting
+    10 Thread-12 Parent Joy is hunting
+    22 Thread-4 Chick Myrtle is filling his plate
+    22 Thread-7 Chick Belinda is filling his plate
+    22 Thread-6 Chick Pamela is filling his plate
+    38 Thread-8 Chick John is filling his plate
+    38 Thread-10 Chick David is filling his plate
+    38 Thread-9 Chick Corey is filling his plate
+    38 Thread-5 Chick Mary is filling his plate
+    54 Thread-3 Chick Arthur is filling his plate
+    54 Thread-2 Chick Sandra is filling his plate
+    54 Thread-1 Chick Josie is filling his plate
+    70 Thread-12 Parent Joy is taking a coffee
+    70 Thread-12 Parent Joy is hunting
+   102 Thread-12 Parent Joy is throwing up 5 worm
+   102 Thread-4 Chick Myrtle is eating
+   102 Thread-7 Chick Belinda is eating
+   102 Thread-6 Chick Pamela is eating
+   102 Thread-8 Chick John is eating
+   103 Thread-10 Chick David is eating
+   103 Thread-11 Parent Karen is taking a coffee
+   103 Thread-11 Parent Karen is hunting
+   118 Thread-6 Chick Pamela is digesting
+   118 Thread-12 Parent Joy is taking a coffee
+   118 Thread-12 Parent Joy is hunting
+   118 Thread-10 Chick David is digesting
+   134 Thread-4 Chick Myrtle is digesting
+   134 Thread-8 Chick John is digesting
+   150 Thread-7 Chick Belinda is digesting
+   150 Thread-10 Chick David is sleeping
+   166 Thread-6 Chick Pamela is sleeping
+   166 Thread-8 Chick John is sleeping
+   166 Thread-12 Parent Joy is throwing up 7 worm
+   166 Thread-11 Parent Karen is taking a coffee
+   166 Thread-4 Chick Myrtle is sleeping
+   166 Thread-5 Chick Mary is eating
+   166 Thread-3 Chick Arthur is eating
+   166 Thread-2 Chick Sandra is eating
+   167 Thread-1 Chick Josie is eating
+   167 Thread-9 Chick Corey is eating
+   167 Thread-11 Parent Karen is hunting
+   182 Thread-3 Chick Arthur is digesting
+   182 Thread-12 Parent Joy is taking a coffee
+   182 Thread-7 Chick Belinda is sleeping
+   182 Thread-10 Chick David is filling his plate
+   182 Thread-12 Parent Joy is hunting
+   182 Thread-10 Chick David is eating
+   198 Thread-7 Chick Belinda is filling his plate
+   198 Thread-6 Chick Pamela is filling his plate
+   198 Thread-3 Chick Arthur is sleeping
+   198 Thread-2 Chick Sandra is digesting
+   198 Thread-4 Chick Myrtle is filling his plate
+   198 Thread-5 Chick Mary is digesting
+   198 Thread-9 Chick Corey is digesting
+   198 Thread-7 Chick Belinda is eating
+   199 Thread-11 Parent Karen is throwing up 1 worm
+   199 Thread-6 Chick Pamela is eating
+   214 Thread-6 Chick Pamela is digesting
+   214 Thread-7 Chick Belinda is digesting
+   214 Thread-10 Chick David is digesting
+   214 Thread-9 Chick Corey is sleeping
+   214 Thread-1 Chick Josie is digesting
+   214 Thread-8 Chick John is filling his plate
+   229 Thread-2 Chick Sandra is sleeping
+   229 Thread-5 Chick Mary is sleeping
+   229 Thread-3 Chick Arthur is filling his plate
+   245 Thread-5 Chick Mary is filling his plate
+   245 Thread-10 Chick David is sleeping
+   245 Thread-6 Chick Pamela is sleeping
+   245 Thread-1 Chick Josie is sleeping
+   245 Thread-9 Chick Corey is filling his plate
+   245 Thread-12 Parent Joy is taking a coffee
+   245 Thread-11 Parent Karen is taking a coffee
+   246 Thread-12 Parent Joy is hunting
+   246 Thread-11 Parent Karen is hunting
+   260 Thread-6 Chick Pamela is filling his plate
+   260 Thread-2 Chick Sandra is filling his plate
+   260 Thread-7 Chick Belinda is sleeping
+   276 Thread-10 Chick David is filling his plate
+   276 Thread-7 Chick Belinda is filling his plate
+   276 Thread-11 Parent Karen is throwing up 1 worm
+   276 Thread-10 Chick David is eating
+   292 Thread-12 Parent Joy is taking a coffee
+   292 Thread-10 Chick David is digesting
+   292 Thread-1 Chick Josie is filling his plate
+   292 Thread-12 Parent Joy is hunting
+   308 Thread-12 Parent Joy is throwing up 6 worm
+   308 Thread-8 Chick John is eating
+   308 Thread-3 Chick Arthur is eating
+   308 Thread-5 Chick Mary is eating
+   308 Thread-9 Chick Corey is eating
+   308 Thread-6 Chick Pamela is eating
+   308 Thread-2 Chick Sandra is eating
+   309 Thread-11 Parent Karen is taking a coffee
+   309 Thread-11 Parent Karen is hunting
+   324 Thread-8 Chick John is digesting
+   324 Thread-10 Chick David is sleeping
+   340 Thread-6 Chick Pamela is digesting
+   340 Thread-5 Chick Mary is digesting
+   340 Thread-12 Parent Joy is taking a coffee
+   340 Thread-2 Chick Sandra is digesting
+   340 Thread-3 Chick Arthur is digesting
+   340 Thread-12 Parent Joy is hunting
+   356 Thread-6 Chick Pamela is sleeping
+   356 Thread-8 Chick John is sleeping
+   356 Thread-9 Chick Corey is digesting
+   372 Thread-10 Chick David is filling his plate
+   372 Thread-2 Chick Sandra is sleeping
+   372 Thread-3 Chick Arthur is sleeping
+   372 Thread-5 Chick Mary is sleeping
+   388 Thread-6 Chick Pamela is filling his plate
+   388 Thread-9 Chick Corey is sleeping
+   403 Thread-12 Parent Joy is taking a coffee
+   403 Thread-12 Parent Joy is hunting
+   403 Thread-11 Parent Karen is taking a coffee
+   403 Thread-8 Chick John is filling his plate
+   403 Thread-3 Chick Arthur is filling his plate
+   403 Thread-5 Chick Mary is filling his plate
+   403 Thread-11 Parent Karen is hunting
+   419 Thread-2 Chick Sandra is filling his plate
+   419 Thread-9 Chick Corey is filling his plate
+   419 Thread-12 Parent Joy is throwing up 6 worm
+   419 Thread-2 Chick Sandra is eating
+   419 Thread-7 Chick Belinda is eating
+   419 Thread-1 Chick Josie is eating
+   419 Thread-10 Chick David is eating
+   420 Thread-6 Chick Pamela is eating
+   420 Thread-4 Chick Myrtle is eating
+   434 Thread-11 Parent Karen is throwing up 4 worm
+   434 Thread-5 Chick Mary is eating
+   434 Thread-9 Chick Corey is eating
+   434 Thread-3 Chick Arthur is eating
+   434 Thread-8 Chick John is eating
+   449 Thread-8 Chick John is digesting
+   449 Thread-9 Chick Corey is digesting
+   449 Thread-4 Chick Myrtle is digesting
+   449 Thread-10 Chick David is digesting
+   449 Thread-6 Chick Pamela is digesting
+   449 Thread-7 Chick Belinda is digesting
+   465 Thread-11 Parent Karen is taking a coffee
+   465 Thread-4 Chick Myrtle is sleeping
+   465 Thread-3 Chick Arthur is digesting
+   465 Thread-2 Chick Sandra is digesting
+   465 Thread-1 Chick Josie is digesting
+   465 Thread-12 Parent Joy is taking a coffee
+   465 Thread-11 Parent Karen is hunting
+   466 Thread-12 Parent Joy is hunting
+   480 Thread-7 Chick Belinda is sleeping
+   480 Thread-6 Chick Pamela is sleeping
+   480 Thread-10 Chick David is sleeping
+   480 Thread-2 Chick Sandra is sleeping
+   480 Thread-5 Chick Mary is digesting
+   480 Thread-8 Chick John is sleeping
+   495 Thread-5 Chick Mary is sleeping
+   495 Thread-7 Chick Belinda is filling his plate
+   495 Thread-10 Chick David is filling his plate
+   495 Thread-3 Chick Arthur is sleeping
+   495 Thread-1 Chick Josie is sleeping
+   510 Thread-2 Chick Sandra is filling his plate
+   510 Thread-11 Parent Karen is throwing up 1 worm
+   510 Thread-9 Chick Corey is sleeping
+   510 Thread-4 Chick Myrtle is filling his plate
+   510 Thread-2 Chick Sandra is eating
+   510 Thread-12 Parent Joy is throwing up 3 worm
+   510 Thread-10 Chick David is eating
+   510 Thread-7 Chick Belinda is eating
+   511 Thread-4 Chick Myrtle is eating
+   525 Thread-12 Parent Joy is taking a coffee
+   525 Thread-2 Chick Sandra is digesting
+   525 Thread-3 Chick Arthur is filling his plate
+   525 Thread-6 Chick Pamela is filling his plate
+   525 Thread-11 Parent Karen is taking a coffee
+   525 Thread-8 Chick John is filling his plate
+   525 Thread-1 Chick Josie is filling his plate
+   525 Thread-12 Parent Joy is hunting
+   526 Thread-11 Parent Karen is hunting
+   541 Thread-10 Chick David is digesting
+   541 Thread-2 Chick Sandra is sleeping
+   541 Thread-5 Chick Mary is filling his plate
+   541 Thread-4 Chick Myrtle is digesting
+   541 Thread-9 Chick Corey is filling his plate
+   541 Thread-7 Chick Belinda is digesting
+   557 Thread-12 Parent Joy is taking a coffee
+   557 Thread-12 Parent Joy is hunting
+   573 Thread-4 Chick Myrtle is sleeping
+   589 Thread-10 Chick David is ready to take the plunge
+   589 Thread-2 Chick Sandra is filling his plate
+   589 Thread-11 Parent Karen is taking a coffee
+   589 Thread-7 Chick Belinda is sleeping
+   589 Thread-11 Parent Karen is hunting
+   604 Thread-12 Parent Joy is taking a coffee
+   604 Thread-12 Parent Joy is hunting
+   620 Thread-12 Parent Joy is throwing up 7 worm
+   620 Thread-3 Chick Arthur is eating
+   620 Thread-6 Chick Pamela is eating
+   620 Thread-8 Chick John is eating
+   620 Thread-5 Chick Mary is eating
+   620 Thread-1 Chick Josie is eating
+   620 Thread-9 Chick Corey is eating
+   621 Thread-2 Chick Sandra is eating
+   621 Thread-4 Chick Myrtle is filling his plate
+   635 Thread-11 Parent Karen is taking a coffee
+   635 Thread-12 Parent Joy is taking a coffee
+   635 Thread-7 Chick Belinda is filling his plate
+   635 Thread-11 Parent Karen is hunting
+   635 Thread-12 Parent Joy is hunting
+   651 Thread-12 Parent Joy is throwing up 3 worm
+   651 Thread-6 Chick Pamela is digesting
+   651 Thread-2 Chick Sandra is digesting
+   651 Thread-3 Chick Arthur is digesting
+   651 Thread-1 Chick Josie is digesting
+   651 Thread-9 Chick Corey is digesting
+   651 Thread-5 Chick Mary is digesting
+   651 Thread-4 Chick Myrtle is eating
+   651 Thread-7 Chick Belinda is eating
+   667 Thread-7 Chick Belinda is digesting
+   667 Thread-8 Chick John is digesting
+   667 Thread-3 Chick Arthur is sleeping
+   683 Thread-1 Chick Josie is sleeping
+   683 Thread-3 Chick Arthur is filling his plate
+   683 Thread-3 Chick Arthur is eating
+   683 Thread-12 Parent Joy is taking a coffee
+   683 Thread-6 Chick Pamela is ready to take the plunge
+   683 Thread-11 Parent Karen is taking a coffee
+   683 Thread-9 Chick Corey is sleeping
+   683 Thread-2 Chick Sandra is ready to take the plunge
+   684 Thread-12 Parent Joy is hunting
+   684 Thread-11 Parent Karen is hunting
+   699 Thread-5 Chick Mary is sleeping
+   699 Thread-9 Chick Corey is filling his plate
+   699 Thread-4 Chick Myrtle is digesting
+   699 Thread-8 Chick John is sleeping
+   699 Thread-1 Chick Josie is filling his plate
+   715 Thread-7 Chick Belinda is ready to take the plunge
+   731 Thread-4 Chick Myrtle is sleeping
+   731 Thread-11 Parent Karen is taking a coffee
+   731 Thread-3 Chick Arthur is digesting
+   731 Thread-11 Parent Karen is hunting
+   747 Thread-3 Chick Arthur is ready to take the plunge
+   747 Thread-5 Chick Mary is filling his plate
+   747 Thread-12 Parent Joy is taking a coffee
+   747 Thread-8 Chick John is filling his plate
+   747 Thread-12 Parent Joy is hunting
+   763 Thread-11 Parent Karen is taking a coffee
+   763 Thread-11 Parent Karen is hunting
+   779 Thread-4 Chick Myrtle is filling his plate
+   795 Thread-12 Parent Joy is taking a coffee
+   795 Thread-12 Parent Joy is hunting
+   811 Thread-11 Parent Karen is throwing up 7 worm
+   811 Thread-9 Chick Corey is eating
+   811 Thread-1 Chick Josie is eating
+   811 Thread-5 Chick Mary is eating
+   811 Thread-4 Chick Myrtle is eating
+   811 Thread-8 Chick John is eating
+   827 Thread-11 Parent Karen is taking a coffee
+   827 Thread-9 Chick Corey is digesting
+   827 Thread-1 Chick Josie is digesting
+   827 Thread-11 Parent Karen is hunting
+   843 Thread-9 Chick Corey is ready to take the plunge
+   843 Thread-5 Chick Mary is digesting
+   843 Thread-8 Chick John is digesting
+   843 Thread-4 Chick Myrtle is digesting
+   859 Thread-12 Parent Joy is taking a coffee
+   859 Thread-1 Chick Josie is sleeping
+   859 Thread-12 Parent Joy is hunting
+   875 Thread-5 Chick Mary is ready to take the plunge
+   875 Thread-4 Chick Myrtle is ready to take the plunge
+   890 Thread-1 Chick Josie is filling his plate
+   890 Thread-8 Chick John is ready to take the plunge
+   890 Thread-1 Chick Josie is eating
+   905 Thread-12 Parent Joy is taking a coffee
+   905 Thread-12 Parent Joy is hunting
+   937 Thread-1 Chick Josie is digesting
+   953 Thread-1 Chick Josie is ready to take the plunge
+   953 MainThread Parent Karen is dying of sorrow
+   953 Thread-11 Parent Karen is throwing up 6 worm
+   953 MainThread Parent Joy is dying of sorrow
+   953 Thread-12 Parent Joy is throwing up 1 worm
+   954 MainThread Chick Josie is buried
+   954 MainThread Chick Sandra is buried
+   954 MainThread Chick Arthur is buried
+   954 MainThread Chick Myrtle is buried
+   954 MainThread Chick Mary is buried
+   954 MainThread Chick Pamela is buried
+   954 MainThread Chick Belinda is buried
+   954 MainThread Chick John is buried
+   954 MainThread Chick Corey is buried
+   954 MainThread Chick David is buried
+   969 Thread-11 Parent Karen is taking a coffee
+   969 MainThread Parent Karen is buried
+   985 Thread-12 Parent Joy is taking a coffee
+   985 MainThread Parent Joy is buried
+Lab02 - finish simulation

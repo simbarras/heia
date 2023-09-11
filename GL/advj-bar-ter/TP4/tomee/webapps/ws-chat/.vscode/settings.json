@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "../../lib/websocket-api.jar",
+        "../../lib/jakartaee-api-9.1-M2-tomcat.jar",
+        "WEB-INF/lib/json-20220924.jar",
+    ],
+    "java.project.outputPath": "WEB-INF/classes"
+}

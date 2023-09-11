@@ -1,0 +1,14 @@
+FROM ubuntu:18.04
+
+RUN apt-get update
+RUN apt-get -y upgrade
+RUN apt autoremove --purge
+RUN apt-get update
+RUN apt-get install -y bash git vim unzip zip curl wget
+RUN curl -s "https://get.sdkman.io" | bash
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN chmod +x /root/.sdkman/bin/sdkman-init.sh
+RUN sh -c 'source "/root/.sdkman/bin/sdkman-init.sh" ; sdk install java 16.0.1.hs-adpt ; sdk install maven 3.8.2'
+RUN apt-get install -y ant
+RUN wget https://repo1.maven.org/maven2/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3.jar -P /usr/share/ant/lib
+ENV PATH="$PATH:/root/.sdkman/candidates/maven/current/bin"

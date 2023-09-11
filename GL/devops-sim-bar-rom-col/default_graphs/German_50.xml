@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<network>
+  <main_description>
+    <layer id="physical" channels="32" link_rate_unit="gbit" link_rate_value="10">
+      <node id="0" pos_x="48" pos_y="552" label="Aachen"/>
+      <node id="1" pos_x="535" pos_y="-32" label="Augsburg"/>
+      <node id="2" pos_x="872" pos_y="289" label="Bayreuth"/>
+      <node id="3" pos_x="1062" pos_y="685" label="Berlin"/>
+      <node id="4" pos_x="448" pos_y="504" label="Bielefeld"/>
+      <node id="5" pos_x="558" pos_y="480" label="Braunschweig"/>
+      <node id="6" pos_x="454" pos_y="702" label="Bremen"/>
+      <node id="7" pos_x="473" pos_y="747" label="Bremerhaven"/>
+      <node id="8" pos_x="1014" pos_y="325" label="Chemnitz"/>
+      <node id="9" pos_x="372" pos_y="118" label="Darmstadt"/>
+      <node id="10" pos_x="306" pos_y="384" label="Dortmund"/>
+      <node id="11" pos_x="1048" pos_y="445" label="Dresden"/>
+      <node id="12" pos_x="158" pos_y="486" label="Duesseldorf"/>
+      <node id="13" pos_x="796" pos_y="378" label="Erfurt"/>
+      <node id="14" pos_x="183" pos_y="560" label="Essen"/>
+      <node id="15" pos_x="595" pos_y="810" label="Flensburg"/>
+      <node id="16" pos_x="454" pos_y="144" label="Frankfurt"/>
+      <node id="17" pos_x="110" pos_y="-123" label="Freiburg"/>
+      <node id="18" pos_x="592" pos_y="181" label="Fulda"/>
+      <node id="19" pos_x="492" pos_y="227" label="Giessen"/>
+      <node id="20" pos_x="874" pos_y="634" label="Greifswald"/>
+      <node id="21" pos_x="594" pos_y="718" label="Hamburg"/>
+      <node id="22" pos_x="529" pos_y="604" label="Hannover"/>
+      <node id="23" pos_x="136" pos_y="193" label="Kaiserslautern"/>
+      <node id="24" pos_x="176" pos_y="83" label="Karlsruhe"/>
+      <node id="25" pos_x="573" pos_y="371" label="Kassel"/>
+      <node id="26" pos_x="473" pos_y="-157" label="Kempten"/>
+      <node id="27" pos_x="720" pos_y="778" label="Kiel"/>
+      <node id="28" pos_x="217" pos_y="275" label="Koblenz"/>
+      <node id="29" pos_x="118" pos_y="403" label="Koeln"/>
+      <node id="30" pos_x="240" pos_y="-168" label="Konstanz"/>
+      <node id="31" pos_x="968" pos_y="540" label="Leipzig"/>
+      <node id="32" pos_x="748" pos_y="500" label="Magdeburg"/>
+      <node id="33" pos_x="258" pos_y="61" label="Mannheim"/>
+      <node id="34" pos_x="661" pos_y="-97" label="Muenchen"/>
+      <node id="35" pos_x="359" pos_y="496" label="Muenster"/>
+      <node id="36" pos_x="290" pos_y="687" label="Norden"/>
+      <node id="37" pos_x="817" pos_y="87" label="Nuernberg"/>
+      <node id="38" pos_x="346" pos_y="622" label="Oldenburg"/>
+      <node id="39" pos_x="399" pos_y="577" label="Osnabrueck"/>
+      <node id="40" pos_x="809" pos_y="-30" label="Passau"/>
+      <node id="41" pos_x="891" pos_y="-118" label="Regensburg"/>
+      <node id="42" pos_x="27" pos_y="229" label="Saarbruecken"/>
+      <node id="43" pos_x="847" pos_y="751" label="Schwerin"/>
+      <node id="44" pos_x="361" pos_y="288" label="Siegen"/>
+      <node id="45" pos_x="209" pos_y="-33" label="Stuttgart"/>
+      <node id="46" pos_x="44" pos_y="333" label="Trier"/>
+      <node id="47" pos_x="346" pos_y="-61" label="Ulm"/>
+      <node id="48" pos_x="169" pos_y="670" label="Wesel"/>
+      <node id="49" pos_x="620" pos_y="90" label="Wuerzburg"/>
+      <link orig="12" dest="14" length="34.870"/>
+      <link orig="10" dest="14" length="32.541"/>
+      <link orig="14" dest="48" length="33.434 "/>
+      <link orig="12" dest="29" length="34.186"/>
+      <link orig="0" dest="29" length="64.712"/>
+      <link orig="28" dest="29" length="77.876"/>
+      <link orig="10" dest="35" length="52.716 "/>
+      <link orig="10" dest="44" length="81.231"/>
+      <link orig="10" dest="25" length="142.667"/>
+      <link orig="0" dest="48" length="104.487"/>
+      <link orig="0" dest="46" length="120.387"/>
+      <link orig="4" dest="35" length="61.970"/>
+      <link orig="35" dest="39" length="44.651"/>
+      <link orig="28" dest="44" length="67.076"/>
+      <link orig="16" dest="28" length="83.128"/>
+      <link orig="23" dest="28" length="102.275"/>
+      <link orig="28" dest="46" length="96.041 "/>
+      <link orig="4" dest="44" length="131.646"/>
+      <link orig="19" dest="44" length="58.044"/>
+      <link orig="38" dest="48" length="193.011"/>
+      <link orig="36" dest="48" length="198.579"/>
+      <link orig="3" dest="31" length="220.687"/>
+      <link orig="3" dest="11" length="149.824"/>
+      <link orig="3" dest="43" length="161.684 "/>
+      <link orig="3" dest="32" length="182.914"/>
+      <link orig="3" dest="20" length="127.575"/>
+      <link orig="11" dest="31" length="173.655"/>
+      <link orig="13" dest="31" length="97.906"/>
+      <link orig="31" dest="32" length="102.666"/>
+      <link orig="2" dest="31" length="102.224"/>
+      <link orig="11" dest="13" length="164.904"/>
+      <link orig="8" dest="11" length="192.446"/>
+      <link orig="8" dest="13" length="63.249"/>
+      <link orig="13" dest="25" length="133.622"/>
+      <link orig="13" dest="49" length="113.566"/>
+      <link orig="2" dest="8" length="154.583"/>
+      <link orig="32" dest="43" length="136.191"/>
+      <link orig="20" dest="43" length="168.949"/>
+      <link orig="21" dest="43" length="139.632"/>
+      <link orig="27" dest="43" length="94.021"/>
+      <link orig="5" dest="32" length="113.001"/>
+      <link orig="21" dest="27" length="77.500"/>
+      <link orig="21" dest="22" length="86.098"/>
+      <link orig="5" dest="21" length="132.388"/>
+      <link orig="6" dest="38" length="147.199"/>
+      <link orig="6" dest="7" length="39.742"/>
+      <link orig="6" dest="22" length="57.602"/>
+      <link orig="15" dest="27" length="99.487"/>
+      <link orig="36" dest="38" length="67.750"/>
+      <link orig="38" dest="39" length="82.875"/>
+      <link orig="7" dest="15" length="98.416"/>
+      <link orig="4" dest="22" length="149.403"/>
+      <link orig="5" dest="22" length="90.516"/>
+      <link orig="22" dest="39" length="55.483"/>
+      <link orig="4" dest="5" length="116.390"/>
+      <link orig="5" dest="25" length="139.046"/>
+      <link orig="19" dest="25" length="101.285"/>
+      <link orig="18" dest="25" length="100.254"/>
+      <link orig="9" dest="16" length="87.171"/>
+      <link orig="16" dest="19" length="29.182"/>
+      <link orig="16" dest="18" length="244.502"/>
+      <link orig="9" dest="33" length="46.078"/>
+      <link orig="9" dest="23" length="80.110"/>
+      <link orig="24" dest="33" length="53.170"/>
+      <link orig="23" dest="42" length="62.586"/>
+      <link orig="23" dest="24" length="66.727"/>
+      <link orig="18" dest="19" length="73.886"/>
+      <link orig="42" dest="46" length="60.158"/>
+      <link orig="18" dest="49" length="84.085"/>
+      <link orig="24" dest="42" length="109.088"/>
+      <link orig="24" dest="45" length="59.361"/>
+      <link orig="45" dest="47" length="73.823"/>
+      <link orig="30" dest="45" length="122.195"/>
+      <link orig="45" dest="49" length="126.667"/>
+      <link orig="17" dest="24" length="118.987"/>
+      <link orig="1" dest="47" length="69.100"/>
+      <link orig="17" dest="30" length="105.483"/>
+      <link orig="26" dest="30" length="85.845"/>
+      <link orig="1" dest="34" length="56.810"/>
+      <link orig="26" dest="34" length="105.881"/>
+      <link orig="34" dest="40" length="147.732"/>
+      <link orig="34" dest="37" length="148.097"/>
+      <link orig="34" dest="41" length="104.420"/>
+      <link orig="1" dest="49" length="175.650"/>
+      <link orig="40" dest="41" length="110.960"/>
+      <link orig="2" dest="37" length="64.721"/>
+      <link orig="37" dest="49" length="91.446"/>
+      <link orig="37" dest="41" length="89.466"/>
+    </layer>
+  </main_description>
+  <graphical_data>
+    <backgroundImage pos_x="-1" pos_y="-1" width="-1" height="-1"/>
+    <startview sizeModificator="0.75" width="1465" height="983" pos_x="-233" pos_y="-173"/>
+    <background color="java.awt.Color[r=255,g=255,b=255]"/>
+    <defaultValues labelFontSize="10.0"/>
+    <display width="1099" height="737" type="native"/>
+  </graphical_data>
+</network>

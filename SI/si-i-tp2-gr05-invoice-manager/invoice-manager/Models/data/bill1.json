@@ -1,0 +1,51 @@
+{
+    "bill": {
+        "id": "93563408",
+        "date": "2021-10-31",
+        "amount": 24,
+        "devise": "CHF",
+        "payed": false,
+        "client": {
+            "number": "80216072",
+            "name": "Terreaux",
+            "surname": "Nicolas",
+            "address": {
+                "street": "la Cua 2",
+                "city": "Arconciel",
+                "npa": 1732,
+                "country": "Switzerland"
+            }
+        },
+        "sender": {
+            "name": "Swisscom (Suisse) SA",
+            "address": {
+                "street": "Alte Tiefenaustrasse 6",
+                "city": "Berne",
+                "npa": 3050,
+                "country": "Switzerland"
+            }
+        },
+        "articles": [
+            {
+                "name": "Swiss",
+                "brand": "Wingo",
+                "type": "Abonnement",
+                "quantity": "1",
+                "price": 58,
+                "tva": 0
+            },
+            {
+                "name": "24 à vie",
+                "brand": "Wingo",
+                "type": "Promo",
+                "quantity": "1",
+                "price": -34,
+                "tva": 0
+            }
+        ],
+        "delivery": {
+            "price": 0,
+            "type": "expedition"
+        }
+    }
+}

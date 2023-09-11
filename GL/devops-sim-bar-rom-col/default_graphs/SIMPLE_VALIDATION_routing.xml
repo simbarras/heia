@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<network>
+	<main_description>
+		<layer id="physical" channels="32" link_rate_unit="gbit" link_rate_value="10">
+			<node id="0" pos_x="50"  pos_y="400"/>
+			<node id="1" pos_x="250" pos_y="400"/>
+			<node id="2" pos_x="250" pos_y="250"/>
+			<node id="3" pos_x="450" pos_y="400"/>
+			<node id="4" pos_x="450" pos_y="250"/>
+			<node id="5" pos_x="450" pos_y="100"/>
+			<link orig="0" dest="1" length="min"/>
+			<link orig="1" dest="0" length="min"/>
+			<link orig="0" dest="2" length="min"/>
+			<link orig="2" dest="0" length="min"/>
+			<link orig="1" dest="3" length="min"/>
+			<link orig="3" dest="1" length="min"/>
+			<link orig="2" dest="3" length="min"/>
+			<link orig="3" dest="2" length="min"/>
+			<link orig="3" dest="4" length="min"/>
+			<link orig="4" dest="3" length="min"/>
+			<link orig="2" dest="4" length="min"/>
+			<link orig="4" dest="2" length="min"/>
+			<link orig="2" dest="5" length="min"/>
+			<link orig="5" dest="2" length="min"/>
+			<link orig="4" dest="5" length="min"/>
+			<link orig="5" dest="4" length="min"/>			
+		</layer>
+		<layer id="routing">
+			<!-- For describing routes: route [ratio, path] -->
+			<link orig="0" dest="1" >
+				<route ratio="1" path="0,1"/>  
+			</link>
+			<link orig="0" dest="2" >
+				<route ratio="1" path="0,2"/>
+			</link>
+			<link orig="0" dest="3" >
+				<route ratio="0.5" path = "0,1,3"/>
+				<route ratio="0.5" path = "0,2,3"/>
+			</link>
+			<link orig="0" dest="4" >
+				<route ratio="1" path = "0,2,4"/>
+				<route ratio="0" path = "0,1,3,4"/>
+				<route ratio="0" path = "0,2,3,4"/>			
+			</link>
+			<link orig="0" dest="5" >
+				<route ratio="1" path = "0,2,5"/>
+				<route ratio="0" path = "0,2,4,5"/>
+			</link>
+			<link orig="1" dest="2" >
+				<route ratio="0.45" path = "1,0,2"/>
+				<route ratio="0.55" path = "1,3,2"/>
+			</link>
+			<link orig="1" dest="3" >
+				<route ratio="1" path = "1,3"/>
+			</link>
+			<link orig="1" dest="4" >
+				<route ratio="1" path = "1,3,4"/>
+				<route ratio="0" path = "1,0,2,4"/>
+				<route ratio="0" path = "1,3,2,4"/>			
+			</link>
+			<link orig="1" dest="5" >
+				<route ratio="0.333" path = "1,3,4,5"/>
+				<route ratio="0.333" path = "1,0,2,5"/>			
+				<route ratio="0.334" path = "1,3,2,5"/> 
+			</link>
+			<link orig="2" dest="3" >
+				<route ratio="1" path = "2,3"/>
+			</link>
+			<link orig="2" dest="4" >
+				<route ratio="1" path = "2,4"/>
+			</link>
+			<link orig="2" dest="5" >
+				<route ratio="1" path = "2,5"/>
+			</link>
+			<link orig="3" dest="4" >
+				<route ratio="1" path = "3,4"/>
+			</link>
+			<link orig="3" dest="5" >
+				<route ratio="0.5" path = "3,4,5"/>
+				<route ratio="0.5" path = "3,2,5"/>
+			</link>
+			<link orig="4" dest="5" >
+				<route ratio="1" path = "4,5"/>
+			</link>
+		</layer>
+		
+  </main_description>
+  <graphical_data/>
+</network>

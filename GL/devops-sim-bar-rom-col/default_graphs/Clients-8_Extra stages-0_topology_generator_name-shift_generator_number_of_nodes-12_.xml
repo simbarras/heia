@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<network>
+  <main_description>
+    <layer id="physical">
+      <node id="0" pos_x="0" pos_y="0"/>
+      <node id="1" pos_x="0" pos_y="80"/>
+      <node id="2" pos_x="0" pos_y="160"/>
+      <node id="3" pos_x="0" pos_y="240"/>
+      <node id="4" pos_x="200" pos_y="0"/>
+      <node id="5" pos_x="200" pos_y="80"/>
+      <node id="6" pos_x="200" pos_y="160"/>
+      <node id="7" pos_x="200" pos_y="240"/>
+      <node id="8" pos_x="400" pos_y="0"/>
+      <node id="9" pos_x="400" pos_y="80"/>
+      <node id="10" pos_x="400" pos_y="160"/>
+      <node id="11" pos_x="400" pos_y="240"/>
+      <link orig="0" dest="4"/>
+      <link orig="0" dest="5"/>
+      <link orig="1" dest="5"/>
+      <link orig="1" dest="6"/>
+      <link orig="2" dest="6"/>
+      <link orig="2" dest="7"/>
+      <link orig="3" dest="7"/>
+      <link orig="3" dest="4"/>
+      <link orig="4" dest="8"/>
+      <link orig="4" dest="10"/>
+      <link orig="5" dest="9"/>
+      <link orig="5" dest="11"/>
+      <link orig="6" dest="10"/>
+      <link orig="6" dest="8"/>
+      <link orig="7" dest="11"/>
+      <link orig="7" dest="9"/>
+      <node id="12" pos_x="-100" pos_y="-25"/>
+      <node id="13" pos_x="-100" pos_y="25"/>
+      <link orig="12" dest="0"/>
+      <link orig="13" dest="0"/>
+      <node id="14" pos_x="-100" pos_y="55"/>
+      <node id="15" pos_x="-100" pos_y="105"/>
+      <link orig="14" dest="1"/>
+      <link orig="15" dest="1"/>
+      <node id="16" pos_x="-100" pos_y="135"/>
+      <node id="17" pos_x="-100" pos_y="185"/>
+      <link orig="16" dest="2"/>
+      <link orig="17" dest="2"/>
+      <node id="18" pos_x="-100" pos_y="215"/>
+      <node id="19" pos_x="-100" pos_y="265"/>
+      <link orig="18" dest="3"/>
+      <link orig="19" dest="3"/>
+      <node id="20" pos_x="500" pos_y="-25"/>
+      <node id="21" pos_x="500" pos_y="25"/>
+      <link orig="8" dest="20"/>
+      <link orig="8" dest="21"/>
+      <node id="22" pos_x="500" pos_y="55"/>
+      <node id="23" pos_x="500" pos_y="105"/>
+      <link orig="9" dest="22"/>
+      <link orig="9" dest="23"/>
+      <node id="24" pos_x="500" pos_y="135"/>
+      <node id="25" pos_x="500" pos_y="185"/>
+      <link orig="10" dest="24"/>
+      <link orig="10" dest="25"/>
+      <node id="26" pos_x="500" pos_y="215"/>
+      <node id="27" pos_x="500" pos_y="265"/>
+      <link orig="11" dest="26"/>
+      <link orig="11" dest="27"/>
+    </layer>
+    <layer id="routing">
+      <link orig="12" dest="21" routing="[12, 0, 4, 8, 21]" slot="1"/>
+      <link orig="12" dest="22" routing="[12, 0, 5, 9, 22]" slot="2"/>
+      <link orig="12" dest="23" routing="[12, 0, 5, 9, 23]" slot="3"/>
+      <link orig="12" dest="24" routing="[12, 0, 4, 10, 24]" slot="4"/>
+      <link orig="12" dest="25" routing="[12, 0, 4, 10, 25]" slot="5"/>
+      <link orig="12" dest="26" routing="[12, 0, 5, 11, 26]" slot="6"/>
+      <link orig="12" dest="27" routing="[12, 0, 5, 11, 27]" slot="7"/>
+      <link orig="13" dest="20" routing="[13, 0, 4, 8, 20]" slot="2"/>
+      <link orig="13" dest="24" routing="[13, 0, 4, 10, 24]" slot="3"/>
+      <link orig="13" dest="25" routing="[13, 0, 4, 10, 25]" slot="6"/>
+      <link orig="14" dest="20" routing="[14, 1, 6, 8, 20]" slot="1"/>
+      <link orig="15" dest="20" routing="[15, 1, 6, 8, 20]" slot="3"/>
+      <link orig="16" dest="20" routing="[16, 2, 6, 8, 20]" slot="4"/>
+      <link orig="17" dest="20" routing="[17, 2, 6, 8, 20]" slot="5"/>
+      <link orig="18" dest="20" routing="[18, 3, 4, 8, 20]" slot="6"/>
+      <link orig="18" dest="21" routing="[18, 3, 4, 8, 21]" slot="3"/>
+      <link orig="19" dest="20" routing="[19, 3, 4, 8, 20]" slot="7"/>
+      <link orig="19" dest="21" routing="[19, 3, 4, 8, 21]" slot="4"/>
+      <link orig="14" dest="21" routing="[14, 1, 6, 8, 21]" slot="2"/>
+      <link orig="15" dest="21" routing="[15, 1, 6, 8, 21]" slot="6"/>
+      <link orig="16" dest="21" routing="[16, 2, 6, 8, 21]" slot="7"/>
+      <link orig="17" dest="21" routing="[17, 2, 6, 8, 21]" slot="8"/>
+      <link orig="13" dest="22" routing="[13, 0, 5, 9, 22]" slot="1"/>
+      <link orig="13" dest="23" routing="[13, 0, 5, 9, 23]" slot="4"/>
+      <link orig="13" dest="26" routing="[13, 0, 5, 11, 26]" slot="5"/>
+      <link orig="13" dest="27" routing="[13, 0, 5, 11, 27]" slot="8"/>
+      <link orig="14" dest="23" routing="[14, 1, 5, 9, 23]" slot="5"/>
+      <link orig="15" dest="22" routing="[15, 1, 5, 9, 22]" slot="7"/>
+      <link orig="16" dest="22" routing="[16, 2, 7, 9, 22]" slot="3"/>
+      <link orig="17" dest="22" routing="[17, 2, 7, 9, 22]" slot="4"/>
+      <link orig="18" dest="22" routing="[18, 3, 7, 9, 22]" slot="5"/>
+      <link orig="19" dest="22" routing="[19, 3, 7, 9, 22]" slot="6"/>
+      <link orig="16" dest="23" routing="[16, 2, 7, 9, 23]" slot="1"/>
+      <link orig="17" dest="23" routing="[17, 2, 7, 9, 23]" slot="2"/>
+      <link orig="18" dest="23" routing="[18, 3, 7, 9, 23]" slot="7"/>
+      <link orig="19" dest="23" routing="[19, 3, 7, 9, 23]" slot="8"/>
+      <link orig="14" dest="24" routing="[14, 1, 6, 10, 24]" slot="7"/>
+      <link orig="15" dest="24" routing="[15, 1, 6, 10, 24]" slot="5"/>
+      <link orig="17" dest="24" routing="[17, 2, 6, 10, 24]" slot="1"/>
+      <link orig="18" dest="24" routing="[18, 3, 4, 10, 24]" slot="2"/>
+      <link orig="18" dest="25" routing="[18, 3, 4, 10, 25]" slot="1"/>
+      <link orig="19" dest="24" routing="[19, 3, 4, 10, 24]" slot="9"/>
+      <link orig="19" dest="25" routing="[19, 3, 4, 10, 25]" slot="10"/>
+      <link orig="14" dest="25" routing="[14, 1, 6, 10, 25]" slot="4"/>
+      <link orig="15" dest="25" routing="[15, 1, 6, 10, 25]" slot="8"/>
+      <link orig="16" dest="25" routing="[16, 2, 6, 10, 25]" slot="2"/>
+      <link orig="14" dest="26" routing="[14, 1, 5, 11, 26]" slot="3"/>
+      <link orig="14" dest="27" routing="[14, 1, 5, 11, 27]" slot="9"/>
+      <link orig="15" dest="26" routing="[15, 1, 5, 11, 26]" slot="1"/>
+      <link orig="15" dest="27" routing="[15, 1, 5, 11, 27]" slot="2"/>
+      <link orig="16" dest="26" routing="[16, 2, 7, 11, 26]" slot="8"/>
+      <link orig="17" dest="26" routing="[17, 2, 7, 11, 26]" slot="7"/>
+      <link orig="19" dest="26" routing="[19, 3, 7, 11, 26]" slot="2"/>
+      <link orig="16" dest="27" routing="[16, 2, 7, 11, 27]" slot="5"/>
+      <link orig="17" dest="27" routing="[17, 2, 7, 11, 27]" slot="6"/>
+      <link orig="18" dest="27" routing="[18, 3, 7, 11, 27]" slot="4"/>
+    </layer>
+  </main_description>
+  <graphical_data/>
+</network>

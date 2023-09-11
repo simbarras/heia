@@ -1,0 +1,101 @@
+image: maven:3.8-openjdk-17
+
+stages:
+  - build
+  - unit_test
+  - volume_test
+  - deploy
+  - publish
+  - reporting
+
+variables:
+  CI_REGISTRY_IMAGE: "registry.forge.hefr.ch/genie-logiciel-2/2022-2023/simulife-servers"
+  IMAGE_NAME: "$CI_REGISTRY_IMAGE/simulife-api-bar-col-ter"
+
+Build jar:
+  stage: build
+  script:
+    - mvn -s settings.xml clean package -DskipTests compile assembly:single
+  artifacts:
+    expire_in: 5 days
+    paths:
+      - target/*.jar
+
+Unit tests:
+  stage: unit_test
+  script:
+    - mvn -s settings.xml clean org.jacoco:jacoco-maven-plugin:prepare-agent test jacoco:report
+  artifacts:
+    paths:
+      - target/site/jacoco/
+
+Charge test 512:
+  stage: volume_test
+  script:
+    - mvn -s settings.xml clean test -P volume_test "-DmaxSize=2950" "-Dprecision=50" "-Dxmx=512"
+
+Charge test 1024:
+  stage: volume_test
+  script:
+    - mvn -s settings.xml clean test -P volume_test "-DmaxSize=4200" "-Dprecision=100" "-Dxmx=1024"
+
+Deploy docker:
+  allow_failure: true
+  image: docker:19.03
+  stage: deploy
+  only:
+    - develop
+    - master
+  variables:
+    DOCKER_DRIVER: overlay2
+  services:
+    - docker:19.03-dind
+  script:
+    ## publishing
+    - sed -i "s/\${CI_SETTINGS}/$(echo ${CI_SETTINGS})/g" settings.xml
+    - sed -i "s/\${CI_JOB_TOKEN}/$(echo ${CI_JOB_TOKEN}})/g" settings.xml
+    - echo 'Publishing Spring Docker image'
+    - docker login -u gitlab+deploy-token-146 -p cffZXMk1e17AT2pXGMZw $CI_REGISTRY
+    - docker build . -t $IMAGE_NAME:latest -t $IMAGE_NAME:$CI_COMMIT_SHORT_SHA -t $IMAGE_NAME:$CI_COMMIT_REF_NAME --network=host
+    - docker push $IMAGE_NAME:latest
+    - docker push $IMAGE_NAME:$CI_COMMIT_SHORT_SHA
+    - docker push $IMAGE_NAME:$CI_COMMIT_REF_NAME
+
+Publish:
+  allow_failure: true
+  stage: publish
+  only:
+    - master
+  image: gaetancollaud/kubectl
+  script:
+    - cd deploy
+    - cat $KUBE_CONFIG > ~/.kube/config
+    - kubectl get pods
+    - sh ./setup.sh $CI_COMMIT_SHORT_SHA
+
+Coverage:
+  allow_failure: true
+  stage: reporting
+  image: registry.gitlab.com/haynes/jacoco2cobertura:1.0.7
+  script:
+    - cat target/site/jacoco/index.html
+    # convert report from jacoco to cobertura, using relative project path
+    - python /opt/cover2cover.py target/site/jacoco/jacoco.xml $CI_PROJECT_DIR/src/main/java/ > target/site/cobertura.xml
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: target/site/cobertura.xml
+
+Sonarqube check:
+  stage: reporting
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+    GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+    - mvn -s settings.xml verify sonar:sonar -Dsonar.projectKey=ol-bar-col-ter
+  allow_failure: true

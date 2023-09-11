@@ -1,0 +1,43 @@
+
+
+// default permissions granted to all domains
+
+grant { 
+        permission java.io.FilePermission "./*","read, delete";
+        permission java.io.FilePermission ".","read,delete";
+        permission java.io.FilePermission "/-","read";
+        permission java.io.FilePermission "output","write";
+        permission java.io.FilePermission "./output/-","write, delete";
+	
+	permission java.io.FilePermission "/groovy/shell","read";
+
+	permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+	permission java.net.SocketPermission "localhost:80", "listen, accept";
+	permission java.net.SocketPermission "localhost:8080-8082", "listen, accept, connect";
+	permission java.net.SocketPermission "localhost:15555", "listen, accept, connect";	
+	permission java.net.SocketPermission "*:1024-", "accept, connect, listen, resolve";	
+
+	permission java.lang.RuntimePermission "getenv.JAVANCO_HOME";
+	permission java.lang.RuntimePermission "createClassLoader";
+	permission java.lang.RuntimePermission "accessDeclaredMembers";
+	permission java.lang.RuntimePermission "getProtectionDomain";
+	permission java.lang.RuntimePermission "setIO";	
+
+	permission java.util.PropertyPermission "*", "read";
+	permission java.util.PropertyPermission "JAVANCO.exit", "read, write";	
+	permission java.util.PropertyPermission "JAVANCO_HOME", "read, write";
+	permission java.util.PropertyPermission "JAVANCO_HOME_ABS", "write";
+	permission java.util.PropertyPermission "JAVANCO_LAUNCH_DIR_PROPERTY", "write";	
+	permission java.util.PropertyPermission "ch.epfl.*", "write";
+	permission java.util.PropertyPermission "log4j.configuration", "write";
+	permission java.util.PropertyPermission "javanco.rmi.port", "write";	
+		
+	permission simple.util.process.ProcessPermission "execute";
+	
+	permission simple.http.load.LoaderPermission "load";
+	
+	permission groovy.security.GroovyCodeSourcePermission "/groovy/shell";
+	
+	
+};
+

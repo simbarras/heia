@@ -1,0 +1,30 @@
+ <resources>
+    <string name="app_name">TP03_Taboo</string>
+    <string name="taboo">Taboo</string>
+    <string name="guess">Guess!</string>
+    <string name="confirm">Confirm</string>
+    <string name="result">Result</string>
+
+    <string name="action_validate">Validate</string>
+
+    <string name="team_1">Team 1</string>
+    <string name="team_2">Team 2</string>
+    <string name="team_3">Team 3</string>
+    <string name="team_4">Team 4</string>
+    <string name="cards">Cards</string>
+    <string name="duration">Duration</string>
+    <string name="pass">Pass</string>
+    <string name="penalty">Penalty</string>
+    <string name="hardmode">Hardmode</string>
+    <string name="play">Play</string>
+
+    <string name="playing_team">Team: %s</string>
+    <string name="remaining_cards">Remaining cards: %d</string>
+    <string name="error">Error</string>
+    <string name="correct">Correct</string>
+    <string name="integer">%d</string>
+    <string name="out_of">%d/%d</string>
+    <string name="validate">Validate</string>
+    <string name="score">Score: %d</string>
+
+</resources>

@@ -1,0 +1,36 @@
+stages:
+  - build
+  - test
+
+build_GCC:
+  image: rikorose/gcc-cmake:gcc-9
+  stage: build
+  script:
+    - mkdir build_gcc
+    - cd build_gcc
+    - cmake ..
+    - make
+  artifacts:
+    expire_in: 1 hrs
+    paths:
+      - build_gcc/
+
+build_CLANG:
+  image: silkeh/clang
+  stage: build
+  script:
+    - mkdir build_clang
+    - cd build_clang
+    - cmake CMAKE_CXX_FLAGS=clang ..
+    - make
+  artifacts:
+    expire_in: 1 hrs
+    paths:
+      - build_clang/
+
+test:
+  image: buildpack-deps:buster
+  stage: test
+  script:
+    - 'echo "1 + 2 * 4 / 2 - 3.5 #" | build_gcc/cpp_calculator'
+    - 'echo "1 + 2 * 4 / 2 - 3.5 #" | build_clang/cpp_calculator'

@@ -1,0 +1,102 @@
+syntax = "proto3";
+package ch.eiafr.microservice.v1;
+//package microservice;
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "ch.eiafr.microservice.v1";
+option go_package = "microservice.v1";
+
+message Organization {
+  string uuid = 1;
+  string name = 2;
+  google.protobuf.Timestamp created_at = 3;
+}
+
+message Device {
+  string uuid = 1;
+  string organization_uuid = 2;
+  string name = 3;
+  DeviceType.Type device_type = 4;
+  google.protobuf.StringValue description = 5;
+  google.protobuf.Timestamp created_at = 6;
+  google.protobuf.Timestamp modified_at = 7;
+}
+
+message DeviceType{
+  enum Type{
+    UNKNOWN = 0;
+    TEMPERATURE_HUMIDITY = 1;
+    WIND = 2;
+    RAIN = 3;
+  }
+}
+
+// Organization service
+service OrganizationService {
+  rpc ListOrganization (google.protobuf.Empty) returns (ListOrganizationResponse);
+  rpc CreateOrganization (CreateOrganizationRequest) returns (CreateOrganizationResponse);
+  rpc DeleteOrganization (DeleteOrganizationRequest) returns (google.protobuf.Empty);
+}
+
+message ListOrganizationResponse {
+  repeated Organization organizations = 1;
+}
+
+message CreateOrganizationRequest {
+  string name = 1;
+}
+
+message DeleteOrganizationRequest {
+  string name = 1;
+}
+
+message CreateOrganizationResponse {
+  Organization organization = 1;
+}
+
+// Device service
+service DeviceService {
+  rpc ListDevice (ListDeviceRequest) returns (ListDeviceResponse);
+  rpc SaveDevice (SaveDeviceRequest) returns (SaveDeviceResponse);
+  rpc DeleteDevice (DeleteDeviceRequest) returns (google.protobuf.Empty);
+}
+
+message ListDeviceRequest {
+  int32 pageSize = 1;
+  google.protobuf.StringValue after = 2;
+}
+
+message ListDeviceResponse {
+  repeated Device devices = 1;
+}
+
+message SaveDeviceRequest {
+  google.protobuf.StringValue uuid = 1;
+  string organization_uuid = 2;
+  string name = 3;
+  DeviceType.Type device_type = 4;
+  google.protobuf.StringValue description = 5;
+}
+
+message SaveDeviceResponse {
+  Device device = 1;
+}
+
+message DeleteDeviceRequest {
+  string uuid = 1;
+}
+
+// Change service
+service ChangeService {
+  rpc ChangeCallBack(google.protobuf.Empty) returns (stream ChangeEvent);
+}
+
+message ChangeEvent{
+  string entityType = 1;
+  string action = 2;
+  string entityId = 3;
+  string entityName = 4;
+}

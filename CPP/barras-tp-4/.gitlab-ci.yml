@@ -1,0 +1,53 @@
+stages:
+  - build
+  - test
+  - run
+
+image: buildpack-deps:buster
+
+build_GCC:
+  image: rikorose/gcc-cmake:gcc-9
+  stage: build
+  script:
+    - mkdir build_gcc
+    - cd build_gcc
+    - cmake ..
+    - make
+  artifacts:
+    paths:
+      - build_gcc/
+
+build_CLANG:
+  image: silkeh/clang
+  stage: build
+  script:
+    - mkdir build_clang
+    - cd build_clang
+    - cmake CMAKE_CXX_FLAGS=clang ..
+    - make
+  artifacts:
+    expire_in: 1 hrs
+    paths:
+      - build_clang/
+
+test_gcc:
+  stage: test
+  image: rikorose/gcc-cmake:gcc-9
+  script:
+    - build_gcc/unittests_tp4
+
+test_clang:
+  stage: test
+  image: silkeh/clang
+  script:
+    - ls -al build_clang
+    - build_clang/unittests_tp4
+
+run:
+  stage: run
+  script:
+    - build_gcc/benchmark > out.txt
+    - cat out.txt
+  artifacts:
+    paths:
+      - ./out.txt

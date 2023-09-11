@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpc
+  namespace: concsys-22-grp-ex2-bar-ter
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: grpc
+  template:
+    metadata:
+      labels:
+        app: grpc
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - image: registry.forge.hefr.ch/simon.barras/concurrent-systems-exercises/tp02-microservices/grpc:latest
+          imagePullPolicy: Always
+          name: grpc
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "0.3"
+            limits:
+              memory: "256Mi"
+              cpu: "0.5"
+          livenessProbe:
+            exec:
+              command: ["/bin/grpc_health_probe", "-addr=:3000"]
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            exec:
+              command: ["/bin/grpc_health_probe", "-addr=:3000"]
+            initialDelaySeconds: 10
+            periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grpc-svc
+  namespace: concsys-22-grp-ex2-bar-ter
+spec:
+  ports:
+    - port: 9000
+      targetPort: 3000
+      protocol: TCP
+      name: grpc-port
+  type: ClusterIP
+  selector:
+    app: grpc

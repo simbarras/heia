@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: clusterviewer-ns
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clusterviewer
+  namespace: clusterviewer-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clusterviewer
+  template:
+    metadata:
+      labels:
+        app: clusterviewer
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - image: registry.forge.hefr.ch/simon.barras/container-clusterviewer/operator:latest
+          name: clusterviewer
+          volumeMounts:
+            - name: html-volume
+              mountPath: /usr/share/nginx/html
+        - image: nginx:latest
+          name: nginx
+          ports:
+            - containerPort: 80
+              name: http
+              protocol: TCP
+          volumeMounts:
+            - name: html-volume
+              mountPath: /usr/share/nginx/html
+      volumes:
+        - name: html-volume
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+  namespace: clusterviewer-ns
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: clusterviewer
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-http
+  namespace: clusterviewer-ns
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: status.194.182.160.30.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx-svc
+                port:
+                  number: 80

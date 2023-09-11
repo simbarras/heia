@@ -1,0 +1,98 @@
+workflow:
+  rules:
+    - if: $CI_COMMIT_MESSAGE =~ /WIP/
+      when: never
+    - when: always
+
+default:
+  image: registry.forge.hefr.ch/data-cockpit/javanco-legacy/mvn_ant_base
+
+stages:
+  - build
+  - check
+  - report
+  - package
+  - deploy
+
+build-ant:
+  stage: build
+  script:
+    - ant compile
+
+build-maven:
+  stage: build
+  script:
+    - mvn compile
+
+check-style:
+  stage: check
+  script:
+    - mvn checkstyle:checkstyle
+
+test-code:
+  stage: check
+  script:
+    - mvn test
+  artifacts:
+    paths:
+      - "target/"
+
+sonarqube-check:
+  stage: check
+  image: maven:3.6.3-jdk-11
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+    GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+    - mvn verify sonar:sonar -Dsonar.projectKey=devops-sim-bar-rom-col
+  allow_failure: true
+  only:
+    - TP4
+
+generate-javadoc:
+  stage: check
+  allow_failure: true
+  script:
+    - mvn javadoc:javadoc
+
+generate-report:
+  stage: report
+  # only:
+  #   - develop
+  script:
+    - mvn site
+  artifacts:
+    paths:
+      - "target/site"
+
+build-docker:
+  stage: package
+  # only:
+  #   - develop
+  image: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - echo "DOCKER_BUILDKIT=1 docker build -t $CI_REGISTRY_IMAGE/tp4:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE/tp4:latest -f docker/Dockerfile_web ."
+    - DOCKER_BUILDKIT=1 docker build -t $CI_REGISTRY_IMAGE/tp4:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE/tp4:latest -f docker/Dockerfile_web .
+    - docker push $CI_REGISTRY_IMAGE/tp4:latest
+    - docker push $CI_REGISTRY_IMAGE/tp4:$CI_COMMIT_SHORT_SHA
+
+deploy-k8:
+  stage: deploy
+  # only:
+  #   - develop
+  image: lachlanevenson/k8s-kubectl:v1.22.2
+  script:
+    - chmod +x generate-k8s.sh
+    - ./generate-k8s.sh $CI_PROJECT_NAME $CI_REGISTRY_IMAGE/tp4:latest $KUBE_TOKEN
+    - export KUBECONFIG=$(pwd)/kube.config
+    - kubectl apply -f k8s-deploy/deploy.yaml
+
+

@@ -1,0 +1,19 @@
+/***/.idea/
+/***.iml
+/node_modules
+install_nvm.sh
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+/out/
+/output/
+/src/main/java/out/production/devops-sim-bar-rom-col/

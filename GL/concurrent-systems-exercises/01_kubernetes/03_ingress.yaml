@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: echoserver
+  namespace: concsys-22-usr-simon-barras
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: echo.concsys-22-usr-simon-barras.kube.isc.heia-fr.ch
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: echoserver
+            port:
+              number: 80

@@ -1,0 +1,61 @@
+stages:
+  - test
+  - build
+  - publish
+
+variables:
+  IMAGE_NAME_GATEWAY: $CI_REGISTRY_IMAGE/gateway
+  IMAGE_NAME_DRINKREST: $CI_REGISTRY_IMAGE/drink-rest
+  IMAGE_NAME_RATINGREST: $CI_REGISTRY_IMAGE/rating-rest
+  IMAGE_NAME_DRINKMQTT: $CI_REGISTRY_IMAGE/drink-mqtt
+  IMAGE_NAME_RATINGMQTT: $CI_REGISTRY_IMAGE/rating-mqtt
+
+test:
+  stage: test
+  image: golang:alpine
+  before_script:
+    - apk update && apk add --no-cache build-base
+  script:
+    - cd backend/pkg/db
+    - go get
+    - go test -v
+
+build:
+  stage: build
+  image: docker:19.03.12
+  services:
+    - name: docker:19.03.12-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - DOCKER_BUILDKIT=1 docker build --network host --target gateway -t $IMAGE_NAME_GATEWAY:$CI_COMMIT_SHORT_SHA -t $IMAGE_NAME_GATEWAY:$CI_COMMIT_REF_NAME -t $IMAGE_NAME_GATEWAY:latest .
+    - DOCKER_BUILDKIT=1 docker build --network host --target drink-rest -t $IMAGE_NAME_DRINKREST:$CI_COMMIT_SHORT_SHA -t $IMAGE_NAME_DRINKREST:$CI_COMMIT_REF_NAME -t $IMAGE_NAME_DRINKREST:latest .
+    - DOCKER_BUILDKIT=1 docker build --network host --target rating-rest -t $IMAGE_NAME_RATINGREST:$CI_COMMIT_SHORT_SHA -t $IMAGE_NAME_RATINGREST:$CI_COMMIT_REF_NAME -t $IMAGE_NAME_RATINGREST:latest .
+    - DOCKER_BUILDKIT=1 docker build --network host --target drink-mqtt -t $IMAGE_NAME_DRINKMQTT:$CI_COMMIT_SHORT_SHA -t $IMAGE_NAME_DRINKMQTT:$CI_COMMIT_REF_NAME -t $IMAGE_NAME_DRINKMQTT:latest .
+    - DOCKER_BUILDKIT=1 docker build --network host --target rating-mqtt -t $IMAGE_NAME_RATINGMQTT:$CI_COMMIT_SHORT_SHA -t $IMAGE_NAME_RATINGMQTT:$CI_COMMIT_REF_NAME -t $IMAGE_NAME_RATINGMQTT:latest .
+    - docker push $IMAGE_NAME_GATEWAY:latest
+    - docker push $IMAGE_NAME_GATEWAY:$CI_COMMIT_REF_NAME
+    - docker push $IMAGE_NAME_GATEWAY:$CI_COMMIT_SHORT_SHA
+    - docker push $IMAGE_NAME_DRINKREST:latest
+    - docker push $IMAGE_NAME_DRINKREST:$CI_COMMIT_REF_NAME
+    - docker push $IMAGE_NAME_DRINKREST:$CI_COMMIT_SHORT_SHA
+    - docker push $IMAGE_NAME_RATINGREST:latest
+    - docker push $IMAGE_NAME_RATINGREST:$CI_COMMIT_REF_NAME
+    - docker push $IMAGE_NAME_RATINGREST:$CI_COMMIT_SHORT_SHA
+    - docker push $IMAGE_NAME_DRINKMQTT:latest
+    - docker push $IMAGE_NAME_DRINKMQTT:$CI_COMMIT_REF_NAME
+    - docker push $IMAGE_NAME_DRINKMQTT:$CI_COMMIT_SHORT_SHA
+    - docker push $IMAGE_NAME_RATINGMQTT:latest
+    - docker push $IMAGE_NAME_RATINGMQTT:$CI_COMMIT_REF_NAME
+    - docker push $IMAGE_NAME_RATINGMQTT:$CI_COMMIT_SHORT_SHA
+
+publish:
+  stage: publish
+  only:
+    - main
+  image: gaetancollaud/kubectl
+  script:
+    - cd deploy
+    - cat $KUBE_CONFIG > ~/.kube/config
+    - kubectl get nodes
+    - sh ./setup.sh $CI_COMMIT_SHORT_SHA

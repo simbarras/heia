@@ -1,0 +1,112 @@
+/* ADVJ Websocket Chat */
+
+body {
+  margin: 30px auto;
+  max-width: 800px;
+  font-family: sans-serif;
+  color: #333333;
+  background-color: #2E3B48;
+}
+
+#header, #status, #main, #footer {
+  padding: 10px;
+  background-color: #597791;
+  min-width: 541px;
+}
+
+#header {
+  border-bottom: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 2em;
+  color: #F5EFE6;
+}
+
+#header img {
+  width: 50px;
+  margin-right: 10px;
+  float:left;
+}
+
+#status {
+  border-radius: 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: #E8DFCA;
+}
+
+#divStatusDot {
+  background: url('dots.png') no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+#divStatusDot.green {
+  background: url('dots.png') no-repeat;
+  background-position: -16px 0;
+}
+
+#spanStatus {
+  float: right;
+}
+
+#main {
+  min-height: 300px;
+  max-height: 300px;
+  overflow: auto;
+  border: 1px solid #E8DFCA;
+  border-bottom: 1px solid black;
+  display: flex;
+  padding: 0px;
+  background-color: #F5EFE6;
+}
+
+#divUsers, #divBoard {
+  padding: 10px;
+}
+
+#divUsers {
+  width: 200px;
+  border-right: 1px solid black;
+}
+
+#divBoard {
+  width: 600px;
+}
+
+#divMessages {
+  height: 254px;
+  margin-left: 0px;
+  overflow-y: auto;
+}
+
+#ulMsgList li {
+  margin-left: 0px;
+  list-style-type: "\1F4AC";
+}
+#ulMsgList li.join, #ulMsgList li.gone {
+  margin-left: -8px;
+  margin-bottom: 5px;
+  list-style: none;
+/*  font-style: italic; */
+  list-style-type: "\1F6C8";
+}
+
+#divSendMessage {
+  padding-top: 5px;
+  border-top: 1px solid black;
+}
+
+#divSendMessage input {
+  width: 400px;
+}
+
+#footer {
+  color: #F5EFE6;
+  border-top: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* ADVJ 2023 */

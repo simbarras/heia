@@ -1,0 +1,31 @@
+image: python:3.9
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"
+  PLATFORMIO_CACHE_DIR: "$CI_PROJECT_DIR/.platformio-cache"
+
+cache:
+  paths:
+    - .pip-cache/
+    - .platformio-cache/
+
+stages:
+ - check
+ - test
+before_script:
+  - pip install -U platformio
+  - git config --global credential.helper store
+  - echo "https://${GITLAB_USER}:${GITLAB_TOKEN}@gitlab.forge.hefr.ch/" > ~/.git-credentials
+
+check-job:
+  stage: check
+  script:
+    - pio run -e disco_f412zg
+    - pio check -e disco_f412zg --skip-packages
+
+test-job:
+  stage: test
+  tags:
+    - ado
+  script:
+    - pio test -e disco_f412zg --test-port /dev/ttyACM0

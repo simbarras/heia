@@ -1,0 +1,21 @@
+<?xml version="1"?>
+<mapper>
+	<lookup>
+	    <service name="files" type="ch.epfl.general_libraries.webserver.FileService" />
+		<service name="images" type="ch.epfl.javanco.remote.ImageService"/>
+		<service name="performActions" type="ch.epfl.javanco.remote.ActionService" />
+		<service name="fileUpload" type="ch.epfl.javanco.remote.FileUploadService" />
+		<service name="session" type="ch.epfl.javanco.remote.HelloSessionService"/>			
+		<service name="testService" type="ch.epfl.general_libraries.webserver.RequestDumpService" />	
+	</lookup>
+	
+	<resolve>
+		<match path="/*"                       name="files" />
+		<match path="/*/*"                     name="files" />
+		<match path="/action"                  name="performActions" />
+		<match path="/images/*"                name="images" />		
+		<match path="/Session"                 name="session"/>
+		<match path="/FileUploadEngine"        name="fileUpload"/>		
+		<match path="/test/*"                  name="testService"/>
+	</resolve>
+</mapper>

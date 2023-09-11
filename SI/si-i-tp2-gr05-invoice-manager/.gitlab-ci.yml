@@ -1,0 +1,15 @@
+image: mcr.microsoft.com/dotnet/sdk
+
+before_script:
+  - dotnet --version
+  - dotnet restore
+
+build:
+  stage: build
+  script:
+    - "dotnet build --no-restore"
+
+tests:
+  stage: test
+  script:
+    - "dotnet test --no-restore"

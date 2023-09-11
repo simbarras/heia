@@ -1,0 +1,102 @@
+\chapter{Implémentation}
+\label{chap:implementation}
+L'implémentation se fait dans deux fichiers python.
+Le premier est\newline\texttt{fusion\_predictor.py}\cite{fusion_perdictor} qui permet de faire l'entraînement et l'analyse des données.
+Le second est\newline\texttt{data\_processor.py}\cite{data_processor} qui permet de créer le nouveau fichier Excel à partir du fichier de Mme Yerly.
+Ces deux fichiers s'utilisent avec des arguments qui permettent de choisir les étapes à effectuer et, si possible, de quelle manière.
+
+
+% -----------------------------------------------------------------------------
+\section{Récolte des données}
+Le fichier python \texttt{data\_processo.py}\cite{data_processor} crée un nouveau fichier Excel à partir du fichier de Mme Yerly.
+Il ajoute les \acrshort{smiles} et précalcule les descripteurs pour les liquides du fichier Excel.
+
+Comme expliqué lors de la conception, le programme a plusieurs étapes et chacune de ces étapes sont optionnelles.
+%show bash code
+\begin{lstlisting}
+python data_processor.py -h 
+usage: data_processor.py [-h] [-t] [-r] [-d] [-a]
+
+Create the new dataset.
+
+optional arguments:
+  -h, --help         show this help message and exit
+  -t, --translate    Translate the name to smiles
+  -r, --rewrite      Rewrite training set and test set
+  -d, --descriptors  Compute the descriptors
+  -a, --analyse      Analyse the dataset
+\end{lstlisting}
+
+Si un des paramètres est omis, le programme n'écrase pas les données dans le fichier Excel mais se contente de les lire.
+
+
+% -----------------------------------------------------------------------------
+\section{Analyse des données}
+Pour analyser les données, il est possible d'utiliser le fichier \texttt{fusion\_predictor.py}\cite{fusion_perdictor} qui permet de générer de générer les rapports de pandas profiling.
+Pour cela, il faut utiliser l'argument \texttt{analyse} en précisant \texttt{-o} ou non pour utiliser les données de bases.
+Ces rapports sont utiles pour comprendre un peu mieux les features présentes et permet de trouver des correlation intéressantes.
+
+% -----------------------------------------------------------------------------
+\section{Entraîner un modèle}
+Le script \texttt{fusion\_predictor.py} permet aussi d'entraîner un modèle.
+Pour se faire il faut utiliser le paramètre \texttt{train} et plusieurs personnalisations sont disponibles
+\begin{lstlisting}
+python fusion_predictor.py -h
+usage: fusion_predictor.py [-h] [--version]
+                           [-o]
+                           [-n {minmax,standard}]
+                           [-b]
+                           [-a {nusvr,svr,
+                                randomforest,
+                                gradientboosting}]
+                           [-p {pca,kbest}]
+                           [-s {random,grid}]
+                           {analyse,train}
+
+Find the fusion point of an ionic liquid.
+
+positional arguments:
+  {analyse,train}       Action to perform
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -o, --old             Use the old data
+  -n {minmax,standard}, --normalise {minmax,standard}
+                        Normalise the data
+  -b, --both            Normalise feature and target
+  -a {nusvr,svr,randomforest,gradientboosting},
+  --algorithm {nusvr,svr,randomforest,gradientboosting}
+                        Algorithm to use
+  -p {pca,kbest}, --preprocessing {pca,kbest}
+                        Preprocessing to use
+  -s {random,grid}, --search {random,grid}
+                        Search algorithm to use
+\end{lstlisting}
+
+Les paramètres pour les rechreches doivent être écrit en dur dans le script.
+
+\subsection{Sélection des données}
+Comme nous avons deux set de données, il est possible de choisir lequel sera utilisé pour l'entraînement.
+L'option \texttt{-o} permet d'indiquer que l'on veut utiliser les données de bases.
+
+
+\subsection{Sélection des features}
+Pour trier les features, il est possible d'utiliser de plusieurs méthodes.
+Dans le script \texttt{fusion\_predictor.py}, cette étape s'appelle le preprocessing et elle est activable avec l'argument \texttt{-p}.
+
+\subsection{Normalisation des données}
+Pour normaliser les données, il est possible de faire de choisir entre deux méthodes.
+La première est la normalisation \acrshort{minimax} utilisée par Mme Yerly et la seconde est la standardisation.
+Ces options s'activent avec l'argument \texttt{-n} et la précision de l'algorithme voulu.
+
+\subsection{Sélection du modèle}
+Comme pour les deux étapes précédentes, il est possible de choisir entre plusieurs algorithmes.
+Ce choix se fait avec l'argument \texttt{-a} et la précision de l'algorithme voulu.
+Ceci prendra les hyper paramètres par défaut de la librairie \acrshort{sklearn}.
+Il est possible de faire rechercher les meilleurs hyper paramètres avec l'argument \texttt{-s} qui activera un \texttt{grid\_search} ou un \texttt{random\_search}.
+Les paramètres de recherche doivent être écrit en dur dans le fichier \texttt{fusion\_predictor.py}.
+
+% -----------------------------------------------------------------------------
+\section{Amélioration de l'\acrshort{ux}}
+Par manque de temps et de résultats satisfaisants, cet aspect n'a pas été traité mais la solution préconisée est celle d'une application web.

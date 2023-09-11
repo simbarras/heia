@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  si-ii-dotnet:
+    image: si-ii-dotnet
+    ports:
+      - "7218:80"
+    depends_on:
+      - si-ii-mysql
+    networks:
+      - si-ii-network
+  
+  si-ii-mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: si-ii
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+        - si-ii-network
+  
+  si-ii-angular:
+    image: si-ii-angular
+    ports:
+      - "80:80"
+    depends_on:
+      - si-ii-dotnet
+    networks:
+      - si-ii-network
+          
+networks:
+    si-ii-network:
+        driver: bridge
+volumes:
+  mysql-data:

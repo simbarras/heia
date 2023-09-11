@@ -1,0 +1,9 @@
+pages:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - mkdir public
+    - cp -r docs/* public/  # copy the docs folder into the public folder
+  artifacts:
+    paths: 
+      - public  # instruct GitLab to keep the public folder

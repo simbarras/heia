@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<network>
+  <main_description>
+    <layer id="physical" channels="32" link_rate_unit="gbit" link_rate_value="10">
+      <node id="0" pos_x="50" pos_y="400"/>
+      <node id="1" pos_x="250" pos_y="400"/>
+      <node id="2" pos_x="250" pos_y="250"/>
+      <node id="3" pos_x="450" pos_y="400"/>
+      <node id="4" pos_x="450" pos_y="250"/>
+      <node id="5" pos_x="450" pos_y="100"/>
+      <link orig="0" dest="1" length="200.0" fibers="1" max_wavelengths="8" wavelengths="3" offset="1"/>
+      <link orig="0" dest="2" length="250.0" fibers="1" max_wavelengths="8" wavelengths="4" offset="1"/>
+      <link orig="1" dest="3" length="200.0" fibers="1" max_wavelengths="8" wavelengths="4" offset="1"/>
+      <link orig="2" dest="3" length="250.0" fibers="1" max_wavelengths="8" wavelengths="1" offset="1"/>
+      <link orig="3" dest="4" length="150.0" fibers="1" max_wavelengths="8" wavelengths="4" offset="1"/>
+      <link orig="2" dest="4" length="200.0" fibers="1" max_wavelengths="8" wavelengths="2" offset="1"/>
+      <link orig="2" dest="5" length="250.0" fibers="1" max_wavelengths="8" wavelengths="2" offset="1"/>
+      <link orig="4" dest="5" length="150.0" fibers="1" max_wavelengths="8" wavelengths="3" offset="1"/>
+      <link orig="1" dest="0" length="200.0" fibers="1" max_wavelengths="8" wavelengths="3" offset="1"/>
+      <link orig="2" dest="0" length="250.0" fibers="1" max_wavelengths="8" wavelengths="4" offset="1"/>
+      <link orig="3" dest="1" length="200.0" fibers="1" max_wavelengths="8" wavelengths="4" offset="1"/>
+      <link orig="3" dest="2" length="250.0" fibers="1" max_wavelengths="8" wavelengths="1" offset="1"/>
+      <link orig="4" dest="2" length="200.0" fibers="1" max_wavelengths="8" wavelengths="2" offset="1"/>
+      <link orig="5" dest="2" length="250.0" fibers="1" max_wavelengths="8" wavelengths="2" offset="1"/>
+      <link orig="4" dest="3" length="150.0" fibers="1" max_wavelengths="8" wavelengths="4" offset="1"/>
+      <link orig="5" dest="4" length="150.0" fibers="1" max_wavelengths="8" wavelengths="3" offset="1"/>
+    </layer>
+    <layer id="demands">
+      <link orig="0" dest="1" demand="1" routing="[0, 1]" offset="2"/>
+      <link orig="0" dest="2" demand="0.70000001192092896" routing="[0, 2]" offset="2"/>
+      <link orig="0" dest="3" demand="0.70000001192092896" routing="[0, 3]" offset="1"/>
+      <link orig="0" dest="4" demand="0.70000001192092896" routing="[0, 4]" offset="1"/>
+      <link orig="0" dest="5" demand="0.70000001192092896" routing="[0, 5]" offset="1"/>
+      <link orig="1" dest="0" demand="0.30000001192092896" routing="[1, 0]" offset="2"/>
+      <link orig="1" dest="2" demand="0.30000001192092896" routing="[1, 2]" offset="1"/>
+      <link orig="1" dest="3" demand="0.30000001192092896" routing="[1, 3]" offset="2"/>
+      <link orig="1" dest="4" demand="0.30000001192092896" routing="[1, 4]" offset="1"/>
+      <link orig="1" dest="5" demand="0.30000001192092896" routing="[1, 5]" offset="1"/>
+      <link orig="2" dest="0" demand="0.30000001192092896" routing="[2, 0]" offset="2"/>
+      <link orig="2" dest="1" demand="0.30000001192092896" routing="[2, 1]" offset="1"/>
+      <link orig="2" dest="3" demand="0.30000001192092896" routing="[2, 3]" offset="2"/>
+      <link orig="2" dest="4" demand="0.30000001192092896" routing="[2, 4]" offset="2"/>
+      <link orig="2" dest="5" demand="0.30000001192092896" routing="[2, 5]" offset="2"/>
+      <link orig="3" dest="0" demand="0.30000001192092896" routing="[3, 0]" offset="1"/>
+      <link orig="3" dest="1" demand="0.30000001192092896" routing="[3, 1]" offset="2"/>
+      <link orig="3" dest="2" demand="0.30000001192092896" routing="[3, 2]" offset="2"/>
+      <link orig="3" dest="4" demand="0.30000001192092896" routing="[3, 4]" offset="2"/>
+      <link orig="3" dest="5" demand="0.30000001192092896" routing="[3, 5]" offset="1"/>
+      <link orig="4" dest="0" demand="0.30000001192092896" routing="[4, 0]" offset="1"/>
+      <link orig="4" dest="1" demand="0.30000001192092896" routing="[4, 1]" offset="1"/>
+      <link orig="4" dest="2" demand="0.30000001192092896" routing="[4, 2]" offset="2"/>
+      <link orig="4" dest="3" demand="0.30000001192092896" routing="[4, 3]" offset="2"/>
+      <link orig="4" dest="5" demand="0.30000001192092896" routing="[4, 5]" offset="2"/>
+      <link orig="5" dest="0" demand="0.30000001192092896" routing="[5, 0]" offset="1"/>
+      <link orig="5" dest="1" demand="0.30000001192092896" routing="[5, 1]" offset="1"/>
+      <link orig="5" dest="2" demand="0.30000001192092896" routing="[5, 2]" offset="2"/>
+      <link orig="5" dest="3" demand="0.30000001192092896" routing="[5, 3]" offset="1"/>
+      <link orig="5" dest="4" demand="0.30000001192092896" routing="[5, 4]" offset="2"/>
+    </layer>
+    <layer id="LEC">
+      <link orig="0" dest="1" routing="[0, 1]" rate="1.0" offset="3" lec="1"/>
+      <link orig="1" dest="0" routing="[1, 0]" rate="1.0" offset="3" lec="1"/>
+      <link orig="0" dest="2" routing="[0, 2]" rate="1.0" offset="3" lec="1"/>
+      <link orig="2" dest="0" routing="[2, 0]" rate="1.0" offset="3" lec="1"/>
+      <link orig="1" dest="3" routing="[1, 3]" rate="1.0" offset="3" lec="1"/>
+      <link orig="3" dest="1" routing="[3, 1]" rate="1.0" offset="3" lec="1"/>
+      <link orig="2" dest="3" routing="[2, 3]" rate="1.0" offset="3" lec="1"/>
+      <link orig="3" dest="2" routing="[3, 2]" rate="1.0" offset="3" lec="1"/>
+      <link orig="2" dest="4" routing="[2, 4]" rate="1.0" offset="3" lec="1"/>
+      <link orig="4" dest="2" routing="[4, 2]" rate="1.0" offset="3" lec="1"/>
+      <link orig="2" dest="5" routing="[2, 5]" rate="1.0" offset="3" lec="1"/>
+      <link orig="5" dest="2" routing="[5, 2]" rate="1.0" offset="3" lec="1"/>
+      <link orig="3" dest="4" routing="[3, 4]" rate="1.0" offset="3" lec="1"/>
+      <link orig="4" dest="3" routing="[4, 3]" rate="1.0" offset="3" lec="1"/>
+      <link orig="4" dest="5" routing="[4, 5]" rate="1.0" offset="3" lec="1"/>
+      <link orig="5" dest="4" routing="[5, 4]" rate="1.0" offset="3" lec="1"/>
+      <link orig="0" dest="3" routing="[0, 1, 3]" rate="1.0" offset="2" lec="1"/>
+      <link orig="3" dest="0" routing="[3, 1, 0]" rate="1.0" offset="2" lec="1"/>
+      <link orig="0" dest="4" routing="[0, 2, 4]" rate="1.0" offset="2" lec="1"/>
+      <link orig="4" dest="0" routing="[4, 2, 0]" rate="1.0" offset="2" lec="1"/>
+      <link orig="0" dest="5" routing="[0, 2, 5]" rate="1.0" offset="2" lec="1"/>
+      <link orig="5" dest="0" routing="[5, 2, 0]" rate="1.0" offset="2" lec="1"/>
+      <link orig="1" dest="2" routing="[1, 0, 2]" rate="1.0" offset="2" lec="1"/>
+      <link orig="2" dest="1" routing="[2, 0, 1]" rate="1.0" offset="2" lec="1"/>
+      <link orig="1" dest="4" routing="[1, 3, 4]" rate="1.0" offset="2" lec="1"/>
+      <link orig="4" dest="1" routing="[4, 3, 1]" rate="1.0" offset="2" lec="1"/>
+      <link orig="1" dest="5" routing="[1, 3, 4, 5]" rate="1.0" offset="2" lec="1"/>
+      <link orig="5" dest="1" routing="[5, 4, 3, 1]" rate="1.0" offset="2" lec="1"/>
+      <link orig="3" dest="5" routing="[3, 4, 5]" rate="1.0" offset="2" lec="1"/>
+      <link orig="5" dest="3" routing="[5, 4, 3]" rate="1.0" offset="2" lec="1"/>
+    </layer>
+  </main_description>
+  <graphical_data/>
+</network>

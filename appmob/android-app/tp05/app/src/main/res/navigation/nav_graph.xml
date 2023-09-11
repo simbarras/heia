@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ch.heiafr.tic.mobapp.tp05_trivia.ui.home.HomeFragment"
+        android:label="@string/home_fragment_title"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="ch.heiafr.tic.mobapp.tp05_trivia.ui.result.ResultFragment"
+        android:label="@string/result_fragment_title"
+        tools:layout="@layout/fragment_result">
+        <action
+            android:id="@+id/action_resultFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="ch.heiafr.tic.mobapp.tp05_trivia.ui.game.GameFragment"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_gameFragment_to_resultFragment"
+            app:destination="@id/resultFragment"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument android:name="mode"
+            app:argType="integer" />
+        <argument android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="ch.heiafr.tic.mobapp.tp05_trivia.ui.history.HistoryFragment"
+        android:label="@string/history_fragment_title">
+        <action
+            android:id="@+id/action_historyFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ch.heiafr.tic.mobapp.tp05_trivia.ui.profile.ProfileFragment"
+        android:label="@string/profile_fragment_title" />
+</navigation>

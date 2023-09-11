@@ -1,0 +1,68 @@
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  OBJECTS_DIRECTORY: 'obj'
+  NUGET_PACKAGES_DIRECTORY: '.nuget'
+  SOURCE_CODE_PATH: '*/*/tp1-groupe5-dotnet'
+  TEST_PROJECT_PATH: '*/*/tp1-groupe5-dotnet.Tests'
+  
+cache:
+  # Per-stage and per-branch caching.
+  key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"
+  paths:
+    - '$SOURCE_CODE_PATH$OBJECTS_DIRECTORY/project.assets.json'
+    - '$SOURCE_CODE_PATH$OBJECTS_DIRECTORY/*.csproj.nuget.*'
+    - '$NUGET_PACKAGES_DIRECTORY'
+  policy: pull-push
+
+test:
+    stage: test
+    image: mcr.microsoft.com/dotnet/sdk:6.0
+    script:
+        - 'dotnet restore --packages $NUGET_PACKAGES_DIRECTORY'
+        - 'dotnet test --no-restore'
+    only:
+        - main
+        - develop
+        - /^feature\/.*$/
+        - /^hotfix\/.*$/
+        - /^release\/.*$/
+
+build:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:6.0
+  before_script:
+    - 'dotnet restore --packages $NUGET_PACKAGES_DIRECTORY'
+  script:
+    - 'dotnet build --no-restore'
+    
+build-docker:
+  stage: build
+  image: docker:19.03.15-dind
+  services:
+    - docker:19.03.15-dind
+  script:
+    - docker login registry.forge.hefr.ch -u $REGISTRY_USERNAME -p $REGISTRY_TOKEN
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG -t $CI_REGISTRY_IMAGE:latest .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    - docker push $CI_REGISTRY_IMAGE:latest
+      
+deploy:
+  stage: deploy
+  image: ubuntu:latest
+  before_script:
+    - apt-get update -qq
+    - apt-get install -qq git
+    - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh
+  script:
+    - ssh -oStrictHostKeyChecking=no $SSH_CREDENTIALS "sudo /home/ubuntu/deploy.sh $CI_COMMIT_REF_SLUG"
+  dependencies:
+    - build-docker
+  only:
+    - main

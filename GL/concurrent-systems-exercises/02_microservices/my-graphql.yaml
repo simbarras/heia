@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graphql
+  namespace: concsys-22-grp-ex2-bar-ter
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: graphql
+  template:
+    metadata:
+      labels:
+        app: graphql
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - image: registry.forge.hefr.ch/simon.barras/concurrent-systems-exercises/tp02-microservices/graphql:latest
+          imagePullPolicy: Always
+          name: graphql
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "0.3"
+            limits:
+              memory: "128Mi"
+              cpu: "0.5"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+              httpHeaders:
+                - name: Accept
+                  value: application/json
+            initialDelaySeconds: 1
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /graphql?query={devices(pageSize:10){uuid,name,createdAt}}
+              port: 3000
+              httpHeaders:
+                - name: Accept
+                  value: application/json
+            initialDelaySeconds: 1
+            periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: graphql-svc
+  namespace: concsys-22-grp-ex2-bar-ter
+spec:
+  ports:
+    - port: 80
+      targetPort: 3000
+      protocol: TCP
+  type: ClusterIP
+  selector:
+    app: graphql
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: http-grpc-microservices
+  namespace: concsys-22-grp-ex2-bar-ter
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: concsys-22-grp-ex2-bar-ter.kube.isc.heia-fr.ch
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: graphql-svc
+                port:
+                  number: 80

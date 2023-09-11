@@ -1,0 +1,39 @@
+.paid {
+  color: #198754;
+}
+
+.unpaid {
+  color: #bb2d3b;
+}
+
+.filter-active {
+  color: #dc3545;
+}
+
+.icon-filter {
+  font-size: 1.2rem;
+  padding-left: 0.3rem;
+}
+
+#invoice-list {
+  cursor: pointer;
+}
+
+#invoice-list tbody tr:hover {
+  background-color: lightgray;
+}
+
+.arrow-left-icon {
+  color: #333333;
+  margin-right: 0.5rem;
+}
+
+.btn-download {
+  margin-left: 1rem;
+}
+
+.icon-download {
+  margin-left: 0.5rem;
+}
+
+/*# sourceMappingURL=styles.css.map */

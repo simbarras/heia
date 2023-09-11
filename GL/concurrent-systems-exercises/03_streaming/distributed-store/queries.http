@@ -1,0 +1,30 @@
+GET {{url}}/api/v1/organizations
+
+###
+
+POST {{url}}/api/v1/organizations
+Content-Type: application/json
+
+{
+  "name": "org-3"
+}
+
+###
+
+DELETE {{url}}/api/v1/organizations/26fc55ac-b4a7-4d9f-905f-ac4f29f99518
+
+###
+
+GET {{url}}/api/v1/devices
+
+###
+
+POST {{url}}/api/v1/devices
+Content-Type: application/json
+
+{
+  "organizationUuid": "a7712b20-fd80-4050-8ded-62654cd617f6",
+  "deviceType": "TEMPERATURE_HUMIDITY",
+  "name": "device-1",
+  "description": "my-description"
+}

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: distributed-store-app
+  namespace: concsys-22-usr-simon-barras
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: distributed-store-app
+  template:
+    metadata:
+      labels:
+        app: distributed-store-app
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - image: registry.forge.hefr.ch/simon.barras/concurrent-systems-exercises/distributed-store-app:${TAG}
+        imagePullPolicy: Always
+        name: distributed-store-app
+        env:
+          - name: APP_KAFKA_CONSUMER_GROUP_NAME
+            value: simon-barras-00
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: "1"
+            memory: "200Mi"
+        volumeMounts:
+          - mountPath: /tmp
+            name: tmp-volume
+      volumes:
+        - name: tmp-volume
+          emptyDir: {}

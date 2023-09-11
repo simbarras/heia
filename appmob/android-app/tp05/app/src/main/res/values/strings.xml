@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">TP05_Trivia</string>
+
+    <!-- Home fragment -->
+    <string name="home_fragment_title">Trivia</string>
+    <string name="action_history">History</string>
+    <string name="action_profile">Profile</string>
+
+    <!-- Game fragment -->
+    <string name="game_fragment_title">Question %d/%d</string>
+
+    <!-- Result fragment -->
+    <string name="result_fragment_title">Result</string>
+    <string name="medal">Medal</string>
+    <string name="score">Score</string>
+    <string name="time">Time</string>
+    <string name="gold_text">Congratulation!</string>
+    <string name="silver_text">Well done!</string>
+    <string name="bronze_text">Good!</string>
+    <string name="nothing_text">Oops…</string>
+    <string name="trivia_completed">Trivia completed</string>
+    <string name="player_rating">Player rating</string>
+    <string name="question_answered">Question answered</string>
+    <string name="correct_questions">Correct questions</string>
+    <string name="score_question">%d/%d</string>
+
+    <!-- History fragment -->
+    <string name="history_fragment_title">History</string>
+    <string name="replay_fragment_title">Replay</string>
+
+    <!-- Profile fragment -->
+    <string name="profile_fragment_title">Profile</string>
+    <string name="rating">%.2f%%</string>
+
+    <!-- Preferences keys -->
+    <string name="pref_key_file">pref_key_file</string>
+    <string name="pref_key_total_gold">pref_key_total_gold</string>
+    <string name="pref_key_total_silver">pref_key_total_silver</string>
+    <string name="pref_key_total_bronze">pref_key_total_bronze</string>
+    <string name="pref_key_total_trivia">pref_key_total_trivia</string>
+    <string name="pref_key_total_answered">pref_key_total_answered</string>
+    <string name="pref_key_total_correct">pref_key_total_correct</string>
+    <string name="cnt_desc_state_question">Question\'s state</string>
+
+</resources>

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drink-mqtt
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: drink-mqtt
+  template:
+    metadata:
+      labels:
+        app: drink-mqtt
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - image: registry.forge.hefr.ch/si-ii-tp-groupe6-22-23/si-ii-tp2-groupe6-22-23/drink-mqtt:${TAG}
+          name: drink-mqtt
+

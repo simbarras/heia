@@ -1,0 +1,32 @@
+stages:
+  - build
+  - test
+  - deploy
+  
+build:
+  image: mcr.microsoft.com/dotnet/sdk:6.0
+  stage: build
+  script:
+    - "cd betApi"
+    - "dotnet restore"
+    - "dotnet build"
+
+test:
+  image: mcr.microsoft.com/dotnet/sdk:6.0
+  stage: test
+  script:
+    - "cd betApi"
+    - "dotnet restore"
+    - "dotnet test"
+
+build_docker:
+  image:
+    name: docker:19.03.15
+    entrypoint: [ "" ]
+  stage: deploy
+  services:
+    - docker:19.03.15-dind
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker build --network host $(pwd)/ -t registry.forge.hefr.ch/si-ii-tp-groupe6-22-23/si-ii-tp1-groupe6-dotnet-22-23
+    - docker push registry.forge.hefr.ch/si-ii-tp-groupe6-22-23/si-ii-tp1-groupe6-dotnet-22-23

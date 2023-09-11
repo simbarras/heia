@@ -1,0 +1,118 @@
+BODY {
+	margin: 20px; BORDER-LEFT: 4px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: verdana, arial, helvetica, sans-serif; BACKGROUND: #fff; FONT-SIZE: 80%; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+#layout_table {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; BORDER-SPACING: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+A:focus:link {
+	COLOR: #09c
+}
+A:focus:visited {
+	COLOR: #09c
+}
+A:link {
+	COLOR: #05a
+}
+A:visited {
+	COLOR: #048
+}
+A:hover:link {
+	COLOR: #080; TEXT-DECORATION: underline
+}
+A:hover:visited {
+	COLOR: #080; TEXT-DECORATION: underline
+}
+A:active:link {
+	COLOR: #0a0
+}
+A:active:visited {
+	COLOR: #0a0
+}
+ACRONYM {
+	BORDER-BOTTOM: #aaa 1px dashed; COLOR: #333; CURSOR: help
+}
+H1 {
+	FONT-FAMILY: verdana, arial, sans-serif
+}
+H2 {
+	FONT-FAMILY: verdana, arial, sans-serif
+}
+H3 {
+	FONT-FAMILY: verdana, arial, sans-serif
+}
+H4 {
+	FONT-FAMILY: verdana, arial, sans-serif
+}
+PRE {
+	FONT-FAMILY: monospace
+}
+CODE {
+	FONT-FAMILY: monospace
+}
+BLOCKQUOTE {
+	FONT-FAMILY: georgia, serif; COLOR: #464; MARGIN-LEFT: 1em
+}
+INPUT {
+	FONT-SIZE: 1em
+}
+SELECT {
+	FONT-SIZE: 1em
+}
+TABLE {
+	FONT-SIZE: 1em
+}
+TH {
+	FONT-SIZE: 1em
+}
+TD {
+	FONT-SIZE: 1em
+}
+LI LI {
+	FONT-SIZE: 1em
+}
+LI P {
+	FONT-SIZE: 1em
+}
+TD P {
+	FONT-SIZE: 1em
+}
+BLOCKQUOTE P {
+	FONT-SIZE: 1em
+}
+CODE {
+	FONT-FAMILY: "courier new", monospace; FONT-SIZE: 1em
+}
+P {
+	PADDING-BOTTOM: 0px; MARGIN: 1em 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H1 {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: verdana, arial, sans-serif; COLOR: #000; FONT-SIZE: 3em; BORDER-TOP: 0px; FONT-WEIGHT: bold; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+H2 {
+	MARGIN: 1em 0px 0.25em; FONT-SIZE: 2em; FONT-WEIGHT: bold
+}
+H3 {
+	MARGIN: 1em 0px 0.25em; FONT-SIZE: 1.5em; FONT-WEIGHT: bold
+}
+H4 {
+	FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+FORM {
+	MARGIN: 0px
+}
+UL {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-LEFT: 12px; MARGIN-LEFT: 12px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+OL {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-LEFT: 12px; MARGIN-LEFT: 12px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+LI {
+	PADDING-LEFT: 4px; MARGIN-LEFT: 4px
+}
+HR {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #09c; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 1px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+p
+{
+margin-left:15px;
+}

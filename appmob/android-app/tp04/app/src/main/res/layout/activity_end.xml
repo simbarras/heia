@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".ui.EndFrag">
+
+
+    <ImageView
+        android:id="@+id/medal_gold"
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/medal_slver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/ic_medal_gold" />
+
+    <TextView
+        android:id="@+id/team_gold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="start|center_vertical"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/score_gold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/medal_gold"
+        app:layout_constraintTop_toTopOf="@+id/medal_gold" />
+
+    <TextView
+        android:id="@+id/score_gold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/medal_gold"
+        app:layout_constraintEnd_toEndOf="@+id/team_gold"
+        app:layout_constraintStart_toStartOf="@+id/team_gold"
+        app:layout_constraintTop_toBottomOf="@+id/team_gold" />
+
+
+    <ImageView
+        android:id="@+id/medal_slver"
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/medal_bronze"
+        app:layout_constraintEnd_toEndOf="@+id/medal_gold"
+        app:layout_constraintStart_toStartOf="@+id/medal_gold"
+        app:layout_constraintTop_toBottomOf="@+id/medal_gold"
+        app:srcCompat="@drawable/ic_medal_silver" />
+
+    <TextView
+        android:id="@+id/team_silver"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/score_silver"
+        app:layout_constraintEnd_toEndOf="@+id/team_gold"
+        app:layout_constraintStart_toStartOf="@+id/team_gold"
+        app:layout_constraintTop_toTopOf="@+id/medal_slver" />
+
+    <TextView
+        android:id="@+id/score_silver"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/medal_slver"
+        app:layout_constraintEnd_toEndOf="@+id/team_silver"
+        app:layout_constraintStart_toStartOf="@+id/team_silver"
+        app:layout_constraintTop_toBottomOf="@+id/team_silver" />
+
+
+    <ImageView
+        android:id="@+id/medal_bronze"
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/medal_fail"
+        app:layout_constraintEnd_toEndOf="@+id/medal_slver"
+        app:layout_constraintStart_toStartOf="@+id/medal_slver"
+        app:layout_constraintTop_toBottomOf="@+id/medal_slver"
+        app:srcCompat="@drawable/ic_medal_bronze" />
+
+    <TextView
+        android:id="@+id/team_bronze"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/score_bronze"
+        app:layout_constraintEnd_toEndOf="@+id/team_silver"
+        app:layout_constraintStart_toStartOf="@+id/team_silver"
+        app:layout_constraintTop_toTopOf="@+id/medal_bronze" />
+
+    <TextView
+        android:id="@+id/score_bronze"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/medal_bronze"
+        app:layout_constraintEnd_toEndOf="@+id/team_bronze"
+        app:layout_constraintStart_toStartOf="@+id/team_bronze"
+        app:layout_constraintTop_toBottomOf="@+id/team_bronze" />
+
+
+    <ImageView
+        android:id="@+id/medal_fail"
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/medal_bronze"
+        app:layout_constraintStart_toStartOf="@+id/medal_bronze"
+        app:layout_constraintTop_toBottomOf="@+id/medal_bronze"
+        app:srcCompat="@drawable/ic_medal_fail" />
+
+    <TextView
+        android:id="@+id/team_fail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/score_fail"
+        app:layout_constraintEnd_toEndOf="@+id/team_bronze"
+        app:layout_constraintStart_toStartOf="@+id/team_bronze"
+        app:layout_constraintTop_toTopOf="@+id/medal_fail" />
+
+    <TextView
+        android:id="@+id/score_fail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/medal_fail"
+        app:layout_constraintEnd_toEndOf="@+id/team_fail"
+        app:layout_constraintStart_toStartOf="@+id/team_fail"
+        app:layout_constraintTop_toBottomOf="@+id/team_fail" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

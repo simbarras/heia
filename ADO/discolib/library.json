@@ -1,0 +1,21 @@
+{
+  "name": "DiscoLib",
+  "version": "0.1.0",
+  "description": "Disco library for ADO",
+  "keywords": "ADO",
+  "authors": [
+    {
+      "name": "SIMON BARRAS",
+      "email": "simon.barras@edu.hefr.ch",
+      "maintainer": true
+    },
+    {
+      "name": "NICOLAS TERREAUX",
+      "email": "nicolas.terreaux@edu.hefr.ch",
+      "maintainer": true
+    }
+  ],
+  "license": "Apache-2.0",
+  "frameworks": "libopencm3",
+  "platforms": "ststm32"
+}

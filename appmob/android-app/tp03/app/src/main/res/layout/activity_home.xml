@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.HomeActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="288dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01999998"
+        app:srcCompat="@drawable/ic_taboo" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/difficult_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/number_of_pass"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/team_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="@string/team_1"
+        app:layout_constraintBottom_toTopOf="@+id/team_3"
+        app:layout_constraintEnd_toStartOf="@+id/team_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:startIconDrawable="@drawable/ic_baseline_people_alt_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/team_1_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:nextFocusDown="@+id/team_2_txt" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/team_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/team_2"
+        app:layout_constraintBottom_toBottomOf="@+id/team_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/team_1"
+        app:layout_constraintTop_toTopOf="@+id/team_1"
+        app:startIconDrawable="@drawable/ic_baseline_people_alt_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/team_2_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:nextFocusDown="@+id/team_3_txt"
+            android:nextFocusForward="@+id/team_3_txt" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/team_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/team_3"
+        app:layout_constraintBottom_toTopOf="@+id/number_of_cards"
+        app:layout_constraintEnd_toEndOf="@+id/team_1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/team_1"
+        app:layout_constraintTop_toBottomOf="@+id/team_1"
+        app:startIconDrawable="@drawable/ic_baseline_people_alt_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/team_3_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:nextFocusDown="@+id/team_4_txt"
+            android:nextFocusForward="@+id/team_4_txt" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/team_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="@string/team_4"
+        app:layout_constraintBottom_toBottomOf="@+id/team_3"
+        app:layout_constraintEnd_toEndOf="@+id/team_2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/team_2"
+        app:layout_constraintTop_toTopOf="@+id/team_3"
+        app:layout_constraintVertical_bias="1.0"
+        app:startIconDrawable="@drawable/ic_baseline_people_alt_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/team_4_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:nextFocusDown="@+id/number_of_cards_txt"
+            android:nextFocusForward="@+id/number_of_cards_txt" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/number_of_cards"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="@string/cards"
+        app:layout_constraintBottom_toTopOf="@+id/number_of_pass"
+        app:layout_constraintEnd_toEndOf="@+id/team_3"
+        app:layout_constraintStart_toStartOf="@+id/team_3"
+        app:layout_constraintTop_toBottomOf="@+id/team_3"
+        app:startIconDrawable="@drawable/ic_baseline_card_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/number_of_cards_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="phone"
+            android:nextFocusDown="@+id/turn_duration_txt"
+            android:nextFocusRight="@+id/turn_duration_txt"
+            android:nextFocusForward="@+id/turn_duration_txt" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/turn_duration"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="@string/duration"
+        app:layout_constraintBottom_toBottomOf="@+id/number_of_cards"
+        app:layout_constraintEnd_toEndOf="@+id/team_4"
+        app:layout_constraintStart_toStartOf="@+id/team_4"
+        app:layout_constraintTop_toTopOf="@+id/number_of_cards"
+        app:layout_constraintVertical_bias="0.0"
+        app:startIconDrawable="@drawable/ic_baseline_timer_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/turn_duration_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="phone"
+            android:nextFocusDown="@+id/number_of_pass_txt"
+            android:nextFocusForward="@+id/number_of_pass_txt" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/number_of_pass"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="50dp"
+        android:hint="@string/pass"
+        app:layout_constraintBottom_toTopOf="@+id/difficult_switch"
+        app:layout_constraintEnd_toEndOf="@+id/number_of_cards"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/number_of_cards"
+        app:layout_constraintTop_toBottomOf="@+id/number_of_cards"
+        app:startIconDrawable="@drawable/ic_baseline_skip_next_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/number_of_pass_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="phone"
+            android:nextFocusDown="@+id/error_penalty_txt"
+            android:nextFocusForward="@+id/error_penalty_txt" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/error_penalty"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="@string/penalty"
+        app:layout_constraintBottom_toBottomOf="@+id/number_of_pass"
+        app:layout_constraintEnd_toEndOf="@+id/turn_duration"
+        app:layout_constraintStart_toStartOf="@+id/turn_duration"
+        app:layout_constraintTop_toTopOf="@+id/number_of_pass"
+        app:startIconDrawable="@drawable/ic_baseline_error_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/error_penalty_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="phone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/play_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play"
+        app:layout_constraintBottom_toBottomOf="@+id/difficult_switch"
+        app:layout_constraintEnd_toEndOf="@+id/error_penalty"
+        app:layout_constraintStart_toStartOf="@+id/error_penalty"
+        app:layout_constraintTop_toTopOf="@+id/difficult_switch"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/hardmode"
+        app:layout_constraintBottom_toBottomOf="@+id/difficult_switch"
+        app:layout_constraintEnd_toEndOf="@+id/number_of_pass"
+        app:layout_constraintStart_toEndOf="@+id/difficult_switch"
+        app:layout_constraintTop_toTopOf="@+id/difficult_switch" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,7 @@
+version: '3.0'
+services:
+  native:
+    image: registry.forge.hefr.ch/your-image
+    build:
+      context: .
+      dockerfile: src/main/docker/Dockerfile.jvm

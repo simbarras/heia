@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<network>
+  <main_description>
+    <layer id="physical">
+      <node id="0" pos_x="384" pos_y="565"/>
+      <node id="1" pos_x="448" pos_y="518"/>
+      <node id="2" pos_x="539" pos_y="569"/>
+      <node id="3" pos_x="669" pos_y="464"/>
+      <node id="4" pos_x="649" pos_y="386"/>
+      <node id="5" pos_x="707" pos_y="303"/>
+      <node id="6" pos_x="661" pos_y="166"/>
+      <node id="7" pos_x="576" pos_y="160"/>
+      <node id="8" pos_x="532" pos_y="83"/>
+      <node id="9" pos_x="346" pos_y="83"/>
+      <node id="10" pos_x="309" pos_y="155"/>
+      <node id="11" pos_x="213" pos_y="184"/>
+      <node id="12" pos_x="165" pos_y="336"/>
+      <node id="13" pos_x="250" pos_y="399"/>
+      <node id="14" pos_x="238" pos_y="487"/>
+      <node id="15" pos_x="450" pos_y="398"/>
+      <node id="16" pos_x="520" pos_y="354"/>
+      <node id="17" pos_x="498" pos_y="261"/>
+      <node id="18" pos_x="394" pos_y="260"/>
+      <node id="19" pos_x="373" pos_y="356"/>
+      <link dest="1" orig="0"/>
+      <link dest="2" orig="1"/>
+      <link dest="15" orig="1"/>
+      <link dest="4" orig="3"/>
+      <link dest="5" orig="4"/>
+      <link dest="16" orig="4"/>
+      <link dest="7" orig="17"/>
+      <link dest="6" orig="7"/>
+      <link dest="8" orig="7"/>
+      <link dest="10" orig="18"/>
+      <link dest="9" orig="10"/>
+      <link dest="11" orig="10"/>
+      <link dest="13" orig="19"/>
+      <link dest="14" orig="13"/>
+      <link dest="12" orig="13"/>
+      <link dest="17" orig="15"/>
+      <link dest="19" orig="17"/>
+      <link dest="16" orig="19"/>
+      <link dest="18" orig="16"/>
+      <link dest="15" orig="18"/>
+      <link dest="14" orig="0" link_curve_start="0" link_curve_end="0" link_curve_start_angle="0" link_curve_end_angle="0"/>
+      <link dest="11" orig="12"/>
+      <link dest="8" orig="9"/>
+      <link dest="5" orig="6"/>
+      <link dest="2" orig="3"/>
+      <link dest="5" orig="0" link_curve_start="-50" link_curve_end="-50" link_curve_start_angle="0" link_curve_end_angle="0"/>
+      <link dest="8" orig="3" link_curve_start="-44" link_curve_end="-44" link_curve_start_angle="0" link_curve_end_angle="0"/>
+      <link dest="11" orig="6" link_curve_start="-43" link_curve_end="-43" link_curve_start_angle="0" link_curve_end_angle="0"/>
+      <link dest="14" orig="9" link_curve_start="-48" link_curve_end="-48" link_curve_start_angle="0" link_curve_end_angle="0"/>
+      <link dest="2" orig="12" link_curve_start="-38" link_curve_end="-38" link_curve_start_angle="0" link_curve_end_angle="0"/>
+    </layer>
+  </main_description>
+  <graphical_data>
+    <startview width="1099" height="737" pos_x="-50" pos_y="-50" sizeModificator="1.0"/>
+    <backgroundImage pos_x="-1" pos_y="-1" width="-1" height="-1"/>
+    <background color="java.awt.Color[r=255,g=255,b=255]"/>
+    <defaultValues labelFontSize="10.0"/>
+  </graphical_data>
+</network>

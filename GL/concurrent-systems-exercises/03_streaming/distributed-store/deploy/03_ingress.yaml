@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: distributed-store-app-http
+  namespace: concsys-22-usr-simon-barras
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: distributed-store-app-your-name.kube.isc.heia-fr.ch
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: distributed-store-app
+            port:
+              number: 8080
+  tls:
+    - hosts:
+        - distributed-store-app-your-name.kube.isc.heia-fr.ch

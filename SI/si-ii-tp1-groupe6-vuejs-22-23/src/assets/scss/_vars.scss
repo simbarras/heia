@@ -1,0 +1,51 @@
+//@import "./node_modules/bootstrap/scss/bootstrap";
+/*
+
+Vars: Summary
+    -Colors
+    -Fonts
+*/
+
+/* Colors */
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-background: #F2F2F2;
+
+$color-primary: #6B1C2A;
+$color-primary-active: rgba(107, 25, 42, 0.15);
+
+$color-grey: #8d8d8d;
+$color-grey-light: #f6f6f6;
+$color-grey-light2: #DDDDDD;
+$color-grey-light3: #D6D6D6;
+
+$color-grey-dark: #4A4A4A;
+$color-grey-dark2: #474747;
+$color-grey-dark3: #5C5C5C;
+
+$color-grey-light-opacity: rgba(214, 214, 214, 0.5);
+
+$color-interaction: #1781E3;
+$color-interaction-active: #0851DA;
+$color-yellow: #ffd70f;
+
+$color-content: #19657A;
+$color-content-active: #114551;
+
+$fw-extralight: 200;
+$fw-light: 300;
+$fw-regular: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-black: 900;
+
+$fs-8: 0.5rem;
+$fs-10: 0.625rem;
+$fs-12: 0.75rem;
+$fs-14: 0.875rem;
+$fs-16: 1rem;
+$fs-18: 1.125rem;
+$fs-20: 1.25rem;
+$fs-24: 1.5rem;
+$fs-36: 2.25rem;
+$fs-48: 3rem;

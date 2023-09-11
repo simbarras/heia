@@ -1,0 +1,102 @@
+image: maven:3.8.6-eclipse-temurin-19-alpine
+
+stages:
+  - compile
+  - test
+  - build
+  - deploy
+  - publish
+
+variables:
+  IMAGE_NAME: $CI_REGISTRY_IMAGE/backend
+  IMAGE_NAME_FRONTEND: $CI_REGISTRY_IMAGE/frontend
+  CLUSTER_URL: 194.182.160.30.nip.io
+
+compile:
+  stage: compile
+  script:
+    - echo "Compiling"
+    - cd piBackend
+    - mvn compile
+    - echo "Compilation complete"
+  artifacts:
+    paths:
+      - /target
+
+build-backend:
+  stage: build
+  image: docker:19.03.12
+  services:
+    - name: docker:19.03.12-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - cd piBackend
+    ## publishing
+    - docker pull $IMAGE_NAME:latest || true
+    - docker build --network host --cache-from $IMAGE_NAME:latest -t $IMAGE_NAME:$CI_COMMIT_SHORT_SHA -t $IMAGE_NAME:$CI_COMMIT_REF_NAME -t $IMAGE_NAME:latest .
+    - docker push $IMAGE_NAME:latest
+    - docker push $IMAGE_NAME:$CI_COMMIT_REF_NAME
+    - docker push $IMAGE_NAME:$CI_COMMIT_SHORT_SHA
+
+build-frontend:
+  stage: build
+  image: docker:19.03.12
+  services:
+    - name: docker:19.03.12-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - cd pi-view
+    ## publishing
+    - docker pull $IMAGE_NAME_FRONTEND:latest || true
+    - docker pull $IMAGE_NAME_FRONTEND-builder:latest || true
+    - docker build --network host -t $IMAGE_NAME_FRONTEND:$CI_COMMIT_SHORT_SHA -t $IMAGE_NAME_FRONTEND:$CI_COMMIT_REF_NAME -t $IMAGE_NAME_FRONTEND:latest .
+    - docker build --network host --target builder -t $IMAGE_NAME_FRONTEND-builder:latest .
+    - docker push $IMAGE_NAME_FRONTEND-builder:latest
+    - docker push $IMAGE_NAME_FRONTEND:latest
+    - docker push $IMAGE_NAME_FRONTEND:$CI_COMMIT_REF_NAME
+    - docker push $IMAGE_NAME_FRONTEND:$CI_COMMIT_SHORT_SHA
+
+deploy-fullstack:
+  stage: deploy
+  only:
+    - main
+  image: gaetancollaud/kubectl
+  script:
+    - cd deployment
+    - cat $KUBE_CONFIG > ./kubeconfig
+    - sh ./setup.sh $CI_COMMIT_SHORT_SHA $CLUSTER_URL
+
+# Create a release with the deployment folder
+release:
+  stage: publish
+  image: alpine
+  only:
+    - main
+  before_script:
+    - apk add curl
+  script: # Build for macOs, linux and windows
+    - curl --location --output /usr/local/bin/release-cli "https://gitlab.com/api/v4/projects/gitlab-org%2Frelease-cli/packages/generic/release-cli/latest/release-cli-linux-amd64"
+    - chmod +x /usr/local/bin/release-cli
+    - tar -czvf deployment.tar.gz deployment
+    - tar -czvf sql.tar.gz sql
+  artifacts:
+    paths:
+      - deployment.tar.gz
+      - sql.tar.gz
+  release:
+    name: "PIGR4-$CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA"
+    description: "README.md"
+    tag_name: $CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA
+    ref: $CI_COMMIT_REF_NAME
+    assets:
+      links:
+        - name: "Deployment"
+          url: "https://gitlab.forge.hefr.ch/nicolas.terreaux/2223-pi-gr4/-/jobs/$CI_JOB_ID/artifacts/raw/deployment.tar.gz?inline=false"
+          link_type: "package"
+        - name: "SQL"
+          url: "https://gitlab.forge.hefr.ch/nicolas.terreaux/2223-pi-gr4/-/jobs/$CI_JOB_ID/artifacts/raw/sql.tar.gz?inline=false"
+          link_type: "package"
+
+

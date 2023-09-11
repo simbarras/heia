@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<dynamic>
+
+<div class="text-center">
+    <h1 class="display-4">Online bill management tool</h1>
+    <h3>Invoices</h3>
+    <table class="table" style="height: 100%" id="invoice-list">
+        <caption>List of invoices</caption>
+        <thead>
+            <tr>
+                <th scope="col" class="text-muted filter-item" onclick="window.location='Id'">#ID<i id="id" class="bi bi-filter icon-filter filter-active bi-align-bottom"></i></th>
+                <th scope="col" class="text-muted filter-item d-none d-md-table-cell" onclick="window.location='Date'">Date<i id="date" class="bi bi-filter icon-filter"></i></th>
+                <th scope="col" class="text-muted filter-item d-none d-md-table-cell" onclick="window.location='Price'">Price<i id="price" class="bi bi-filter icon-filter"></i></th>
+                <th scope="col" class="text-muted filter-item d-none d-sm-table-cell" onclick="window.location='Article'">Article<i id="article" class="bi bi-filter icon-filter"></i></th>
+                <th scope="col" class="text-muted filter-item" onclick="window.location='Status'">Status<i id="status" class="bi bi-filter icon-filter"></i></th>
+                <th scope="col" class="text-muted d-none d-lg-table-cell">Download<i class="bi bi-file-earmark-arrow-down icon-download"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var invoice in Model)
+            {
+                <tr class="list-item-container" onclick="window.location='/Home/Invoice/@invoice.Id'">
+                    <th scope="row">@invoice.Id</th>
+                    <td class="d-none d-md-table-cell">@invoice.Date</td>
+                    <td class="d-none d-md-table-cell">@invoice.Devise @invoice.Amount</td>
+                    <td class="d-none d-sm-table-cell">@invoice.Articles[0].Brand @invoice.Articles[0].Type @invoice.Articles[0].Name</td>
+                    <td>@if (@invoice.Payed)
+                        {
+                            <p class="paid">payed</p>    
+                        }
+                        @if (@invoice.Payed == false)
+                        {
+                            <p class="unpaid">not paid</p>    
+                        }
+                    </td>
+                    <td class="d-none d-lg-table-cell">
+                        <button type="button" class="btn btn-light btn-download" onclick="event.cancelBubble=true;window.location='/Home/Download/Download/@invoice.Id/json'">JSON<i class="bi bi-file-earmark-arrow-down icon-download"></i></button>
+                        <button type="button" class="btn btn-light btn-download" onclick="event.cancelBubble=true;window.location='/Home/Download/Download/@invoice.Id/xml'">XML<i class="bi bi-file-earmark-arrow-down icon-download"></i></button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

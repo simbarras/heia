@@ -1,0 +1,182 @@
+\chapter{Analyse}
+\label{chap:analyse}
+Ce projet propose de nombreux aspects intéressants à analyser.
+Il y a notamment les connaissances chimiques requises mais aussi les connaissances techniques pour le \acrlong{ml}.
+
+% -----------------------------------------------------------------------------
+\section{Liquides ioniques}
+Les liquides ioniques sont des liquides qui sont issus d'une liaison ionique.
+Les liaisons ioniques s'obtiennent par l'attraction de deux ions de charge opposée.
+Les ions de charge positive et négative sont respectivement appelés : cation et anion.
+Généralement, les cations sont métalliques tandis que les anions ne le sont pas.
+
+Ces liquides ioniques sont des éléments qui sont beaucoup utilisés en chimie.
+Ils permettent notamment de stocker de l'énergie mais disposent aussi de nombreuses autres applications.
+Le problème, c'est que les possibilités de liaisons sont probablement infinies et leurs propriétés diffèrent pour chaque composition.
+Dans notre cas, la particularité qui nous intéresse est le point d'ébullition.
+Si on voulait obtenir cette information par expérience, il faudrait compter en jour le temps et les ressources consommées seraient importantes.
+
+\subsection{\acrshort{smiles}}
+L'écriture \acrfull{smiles} permet de représenter la composition d'une molécule à l'aide d'une chaîne de caractères.
+Nous allons utiliser cette écriture dans ce projet pour obtenir de plus d'informations sur les molécules.
+
+
+% -----------------------------------------------------------------------------
+\section{Données}
+Pour ce projet nous allons utiliser le même molécule mais avec des features différentes.
+Tout d'abord, il faut transformer les molécules en \acrshort{smiles} afin de pouvoir calculer les descripteurs.
+Pour calculer ces descripteurs, il existe plusieurs librairies python mais la plus utilisé c'est mordred\cite{mordred}.
+Il faudra trier les données qui n'ont pas pas pu être traduite en \acrshort{smiles} ou celles qui n'ont pas de descripteurs.
+Ceci va nous donner beaucoup de colonne et le premier filtrage sera d'enlever les colonnes avec dess valeurs non-numériques.
+
+\subsection{Les nouvelles données}
+Les nouvelles donnnées comportent les mêmes cibles et les mêmes liquides.
+En revanche, les features sont différentes.
+Une fois que nous avons nettoyer les colonnes utilisables, il nous reste 920 features.
+
+
+% -----------------------------------------------------------------------------
+\section{\acrlong{ml}}
+Le \acrfull{ml} est une branche de l'informatique qui consiste à résoudre des problèmes de prédiction en entrainant des algorithmes.
+Le but est de fournir des exemples de données dont on connait la réponse et de faire apprendre à l'algorithme comment prédire la réponse à partir de ces exemples pour des données qu'il n'a jamais vu.
+Pour ce faire, nous pouvons utiliser toute une série d'algorithmes et de techniques différentes.
+En effet, les données peuvent être pré-traîtées afin de les normaliser et il y a des algorithmes qui permettent de classifier les données tandis que d'autres permettent de prédire des valeurs numériques.
+
+
+\subsection{Sélection des features}
+Dans ce projet, nous avons un grand nombre de features qui ne sont pas toutes corrélées avec le point d'ébullition du liquide ionique.
+Comme il y a trop de features pour être analysée à la main, nous pouvons utiliser des techniques de sélection de features afin de ne garder que les plus pertinentes.
+
+\subsubsection{Pandas profiling}
+La librairie \texttt{pandas\_profiling} permet de générer un rapport sur les données.
+Ces rapports contiennent les informations importantes des données et permettent de voir les corrélations entre les features.
+Cet outil est très utile pour faire une \acrfull{eda} rapide.
+
+\subsubsection{Select K Best}
+Cette technique permet de sélectionner les $k$ meilleures features les plus pertinentes.
+Elle utilise une fonction de score afin de déterminer les features qui seront gardées.
+La fonction de score peut être modifiée avec le paramètre \texttt{score\_func} de la fonction \texttt{SelectKBest} de \texttt{sklearn.feature\_selection}.
+
+\subsubsection{Elimination récursive des features}
+Certain modèle propose une synthèse de l'importances des features.
+Nous pouvons utiliser cetter information pour supprimer les features qui ont le moins d'influence.
+Si nous répétons l'opération plusieur fois nous pourrions arriver à un dataset alléger qui pourrait donner de meilleures performances.
+
+\subsubsection{Fusion des features}
+Certains outils permettent de réduire le dataset en fusionnant les features.
+Cela permet de réduire le nombre de features tout en gardant les informations importantes.
+Ces outils sont souvent utilisés pour la \acrfull{eda} mais peuvent aussi être utilisés comme preprocessing pour l'entrainement.
+La librairie \acrshort{pandas} met à disposition la fonction \acrshort{pca} qui fusionne les features jusqu'à obtenir le nombre données en paramètres.
+
+
+\subsection{Normalisation des données}
+La normalisation consiste à transformer les données afin de les rendre plus facilement comparable pour l'algorithme.
+En effet, si une feature contient des valeurs entre 0 et 1 et une autre entre 0 et 1000, l'algorithme va donner plus d'importance à la feature qui contient des valeurs plus grandes.
+Pour éviter ce biais, nous pouvons utiliser des techniques de normalisation.
+
+\subsubsection{Normalisation \acrshort{minimax}}
+\label{analyse:ml:normalisation:minimax}
+Cet algorithme utilise les limites inférieure et supérieure des données pour normaliser ces données.
+Ceci permet de distribuer les données entre deux limites redéfinies, souvent entre 0 et 1.
+\begin{align*}
+    X_{sc} = a + \frac{(X - X_{min})(b - a)}{X_{max} - X_{min}}
+\end{align*}
+$a$ étant la limite inférieure et $b$ la limite supérieure.
+
+\subsubsection{Normalisation standard}
+\label{analyse:ml:normalisation:standard}
+Cette technique est en réalité de la standardization.
+Elle se base sur la moyenne et l'écart type des données afin de les normaliser.
+Elle redistribue les données autour de 0 avec un écart type de 1.
+\begin{equation*}
+    X_{sc} = \frac{X - \mu}{\sigma}
+\end{equation*}
+$\mu$ étant la moyenne et $\sigma$ l'écart type.
+
+
+\subsection{Les algorithmes de machine learning}
+Les algorithmes de \acrlong{ml} sont des procédés qui permettent de résoudre des problèmes de prédiction.
+Il existe plusieurs types d'algorithmes qui ont chacun leur manière de calculer les prédictions.
+Ces algorithmes possèdent des paramètres, que nous appelons hyper paramètres, qui permettent de les configurer afin d'obtenir les meilleurs résultats possibles.
+
+\subsubsection{\acrlong{svm}}
+\label{analyse:ml:algorithme:svm}
+Les \acrfull{svm} sont des algorithmes qui permettent de résoudre des problèmes de classification et de régressions.
+Cet algorithme est basé sur la théorie des noyaux qui permet de résoudre des problèmes non linéaires.
+Il permet de trouver une fonction qui sépare les données en deux groupes ou de prédire une valeur numérique.
+Les noyaux sont des fonctions qui permettent de transformer les données afin de les rendre plus facilement séparable.
+\begin{itemize}
+    \item Linear: $\langle x, x'\rangle$
+    \item Polynomial: $(\gamma \langle x, x'\rangle + r)^d$
+    \item \acrfull{rbf}: $\exp(-\gamma \|x - x'\|^2)$
+    \item Sigmoid: $\tanh(\gamma \langle x, x'\rangle + r)$
+\end{itemize}
+$\gamma$ est un hyper paramètre qui permet de contrôler la largeur du noyau. Il défini l'influence de chaque donnée d'entrainement.
+$c$ est un hyper paramètre qui permet de contrôler la marge d'erreur. Plus il est grand plus l'algorithme sera tolérant.
+Pour l'algorithmes \acrfull{nusvr}, nous pouvons aussi indiquer $\nu$ qui permet de contrôler le nombre de support vector.
+
+\subsubsection{Random Forest}
+L'algorithme Random Forest est un algorithme de classification et de régression.
+Il est basé sur un ensemble d'arbres de décisions qui sont construits de manière aléatoire.
+Cet algorithme permet de résoudre des problèmes non linéaires et il est souvent performant.
+Les hyper paramètres principaux de cet algorithme sont les suivants:
+\begin{itemize}
+    \item n\_estimators: nombre d'arbres de décisions
+    \item max\_depth: profondeur maximale de l'arbre
+    \item max\_features: nombre de features à considérer pour chaque noeud
+    \item min\_samples\_split: nombre minimum de données pour séparer un noeud
+    \item min\_samples\_leaf: nombre minimum de données pour être une feuille
+\end{itemize}
+Cet algorithme est aussi très utile pour connaître l'importance de chaque feature.
+En effet, une fois le modèle entrainé, il est possible d'obtenir une liste de valeur qui indique l'importance de chaque feature.
+
+\subsubsection{Gradient Boosting}
+Comme les deux précédents, cet algorithme est un classifieur et un régresseur.
+Dans son fonctionnement, il ressemble à un Random Forest.
+La différence est que les arbres sont construits de manière itérative et non aléatoire.
+Générallement, cet algorithme est meilleur que le Random Forest et présente de très bons résultats qui se rapprochent du Deep Learning.
+Les hyper paramètres principaux sont les mêmes que pour le Random Forest:
+\begin{itemize}
+    \item n\_estimators: nombre d'arbres de décisions
+    \item max\_depth: profondeur maximale de l'arbre
+    \item max\_features: nombre de features à considérer pour chaque noeud
+    \item min\_samples\_split: nombre minimum de données pour séparer un noeud
+    \item min\_samples\_leaf: nombre minimum de données pour être une feuille
+\end{itemize}
+
+
+\subsection{Métriques}
+Les métriques sont des fonctions qui permettent de mesurer la performance d'un algorithme et de comparer les résultats obtenus entre plusieurs pipelines de \acrlong{ml}.
+
+\subsubsection{R-squared}
+La métrique $R^2$ permet de mesurer la performance d'un algorithme de régression.
+Elle est un pourcentatge qui indique la proportion de la variance des données qui est expliquée par le modèle.
+Plus le score est proche de 1, plus le modèle est performant.
+\begin{equation*}
+    R^2 = 1 - \frac{\sum_{i=1}^n (y_i - \hat{y}_i)^2}{\sum_{i=1}^n (y_i - \bar{y})^2}
+\end{equation*}
+$y_i$ est la valeur réelle de la donnée $i$, $\hat{y}_i$ est la valeur prédite par le modèle et $\bar{y}$ est la moyenne des valeurs réelles.
+
+\subsubsection{\acrlong{mse}}
+Le \acrfull{mse} permet aussi de mesurer la performance d'un algorithme de régression.
+Cette métrique calcul la moyenne au carré des erreurs des estimations.
+Ceci indique la qualité du modèle et est pratiquement toujours positif.
+Dans le cas où les estimations sont toutes exactes alors nous aurons un \acrfull{mse} de 0 mais ce cas ne se présente jamais en pratique.
+\begin{equation*}
+    MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
+\end{equation*}
+$y_i$ est la valeur réelle de la donnée $i$ et $\hat{y}_i$ est la valeur prédite par le modèle.
+
+\subsubsection{\acrlong{mae}}
+Cette métrique ressemble beaucoup à la précédente.
+Elle calcule la moyenne des erreurs absolues des estimations.
+L'avantage du \acrfull{mae} c'est que les résultats sont plus facilement interprétables et il est plus facile de savoir si le modèle convient au client ou non.
+\begin{equation*}
+    MAE = \frac{1}{n} \sum_{i=1}^n |y_i - \hat{y}_i|
+\end{equation*}
+
+\subsubsection{Max error}
+L'erreur maximum représente la pire estimation de l'algorithme.
+Cette métrique montre ce qu'il se passe quand l'algorithme fait une erreur et dépendamment de la situation, elle peut être très importante à minimiser.
+
+% -----------------------------------------------------------------------------

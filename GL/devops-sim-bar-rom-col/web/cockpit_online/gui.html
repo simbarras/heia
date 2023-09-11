@@ -1,0 +1,24 @@
+	    <!DOCTYPE html>
+	    <html>
+	    <head>
+	    <title>Online cockpit test</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <!-- Bootstrap -->
+	    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	    </head>
+	    <body style="line-height: 12px;">
+	    <h1>3. Navigate in your results !</h1><a href="/cockpit">Back to cockpit</a><br>
+		<img id="imagechart" src="chart?method=Nothing to display&xAxis=yyyyy&criterium=zzzzzzz" alt="some_text">
+		<label> Y-Axis#METHOD_SELECTOR#</label>
+		<label> X-Axis#X_AXIS_SELECTOR#</label>
+		<label> Color#CRITERIUM_SELECTOR#</label>
+			 <button type='DisplayButton' class='btn' onclick='
+			       document.getElementById("imagechart").src=
+				   "chart?method=" + document.getElementById("method").value +
+				   "&xAxis=" + document.getElementById("xAxis").value +
+				   "&criterium=" + document.getElementById("criterium").value
+				'>Display !</button>
+	    <script src="http://code.jquery.com/jquery.js"></script>
+	    <script src="bootstrap/js/bootstrap.min.js"></script>
+	    </body>
+	    </html>	

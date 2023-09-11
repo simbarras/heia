@@ -1,0 +1,53 @@
+\chapter{Conclusion}
+\label{chap:conclusion}
+Ce projet est typiquement le genre de projets qui peuvent ne jamais avoir de fin.
+En effet, l'\acrshort{eda} peut durer des mois et les améliorations de modèles sont quasiment infinies.
+Ce projet étant un projet de semestre 5 nous ne disposons pas de temps illimités.
+
+% -----------------------------------------------------------------------------
+\section{Résumé du projet}
+Pour résumer ce projet, il s'agit du développement d'un modèle de machine learning capable de prédire la température de fusion d'un liquide ionique avec une précision de 5° Kelvin.
+Le projet a été bâtis sur un précédent projet au sein de la \acrshort{heia-fr} et avait pour but de battre les performances du modèle de base.
+
+Les activités étaient découpées en 3 parties.
+La première consistait à reproduire les résultats du modèle de base.
+Ceci a été fait avec le nouveau fichier Excel et la librairie \acrshort{sklearn}.
+La deuxième partie était la création d'un nouveau fichier Excel contenant les mêmes dataset que la première version tout en ajoutant les descripteurs.
+Cette étape est nécessaire pour la création du nouveau modèle et est probablement la plus grosse plus-value de ce projet.
+En effet, dans le cas où le nouveau modèle n'est pas meilleur que celui de base, les données pourront toujours être reprises et tester avec d'autres modèles.
+La troisième et dernière partie, consistait à créer un nouveau modèle de machine learning utilisant les données obtenues avec les descripteurs.
+Cette étape n'a pas portée ses fruits et aucun modèle n'a été capable de battre significatievement le modèle de base et encore moins de se rapprocher de la précision de 5° Kelvin.
+
+
+% -----------------------------------------------------------------------------
+\section{Problèmes rencontrés}
+Le projet s'est déroulé sans problème majeur. A part le dernier objectif qui n'a pas été atteint, le projet a été mené à bien.
+Cet échec s'explique par le fait que je suis débutant dans le domaine du \acrlong{ml}.
+J'ai trouvé que ce domaine est très vaste et demande une certaine expérience afin de pouvoir créer des modèles performants.
+
+% -----------------------------------------------------------------------------
+\section{Axes d'améliorations}
+Le projet possède deux grands axes d'améliorations. Le premier est au niveau de la performance et le second se concentre plus sur l'\acrlong{ux}.
+
+Les performances des modèles étant décevantes, il est naturelle de penser qu'il est possible d'en développer de meilleurs.
+Ceci passera par une \acrlong{eda} plus poussée et des connaissances en chimie afin de préselectionner les features intéressantes.
+
+Du point de vu de l'\acrshort{ux}, le projet est livré avec deux fichiers\cite{data_processor}\cite{fusion_perdictor} python s'utilisant avec des paramètres. 
+Il serait très intéressant de développer une version web qui permettrait de faire des prédictions sans avoir à installer des librairies python.
+Ceci aurait aussi l'avantage d'avoir une interface graphique plus agréable.
+
+% -----------------------------------------------------------------------------
+\section{Avis personnel}
+Personnellement, j'ai trouvé ce projet très intéressant et enrichissant.
+
+Tout d'abord, j'ai exploré le monde de la chimie qui est un domaine que je ne connaissais que très peu mais il m'intéresse car j'ai beaucoup de connaissances dont c'est leur métier.
+Ensuite, j'ai fait ce projet de \acrlong{ml} en même temps que le cours. Ceci n'a pas été facile car la théorie et la pratique étaient assez souvent dissociées.
+En effet, les thèmes n'étant pas forcément synchronisés, j'ai beaucoup tatônner dans ce projet.
+Malgré ces contre-temps, je ne regrette pas du tout mon choix et je suis très content de l'avoir fait.
+
+En ce qui me concerne, j'estime avoir eu une bonne gestion de projet avec l'utilisation, au maximum, de GitLab.
+J'ai trouvé que la documentation en LaTex avec une pipeline était très pratique pour partager mon avancée.
+Par contre, la gestion du planning est à revoir car les outils ne sont pas très pratiques à utiliser.
+J'ai aussi apprécié le fait de devoir faire une mini-présentation à chaque weekly-meeting.
+Ceci me permettait d'avoir un fil rouge tout au long des séances et facilitait la rédaction de mes PVs.
+En revanche, je déplore mon manque de rigueur sur la tenue de la documentation et du maintien de mon code que j'ai dû rattraper à la fin du projet.

@@ -1,0 +1,306 @@
+05-May-2023 09:33:58.218 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Server version name:   Apache Tomcat (TomEE)/10.0.27 (9.0.0)
+05-May-2023 09:33:58.220 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Server built:          Oct 3 2022 14:18:31 UTC
+05-May-2023 09:33:58.221 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Server version number: 10.0.27.0
+05-May-2023 09:33:58.221 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke OS Name:               Windows 11
+05-May-2023 09:33:58.222 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke OS Version:            10.0
+05-May-2023 09:33:58.222 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Architecture:          amd64
+05-May-2023 09:33:58.223 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Java Home:             C:\Users\nterr\.jdks\corretto-11.0.18
+05-May-2023 09:33:58.223 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke JVM Version:           11.0.18+10-LTS
+05-May-2023 09:33:58.224 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke JVM Vendor:            Amazon.com Inc.
+05-May-2023 09:33:58.224 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke CATALINA_BASE:         C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee
+05-May-2023 09:33:58.224 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke CATALINA_HOME:         C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee
+05-May-2023 09:33:58.244 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+05-May-2023 09:33:58.244 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+05-May-2023 09:33:58.244 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+05-May-2023 09:33:58.244 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+05-May-2023 09:33:58.245 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+05-May-2023 09:33:58.245 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Djava.util.logging.config.file=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\conf\logging.properties
+05-May-2023 09:33:58.245 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+05-May-2023 09:33:58.246 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -javaagent:C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\lib\openejb-javaagent.jar
+05-May-2023 09:33:58.246 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+05-May-2023 09:33:58.246 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+05-May-2023 09:33:58.246 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Dignore.endorsed.dirs=
+05-May-2023 09:33:58.246 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Dcatalina.base=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee
+05-May-2023 09:33:58.247 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Dcatalina.home=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee
+05-May-2023 09:33:58.247 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Djava.io.tmpdir=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\temp
+05-May-2023 09:33:58.264 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Users\nterr\.jdks\corretto-11.0.18\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\bin;C:\Program Files\Amazon Corretto\jdk11.0.3_7\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\HP\IdrsOCR_15.4.1132.0\;C:\Program Files\SourceGear\Common\DiffMerge\;C:\Program Files\PuTTY\;C:\Program Files\Wolfram Research\WolframScript\;C:\Users\nterr\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Software\apache-ant-1.10.12\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Software\mongosh-1.1.7-win32-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MATLAB\R2022a\bin;C:\Users\nterr\.jdks\openjdk-17\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\Go\bin;C:\Program Files (x86)\GitExtensions\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\Maven\apache-maven-3.8.3\bin;C:\Users\nterr\AppData\Local\Android\Sdk\tools;C:\Users\nterr\AppData\Local\Android\Sdk\cmdline-tools\latest\bin;C:\Users\nterr\AppData\Local\Android\Sdk\platform-tools;C:\Users\nterr\.gradle\wrapper\dists\gradle-7.1.1-all\1wqbeia0d49252rmlcr6o8lbl\gradle-7.1.1\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\nterr\.jdks\corretto-11.0.18\bin;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\HP\IdrsOCR_15.4.1132.0\;C:\Program Files\SourceGear\Common\DiffMerge\;C:\Program Files\PuTTY\;C:\Program Files\Wolfram Research\WolframScript\;C:\Users\nterr\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\GitExtensions\;C:\Program Files\Git\cmd;C:\Software\apache-ant-1.10.12\bin;C:\Program Files\Microsoft SQL Server\150\;C:\Users\nterr\AppData\Local\Programs\Microsoft VS Code\bin;C:\src\flutter\bin;C:\Users\nterr\.dotnet\tools;C:\Users\nterr\AppData\Roaming\npm;C:\Users\nterr\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\nterr\AppData\Roaming\Python\Python37\Scripts;C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP2\AFirstExample;C:\Maven\apache-maven-3.8.3\bin;;.]
+05-May-2023 09:33:58.599 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Initializing ProtocolHandler ["http-nio-8080"]
+05-May-2023 09:33:58.921 INFO [main] org.apache.openejb.util.OptionsLog.info Using 'openejb.jdbc.datasource-creator=org.apache.tomee.jdbc.TomEEDataSourceCreator'
+05-May-2023 09:33:59.002 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> ********************************************************************************
+05-May-2023 09:33:59.003 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> OpenEJB http://tomee.apache.org/
+05-May-2023 09:33:59.003 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> Startup: Fri May 05 09:33:58 CEST 2023
+05-May-2023 09:33:59.004 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> Copyright 1999-2021 (C) Apache TomEE Project, All Rights Reserved.
+05-May-2023 09:33:59.005 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> Version: 9.0.0
+05-May-2023 09:33:59.005 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> Build date: 20230103
+05-May-2023 09:33:59.005 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> Build time: 09:35
+05-May-2023 09:33:59.005 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> ********************************************************************************
+05-May-2023 09:33:59.005 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> openejb.home = C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee
+05-May-2023 09:33:59.006 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> openejb.base = C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee
+05-May-2023 09:33:59.008 INFO [main] org.apache.openejb.cdi.CdiBuilder.initializeOWB Created new singletonService org.apache.openejb.cdi.ThreadSingletonServiceImpl@6f2cfcc2
+05-May-2023 09:33:59.015 INFO [main] org.apache.openejb.cdi.CdiBuilder.initializeOWB Succeeded in installing singleton service
+05-May-2023 09:33:59.052 INFO [main] org.apache.openejb.config.ConfigurationFactory.init TomEE configuration file is 'C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\conf\tomee.xml'
+05-May-2023 09:33:59.094 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureService Configuring Service(id=Tomcat Security Service, type=SecurityService, provider-id=Tomcat Security Service)
+05-May-2023 09:33:59.096 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureService Configuring Service(id=Default Transaction Manager, type=TransactionManager, provider-id=Default Transaction Manager)
+05-May-2023 09:33:59.099 INFO [main] org.apache.openejb.util.OptionsLog.info Using 'openejb.deployments.classpath=false'
+05-May-2023 09:33:59.101 INFO [main] org.apache.openejb.assembler.classic.Assembler.createRecipe Creating TransactionManager(id=Default Transaction Manager)
+05-May-2023 09:33:59.160 INFO [main] org.apache.openejb.assembler.classic.Assembler.createRecipe Creating SecurityService(id=Tomcat Security Service)
+05-May-2023 09:33:59.259 INFO [main] org.apache.openejb.server.ServiceManager.initServer Creating ServerService(id=cxf)
+05-May-2023 09:33:59.490 INFO [main] org.apache.openejb.server.ServiceManager.initServer Creating ServerService(id=cxf-rs)
+05-May-2023 09:33:59.523 INFO [main] org.apache.openejb.server.SimpleServiceManager.start   ** Bound Services **
+05-May-2023 09:33:59.527 INFO [main] org.apache.openejb.server.SimpleServiceManager.printRow   NAME                 IP              PORT  
+05-May-2023 09:33:59.527 INFO [main] org.apache.openejb.server.SimpleServiceManager.start -------
+05-May-2023 09:33:59.527 INFO [main] org.apache.openejb.server.SimpleServiceManager.start Ready!
+05-May-2023 09:33:59.527 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Server initialization in [1644] milliseconds
+05-May-2023 09:33:59.592 INFO [main] org.apache.tomee.catalina.OpenEJBNamingContextListener.bindResource Importing a Tomcat Resource with id 'UserDatabase' of type 'org.apache.catalina.UserDatabase'.
+05-May-2023 09:33:59.592 INFO [main] org.apache.openejb.assembler.classic.Assembler.createRecipe Creating Resource(id=UserDatabase)
+05-May-2023 09:33:59.607 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Starting service [Catalina]
+05-May-2023 09:33:59.607 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Starting Servlet engine: [Apache Tomcat (TomEE)/10.0.27 (9.0.0)]
+05-May-2023 09:33:59.627 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deploying web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\docs]
+05-May-2023 09:33:59.638 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.init ------------------------- localhost -> /docs
+05-May-2023 09:33:59.781 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureApplication Configuring enterprise application: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\docs
+05-May-2023 09:33:59.835 INFO [main] org.apache.openejb.config.AppInfoBuilder.build Enterprise application "C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\docs" loaded.
+05-May-2023 09:34:00.295 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Assembling app: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\docs
+05-May-2023 09:34:00.362 INFO [main] org.apache.openejb.assembler.classic.ValidatorBuilder.getConfig Ignoring XML Configuration for validator org.apache.bval.jsr.ConfigurationImpl
+05-May-2023 09:34:00.395 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Deployed Application(path=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\docs)
+05-May-2023 09:34:00.526 INFO [main] org.apache.myfaces.ee.MyFacesContainerInitializer.onStartup Using org.apache.myfaces.ee.MyFacesContainerInitializer
+05-May-2023 09:34:00.588 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+05-May-2023 09:34:01.027 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [422] milliseconds.
+05-May-2023 09:34:01.081 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deployment of web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\docs] has finished in [1,454] ms
+05-May-2023 09:34:01.081 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deploying web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager]
+05-May-2023 09:34:01.083 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.init ------------------------- localhost -> /host-manager
+05-May-2023 09:34:01.118 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureApplication Configuring enterprise application: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager
+05-May-2023 09:34:01.125 INFO [main] org.apache.openejb.config.AppInfoBuilder.build Enterprise application "C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager" loaded.
+05-May-2023 09:34:01.126 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Assembling app: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager
+05-May-2023 09:34:01.129 INFO [main] org.apache.openejb.assembler.classic.ValidatorBuilder.getConfig Ignoring XML Configuration for validator org.apache.bval.jsr.ConfigurationImpl
+05-May-2023 09:34:01.134 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.deployWebApps using context file C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager\META-INF\context.xml
+05-May-2023 09:34:01.134 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Deployed Application(path=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager)
+05-May-2023 09:34:01.160 INFO [main] org.apache.myfaces.ee.MyFacesContainerInitializer.onStartup Using org.apache.myfaces.ee.MyFacesContainerInitializer
+05-May-2023 09:34:01.179 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+05-May-2023 09:34:01.201 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deployment of web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager] has finished in [120] ms
+05-May-2023 09:34:01.202 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deploying web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager]
+05-May-2023 09:34:01.204 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.init ------------------------- localhost -> /manager
+05-May-2023 09:34:01.231 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureApplication Configuring enterprise application: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager
+05-May-2023 09:34:01.240 INFO [main] org.apache.openejb.config.AppInfoBuilder.build Enterprise application "C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager" loaded.
+05-May-2023 09:34:01.240 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Assembling app: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager
+05-May-2023 09:34:01.244 INFO [main] org.apache.openejb.assembler.classic.ValidatorBuilder.getConfig Ignoring XML Configuration for validator org.apache.bval.jsr.ConfigurationImpl
+05-May-2023 09:34:01.247 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.deployWebApps using context file C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager\META-INF\context.xml
+05-May-2023 09:34:01.248 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Deployed Application(path=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager)
+05-May-2023 09:34:01.274 INFO [main] org.apache.myfaces.ee.MyFacesContainerInitializer.onStartup Using org.apache.myfaces.ee.MyFacesContainerInitializer
+05-May-2023 09:34:01.291 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+05-May-2023 09:34:01.301 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deployment of web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager] has finished in [99] ms
+05-May-2023 09:34:01.302 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deploying web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ROOT]
+05-May-2023 09:34:01.302 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.init ------------------------- localhost -> /
+05-May-2023 09:34:01.321 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureApplication Configuring enterprise application: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ROOT
+05-May-2023 09:34:01.325 INFO [main] org.apache.openejb.config.AppInfoBuilder.build Enterprise application "C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ROOT" loaded.
+05-May-2023 09:34:01.325 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Assembling app: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ROOT
+05-May-2023 09:34:01.329 INFO [main] org.apache.openejb.assembler.classic.ValidatorBuilder.getConfig Ignoring XML Configuration for validator org.apache.bval.jsr.ConfigurationImpl
+05-May-2023 09:34:01.333 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Deployed Application(path=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ROOT)
+05-May-2023 09:34:01.352 INFO [main] org.apache.myfaces.ee.MyFacesContainerInitializer.onStartup Using org.apache.myfaces.ee.MyFacesContainerInitializer
+05-May-2023 09:34:01.368 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+05-May-2023 09:34:01.378 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deployment of web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ROOT] has finished in [76] ms
+05-May-2023 09:34:01.378 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deploying web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat]
+05-May-2023 09:34:01.379 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.init ------------------------- localhost -> /ws-chat
+05-May-2023 09:34:01.469 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureApplication Configuring enterprise application: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat
+05-May-2023 09:34:01.533 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureService Configuring Service(id=Default Managed Container, type=Container, provider-id=Default Managed Container)
+05-May-2023 09:34:01.534 INFO [main] org.apache.openejb.config.AutoConfig.createContainer Auto-creating a container for bean ws-chat.Comp1750490055: Container(type=MANAGED, id=Default Managed Container)
+05-May-2023 09:34:01.534 INFO [main] org.apache.openejb.assembler.classic.Assembler.createRecipe Creating Container(id=Default Managed Container)
+05-May-2023 09:34:01.543 INFO [main] org.apache.openejb.core.managed.SimplePassivater.init Using directory C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\temp for stateful session passivation
+05-May-2023 09:34:01.559 INFO [main] org.apache.openejb.config.AppInfoBuilder.build Enterprise application "C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat" loaded.
+05-May-2023 09:34:01.559 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Assembling app: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat
+05-May-2023 09:34:01.607 INFO [main] org.apache.openejb.assembler.classic.ValidatorBuilder.getConfig Ignoring XML Configuration for validator org.apache.bval.jsr.ConfigurationImpl
+05-May-2023 09:34:01.613 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.deployWebApps using context file C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat\META-INF\context.xml
+05-May-2023 09:34:01.614 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Deployed Application(path=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat)
+05-May-2023 09:34:01.655 INFO [main] org.apache.myfaces.ee.MyFacesContainerInitializer.onStartup Using org.apache.myfaces.ee.MyFacesContainerInitializer
+05-May-2023 09:34:01.685 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+05-May-2023 09:34:01.718 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.logApplication Application{path='http://localhost:8080/ws-chat/api', class=lab.NameCheckREST, resources=1, providers=0, invalids=0}
+05-May-2023 09:34:01.723 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.logApplication Resource{clazz=lab.NameCheckREST$NameResource, discovered=true, singleton=false}
+05-May-2023 09:34:01.939 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication Using readers:
+05-May-2023 09:34:01.939 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.PrimitiveTextProvider@66fbc5e7
+05-May-2023 09:34:01.939 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.FormEncodingProvider@1e225820
+05-May-2023 09:34:01.940 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.MultipartProvider@8aeab9e
+05-May-2023 09:34:01.940 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.SourceProvider@2a2dc0a
+05-May-2023 09:34:01.940 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.JAXBElementTypedProvider@3a00b15d
+05-May-2023 09:34:01.940 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.JAXBElementProvider@36ef1d65
+05-May-2023 09:34:01.940 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.openejb.server.cxf.rs.johnzon.TomEEJsonpProvider@9accff0
+05-May-2023 09:34:01.940 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.openejb.server.cxf.rs.johnzon.TomEEJsonbProvider@4be0a27d
+05-May-2023 09:34:01.941 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.StringTextProvider@52559a69
+05-May-2023 09:34:01.941 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.BinaryDataProvider@285583d4
+05-May-2023 09:34:01.941 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.DataSourceProvider@1039bfc4
+05-May-2023 09:34:01.942 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication Using writers:
+05-May-2023 09:34:01.942 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.JAXBElementTypedProvider@3a00b15d
+05-May-2023 09:34:01.942 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.openejb.server.cxf.rs.johnzon.TomEEJsonpProvider@9accff0
+05-May-2023 09:34:01.943 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.johnzon.jaxrs.WadlDocumentMessageBodyWriter@7f85217c
+05-May-2023 09:34:01.943 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.nio.NioMessageBodyWriter@1fd7a37
+05-May-2023 09:34:01.943 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.StringTextProvider@52559a69
+05-May-2023 09:34:01.943 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.PrimitiveTextProvider@66fbc5e7
+05-May-2023 09:34:01.944 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.FormEncodingProvider@1e225820
+05-May-2023 09:34:01.944 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.MultipartProvider@8aeab9e
+05-May-2023 09:34:01.944 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.JAXBElementProvider@36ef1d65
+05-May-2023 09:34:01.944 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.SourceProvider@2a2dc0a
+05-May-2023 09:34:01.945 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.openejb.server.cxf.rs.johnzon.TomEEJsonbProvider@4be0a27d
+05-May-2023 09:34:01.945 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.BinaryDataProvider@285583d4
+05-May-2023 09:34:01.945 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.DataSourceProvider@1039bfc4
+05-May-2023 09:34:01.945 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication Using exception mappers:
+05-May-2023 09:34:01.945 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.impl.WebApplicationExceptionMapper@6babffb5
+05-May-2023 09:34:01.945 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.openejb.server.cxf.rs.EJBExceptionMapper@ea04cab
+05-May-2023 09:34:01.946 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.validation.ValidationExceptionMapper@2173a742
+05-May-2023 09:34:01.946 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.openejb.server.cxf.rs.CxfRsHttpListener$CxfResponseValidationExceptionMapper@706ceca6
+05-May-2023 09:34:01.947 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.logEndpoints REST Application: http://localhost:8080/ws-chat/api           -> lab.NameCheckREST@e29f4f6
+05-May-2023 09:34:01.950 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.logEndpoints      Service URI: http://localhost:8080/ws-chat/api/checkName -> Pojo lab.NameCheckREST$NameResource
+05-May-2023 09:34:01.951 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.logEndpoints               GET http://localhost:8080/ws-chat/api/checkName ->      Response checkName(String)
+05-May-2023 09:34:01.957 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deployment of web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat] has finished in [578] ms
+05-May-2023 09:34:01.959 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Starting ProtocolHandler ["http-nio-8080"]
+05-May-2023 09:34:01.974 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Server startup in [2446] milliseconds
+05-May-2023 14:35:14.376 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Server version name:   Apache Tomcat (TomEE)/10.0.27 (9.0.0)
+05-May-2023 14:35:14.377 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Server built:          Oct 3 2022 14:18:31 UTC
+05-May-2023 14:35:14.378 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Server version number: 10.0.27.0
+05-May-2023 14:35:14.378 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke OS Name:               Windows 11
+05-May-2023 14:35:14.378 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke OS Version:            10.0
+05-May-2023 14:35:14.379 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Architecture:          amd64
+05-May-2023 14:35:14.379 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Java Home:             C:\Users\nterr\.jdks\corretto-11.0.18
+05-May-2023 14:35:14.379 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke JVM Version:           11.0.18+10-LTS
+05-May-2023 14:35:14.380 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke JVM Vendor:            Amazon.com Inc.
+05-May-2023 14:35:14.380 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke CATALINA_BASE:         C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee
+05-May-2023 14:35:14.381 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke CATALINA_HOME:         C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee
+05-May-2023 14:35:14.433 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+05-May-2023 14:35:14.433 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+05-May-2023 14:35:14.433 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+05-May-2023 14:35:14.433 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+05-May-2023 14:35:14.434 INFO [main] jdk.internal.reflect.NativeMethodAccessorImpl.invoke Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+05-May-2023 14:35:14.434 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Djava.util.logging.config.file=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\conf\logging.properties
+05-May-2023 14:35:14.434 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+05-May-2023 14:35:14.434 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -javaagent:C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\lib\openejb-javaagent.jar
+05-May-2023 14:35:14.434 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+05-May-2023 14:35:14.434 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+05-May-2023 14:35:14.434 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Dignore.endorsed.dirs=
+05-May-2023 14:35:14.434 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Dcatalina.base=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee
+05-May-2023 14:35:14.434 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Dcatalina.home=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee
+05-May-2023 14:35:14.434 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Command line argument: -Djava.io.tmpdir=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\temp
+05-May-2023 14:35:14.451 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Users\nterr\.jdks\corretto-11.0.18\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\bin;C:\Program Files\Amazon Corretto\jdk11.0.3_7\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\HP\IdrsOCR_15.4.1132.0\;C:\Program Files\SourceGear\Common\DiffMerge\;C:\Program Files\PuTTY\;C:\Program Files\Wolfram Research\WolframScript\;C:\Users\nterr\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Software\apache-ant-1.10.12\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Software\mongosh-1.1.7-win32-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MATLAB\R2022a\bin;C:\Users\nterr\.jdks\openjdk-17\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\Go\bin;C:\Program Files (x86)\GitExtensions\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\Maven\apache-maven-3.8.3\bin;C:\Users\nterr\AppData\Local\Android\Sdk\tools;C:\Users\nterr\AppData\Local\Android\Sdk\cmdline-tools\latest\bin;C:\Users\nterr\AppData\Local\Android\Sdk\platform-tools;C:\Users\nterr\.gradle\wrapper\dists\gradle-7.1.1-all\1wqbeia0d49252rmlcr6o8lbl\gradle-7.1.1\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\nterr\.jdks\corretto-11.0.18\bin;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\HP\IdrsOCR_15.4.1132.0\;C:\Program Files\SourceGear\Common\DiffMerge\;C:\Program Files\PuTTY\;C:\Program Files\Wolfram Research\WolframScript\;C:\Users\nterr\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\GitExtensions\;C:\Program Files\Git\cmd;C:\Software\apache-ant-1.10.12\bin;C:\Program Files\Microsoft SQL Server\150\;C:\Users\nterr\AppData\Local\Programs\Microsoft VS Code\bin;C:\src\flutter\bin;C:\Users\nterr\.dotnet\tools;C:\Users\nterr\AppData\Roaming\npm;C:\Users\nterr\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\nterr\AppData\Roaming\Python\Python37\Scripts;C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP2\AFirstExample;C:\Maven\apache-maven-3.8.3\bin;;.]
+05-May-2023 14:35:14.832 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Initializing ProtocolHandler ["http-nio-8080"]
+05-May-2023 14:35:15.174 INFO [main] org.apache.openejb.util.OptionsLog.info Using 'openejb.jdbc.datasource-creator=org.apache.tomee.jdbc.TomEEDataSourceCreator'
+05-May-2023 14:35:15.261 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> ********************************************************************************
+05-May-2023 14:35:15.262 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> OpenEJB http://tomee.apache.org/
+05-May-2023 14:35:15.262 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> Startup: Fri May 05 14:35:15 CEST 2023
+05-May-2023 14:35:15.262 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> Copyright 1999-2021 (C) Apache TomEE Project, All Rights Reserved.
+05-May-2023 14:35:15.262 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> Version: 9.0.0
+05-May-2023 14:35:15.262 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> Build date: 20230103
+05-May-2023 14:35:15.262 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> Build time: 09:35
+05-May-2023 14:35:15.262 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> ********************************************************************************
+05-May-2023 14:35:15.263 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> openejb.home = C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee
+05-May-2023 14:35:15.263 INFO [main] org.apache.openejb.OpenEJB$Instance.<init> openejb.base = C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee
+05-May-2023 14:35:15.264 INFO [main] org.apache.openejb.cdi.CdiBuilder.initializeOWB Created new singletonService org.apache.openejb.cdi.ThreadSingletonServiceImpl@4c2cc639
+05-May-2023 14:35:15.267 INFO [main] org.apache.openejb.cdi.CdiBuilder.initializeOWB Succeeded in installing singleton service
+05-May-2023 14:35:15.299 INFO [main] org.apache.openejb.config.ConfigurationFactory.init TomEE configuration file is 'C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\conf\tomee.xml'
+05-May-2023 14:35:15.344 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureService Configuring Service(id=Tomcat Security Service, type=SecurityService, provider-id=Tomcat Security Service)
+05-May-2023 14:35:15.346 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureService Configuring Service(id=Default Transaction Manager, type=TransactionManager, provider-id=Default Transaction Manager)
+05-May-2023 14:35:15.348 INFO [main] org.apache.openejb.util.OptionsLog.info Using 'openejb.deployments.classpath=false'
+05-May-2023 14:35:15.351 INFO [main] org.apache.openejb.assembler.classic.Assembler.createRecipe Creating TransactionManager(id=Default Transaction Manager)
+05-May-2023 14:35:15.415 INFO [main] org.apache.openejb.assembler.classic.Assembler.createRecipe Creating SecurityService(id=Tomcat Security Service)
+05-May-2023 14:35:15.537 INFO [main] org.apache.openejb.server.ServiceManager.initServer Creating ServerService(id=cxf)
+05-May-2023 14:35:15.827 INFO [main] org.apache.openejb.server.ServiceManager.initServer Creating ServerService(id=cxf-rs)
+05-May-2023 14:35:15.864 INFO [main] org.apache.openejb.server.SimpleServiceManager.start   ** Bound Services **
+05-May-2023 14:35:15.867 INFO [main] org.apache.openejb.server.SimpleServiceManager.printRow   NAME                 IP              PORT  
+05-May-2023 14:35:15.867 INFO [main] org.apache.openejb.server.SimpleServiceManager.start -------
+05-May-2023 14:35:15.868 INFO [main] org.apache.openejb.server.SimpleServiceManager.start Ready!
+05-May-2023 14:35:15.868 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Server initialization in [1808] milliseconds
+05-May-2023 14:35:15.943 INFO [main] org.apache.tomee.catalina.OpenEJBNamingContextListener.bindResource Importing a Tomcat Resource with id 'UserDatabase' of type 'org.apache.catalina.UserDatabase'.
+05-May-2023 14:35:15.943 INFO [main] org.apache.openejb.assembler.classic.Assembler.createRecipe Creating Resource(id=UserDatabase)
+05-May-2023 14:35:15.960 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Starting service [Catalina]
+05-May-2023 14:35:15.960 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Starting Servlet engine: [Apache Tomcat (TomEE)/10.0.27 (9.0.0)]
+05-May-2023 14:35:15.972 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deploying web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\docs]
+05-May-2023 14:35:15.984 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.init ------------------------- localhost -> /docs
+05-May-2023 14:35:16.190 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureApplication Configuring enterprise application: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\docs
+05-May-2023 14:35:16.259 INFO [main] org.apache.openejb.config.AppInfoBuilder.build Enterprise application "C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\docs" loaded.
+05-May-2023 14:35:16.723 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Assembling app: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\docs
+05-May-2023 14:35:16.820 INFO [main] org.apache.openejb.assembler.classic.ValidatorBuilder.getConfig Ignoring XML Configuration for validator org.apache.bval.jsr.ConfigurationImpl
+05-May-2023 14:35:16.871 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Deployed Application(path=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\docs)
+05-May-2023 14:35:17.041 INFO [main] org.apache.myfaces.ee.MyFacesContainerInitializer.onStartup Using org.apache.myfaces.ee.MyFacesContainerInitializer
+05-May-2023 14:35:17.113 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+05-May-2023 14:35:17.559 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [429] milliseconds.
+05-May-2023 14:35:17.609 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deployment of web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\docs] has finished in [1,636] ms
+05-May-2023 14:35:17.609 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deploying web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager]
+05-May-2023 14:35:17.624 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.init ------------------------- localhost -> /host-manager
+05-May-2023 14:35:17.676 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureApplication Configuring enterprise application: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager
+05-May-2023 14:35:17.682 INFO [main] org.apache.openejb.config.AppInfoBuilder.build Enterprise application "C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager" loaded.
+05-May-2023 14:35:17.683 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Assembling app: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager
+05-May-2023 14:35:17.686 INFO [main] org.apache.openejb.assembler.classic.ValidatorBuilder.getConfig Ignoring XML Configuration for validator org.apache.bval.jsr.ConfigurationImpl
+05-May-2023 14:35:17.690 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.deployWebApps using context file C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager\META-INF\context.xml
+05-May-2023 14:35:17.690 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Deployed Application(path=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager)
+05-May-2023 14:35:17.717 INFO [main] org.apache.myfaces.ee.MyFacesContainerInitializer.onStartup Using org.apache.myfaces.ee.MyFacesContainerInitializer
+05-May-2023 14:35:17.733 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+05-May-2023 14:35:17.751 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deployment of web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\host-manager] has finished in [141] ms
+05-May-2023 14:35:17.751 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deploying web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager]
+05-May-2023 14:35:17.761 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.init ------------------------- localhost -> /manager
+05-May-2023 14:35:17.792 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureApplication Configuring enterprise application: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager
+05-May-2023 14:35:17.798 INFO [main] org.apache.openejb.config.AppInfoBuilder.build Enterprise application "C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager" loaded.
+05-May-2023 14:35:17.798 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Assembling app: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager
+05-May-2023 14:35:17.801 INFO [main] org.apache.openejb.assembler.classic.ValidatorBuilder.getConfig Ignoring XML Configuration for validator org.apache.bval.jsr.ConfigurationImpl
+05-May-2023 14:35:17.806 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.deployWebApps using context file C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager\META-INF\context.xml
+05-May-2023 14:35:17.806 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Deployed Application(path=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager)
+05-May-2023 14:35:17.832 INFO [main] org.apache.myfaces.ee.MyFacesContainerInitializer.onStartup Using org.apache.myfaces.ee.MyFacesContainerInitializer
+05-May-2023 14:35:17.851 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+05-May-2023 14:35:17.863 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deployment of web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\manager] has finished in [112] ms
+05-May-2023 14:35:17.863 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deploying web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ROOT]
+05-May-2023 14:35:17.864 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.init ------------------------- localhost -> /
+05-May-2023 14:35:17.902 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureApplication Configuring enterprise application: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ROOT
+05-May-2023 14:35:17.905 INFO [main] org.apache.openejb.config.AppInfoBuilder.build Enterprise application "C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ROOT" loaded.
+05-May-2023 14:35:17.906 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Assembling app: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ROOT
+05-May-2023 14:35:17.910 INFO [main] org.apache.openejb.assembler.classic.ValidatorBuilder.getConfig Ignoring XML Configuration for validator org.apache.bval.jsr.ConfigurationImpl
+05-May-2023 14:35:17.914 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Deployed Application(path=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ROOT)
+05-May-2023 14:35:17.934 INFO [main] org.apache.myfaces.ee.MyFacesContainerInitializer.onStartup Using org.apache.myfaces.ee.MyFacesContainerInitializer
+05-May-2023 14:35:17.949 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+05-May-2023 14:35:17.959 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deployment of web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ROOT] has finished in [96] ms
+05-May-2023 14:35:17.959 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deploying web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat]
+05-May-2023 14:35:17.968 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.init ------------------------- localhost -> /ws-chat
+05-May-2023 14:35:18.093 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureApplication Configuring enterprise application: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat
+05-May-2023 14:35:18.160 INFO [main] org.apache.openejb.config.ConfigurationFactory.configureService Configuring Service(id=Default Managed Container, type=Container, provider-id=Default Managed Container)
+05-May-2023 14:35:18.161 INFO [main] org.apache.openejb.config.AutoConfig.createContainer Auto-creating a container for bean ws-chat.Comp1360393616: Container(type=MANAGED, id=Default Managed Container)
+05-May-2023 14:35:18.161 INFO [main] org.apache.openejb.assembler.classic.Assembler.createRecipe Creating Container(id=Default Managed Container)
+05-May-2023 14:35:18.169 INFO [main] org.apache.openejb.core.managed.SimplePassivater.init Using directory C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\temp for stateful session passivation
+05-May-2023 14:35:18.184 INFO [main] org.apache.openejb.config.AppInfoBuilder.build Enterprise application "C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat" loaded.
+05-May-2023 14:35:18.185 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Assembling app: C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat
+05-May-2023 14:35:18.228 INFO [main] org.apache.openejb.assembler.classic.ValidatorBuilder.getConfig Ignoring XML Configuration for validator org.apache.bval.jsr.ConfigurationImpl
+05-May-2023 14:35:18.236 INFO [main] org.apache.tomee.catalina.TomcatWebAppBuilder.deployWebApps using context file C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat\META-INF\context.xml
+05-May-2023 14:35:18.236 INFO [main] org.apache.openejb.assembler.classic.Assembler.createApplication Deployed Application(path=C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat)
+05-May-2023 14:35:18.283 INFO [main] org.apache.myfaces.ee.MyFacesContainerInitializer.onStartup Using org.apache.myfaces.ee.MyFacesContainerInitializer
+05-May-2023 14:35:18.319 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+05-May-2023 14:35:18.360 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.logApplication Application{path='http://localhost:8080/ws-chat/api', class=lab.NameCheckREST, resources=1, providers=0, invalids=0}
+05-May-2023 14:35:18.365 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.logApplication Resource{clazz=lab.NameCheckREST$NameResource, discovered=true, singleton=false}
+05-May-2023 14:35:18.581 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication Using readers:
+05-May-2023 14:35:18.582 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.PrimitiveTextProvider@52559a69
+05-May-2023 14:35:18.582 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.FormEncodingProvider@2a2dc0a
+05-May-2023 14:35:18.582 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.MultipartProvider@3a00b15d
+05-May-2023 14:35:18.582 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.SourceProvider@36ef1d65
+05-May-2023 14:35:18.582 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.JAXBElementTypedProvider@4be0a27d
+05-May-2023 14:35:18.582 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.JAXBElementProvider@5f366587
+05-May-2023 14:35:18.582 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.openejb.server.cxf.rs.johnzon.TomEEJsonpProvider@285583d4
+05-May-2023 14:35:18.582 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.openejb.server.cxf.rs.johnzon.TomEEJsonbProvider@6003ad65
+05-May-2023 14:35:18.582 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.StringTextProvider@1039bfc4
+05-May-2023 14:35:18.583 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.BinaryDataProvider@7f85217c
+05-May-2023 14:35:18.583 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.DataSourceProvider@1fd7a37
+05-May-2023 14:35:18.583 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication Using writers:
+05-May-2023 14:35:18.583 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.JAXBElementTypedProvider@4be0a27d
+05-May-2023 14:35:18.583 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.openejb.server.cxf.rs.johnzon.TomEEJsonpProvider@285583d4
+05-May-2023 14:35:18.583 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.johnzon.jaxrs.WadlDocumentMessageBodyWriter@5b202ff
+05-May-2023 14:35:18.584 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.nio.NioMessageBodyWriter@58a84a12
+05-May-2023 14:35:18.584 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.StringTextProvider@1039bfc4
+05-May-2023 14:35:18.584 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.PrimitiveTextProvider@52559a69
+05-May-2023 14:35:18.584 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.FormEncodingProvider@2a2dc0a
+05-May-2023 14:35:18.584 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.MultipartProvider@3a00b15d
+05-May-2023 14:35:18.584 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.JAXBElementProvider@5f366587
+05-May-2023 14:35:18.584 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.SourceProvider@36ef1d65
+05-May-2023 14:35:18.584 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.openejb.server.cxf.rs.johnzon.TomEEJsonbProvider@6003ad65
+05-May-2023 14:35:18.584 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.BinaryDataProvider@7f85217c
+05-May-2023 14:35:18.584 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.provider.DataSourceProvider@1fd7a37
+05-May-2023 14:35:18.584 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication Using exception mappers:
+05-May-2023 14:35:18.585 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.impl.WebApplicationExceptionMapper@706ceca6
+05-May-2023 14:35:18.585 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.openejb.server.cxf.rs.EJBExceptionMapper@5a90265a
+05-May-2023 14:35:18.585 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.cxf.jaxrs.validation.ValidationExceptionMapper@7f6329cb
+05-May-2023 14:35:18.586 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.deployApplication      org.apache.openejb.server.cxf.rs.CxfRsHttpListener$CxfResponseValidationExceptionMapper@4b8137c5
+05-May-2023 14:35:18.588 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.logEndpoints REST Application: http://localhost:8080/ws-chat/api           -> lab.NameCheckREST@1a538ed8
+05-May-2023 14:35:18.592 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.logEndpoints      Service URI: http://localhost:8080/ws-chat/api/checkName -> Pojo lab.NameCheckREST$NameResource
+05-May-2023 14:35:18.593 INFO [main] org.apache.openejb.server.cxf.rs.CxfRsHttpListener.logEndpoints               GET http://localhost:8080/ws-chat/api/checkName ->      Response checkName(String)
+05-May-2023 14:35:18.598 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Deployment of web application directory [C:\Users\nterr\Documents\HEIA-FR\advj-bar-ter\TP4\tomee\webapps\ws-chat] has finished in [638] ms
+05-May-2023 14:35:18.601 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Starting ProtocolHandler ["http-nio-8080"]
+05-May-2023 14:35:18.624 INFO [main] jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke Server startup in [2756] milliseconds

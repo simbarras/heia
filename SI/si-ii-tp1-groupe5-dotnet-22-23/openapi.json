@@ -1,0 +1,587 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "SI-II TP1 Groupe 5 22-23",
+    "description": "API Specification for SI II TP1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/api/v1/"
+    }
+  ],
+  "tags": [
+    "league",
+    "match",
+    "player",
+    "team"
+  ],
+  "paths": {
+    "/leagues": {
+      "get": {
+        "tags": [
+          "league"
+        ],
+        "summary": "Get all leagues",
+        "operationId": "getleagues",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/league"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "league"
+        ],
+        "summary": "Add a new league to the store",
+        "operationId": "addleague",
+        "requestBody": {
+          "description": "league object that needs to be added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/league"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/leagues/{leagueId}": {
+      "get": {
+        "tags": [
+          "league"
+        ],
+        "summary": "Find league by ID",
+        "description": "Returns a single league",
+        "operationId": "getleagueById",
+        "parameters": [
+          {
+            "name": "leagueId",
+            "in": "path",
+            "description": "ID of league to return",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/league"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "league not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "league"
+        ],
+        "summary": "Update an existing league",
+        "operationId": "updateleague",
+        "parameters": [
+          {
+            "name": "leagueId",
+            "in": "path",
+            "description": "ID of league to update",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "league object that needs to be added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/league"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "league not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      }
+    },
+    "/matches": {
+      "get": {
+        "tags": [
+          "Match"
+        ],
+        "summary": "Get all matches",
+        "operationId": "getMatches",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Match"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Match"
+        ],
+        "summary": "Add a new match to the store",
+        "operationId": "addMatch",
+        "requestBody": {
+          "description": "Match object that needs to be added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Match"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/matches/{matchId}": {
+      "get": {
+        "tags": [
+          "Match"
+        ],
+        "summary": "Find match by ID",
+        "description": "Returns a single match",
+        "operationId": "getMatchById",
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "description": "ID of match to return",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Match"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Match not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Match"
+        ],
+        "summary": "Update an existing match",
+        "operationId": "updateMatch",
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "description": "ID of match to update",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Match object that needs to be added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Match"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Match not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      }
+    },
+    "/player": {
+      "get": {
+        "tags": [
+          "Player"
+        ],
+        "summary": "Get all players",
+        "operationId": "getPlayers",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Player"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Player"
+        ],
+        "summary": "Add a new player to the store",
+        "operationId": "addPlayer",
+        "requestBody": {
+          "description": "Player object that needs to be added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/player"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/player/{playerId}": {
+      "get": {
+        "tags": [
+          "Player"
+        ],
+        "summary": "Find player by ID",
+        "description": "Returns a single player",
+        "operationId": "getPlayerById",
+        "parameters": [
+          {
+            "name": "playerId",
+            "in": "path",
+            "description": "ID of player to return",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Player"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Player not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Player"
+        ],
+        "summary": "Update an existing player",
+        "operationId": "updatePlayer",
+        "parameters": [
+          {
+            "name": "playerId",
+            "in": "path",
+            "description": "ID of player to update",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Player object that needs to be added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/player"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Player not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      }
+    },
+    "/team": {
+      "get": {
+        "tags": [
+          "team"
+        ],
+        "summary": "Get all teams",
+        "operationId": "getTeams",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Team"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "team"
+        ],
+        "summary": "Add a new team to the store",
+        "operationId": "addTeam",
+        "requestBody": {
+          "description": "Team object that needs to be added to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Team"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/team/{teamId}": {
+      "get": {
+        "tags": [
+          "team"
+        ],
+        "summary": "Find team by ID",
+        "description": "Returns a single team",
+        "operationId": "getTeamById",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "path",
+            "description": "ID of team to return",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Team"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Team not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "league": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "players": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/player"
+            }
+          },
+          "matches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/match"
+            }
+          }
+        }
+      },
+      "player": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "birthdate": {
+            "type": "string",
+            "format": "date"
+          },
+          "team": {
+            "$ref": "#/components/schemas/team"
+          }
+        }
+      },
+      "match": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "team1": {
+            "$ref": "#/components/schemas/team"
+          },
+          "team2": {
+            "$ref": "#/components/schemas/team"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "team": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "matches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/match"
+            }
+          }
+        }
+      }
+    }
+  }
+}

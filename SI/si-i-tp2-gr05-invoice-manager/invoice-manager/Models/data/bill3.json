@@ -1,0 +1,51 @@
+{
+    "bill" : {
+        "id" : "5489592",
+        "date" : "2018-02-17",
+        "amount" : 50.04,
+        "devise" : "CHF",
+        "payed" : true,
+        "client" : {
+            "number" : "1771748",
+            "name" : "Collaud",
+            "surname" : "Roman",
+            "address" : {
+                "street" : "Rts de la Bataille 26",
+                "city" : "Saint-Aubin",
+                "npa" : 1566,
+                "country" : "Switzerland"
+            }
+        },
+        "sender" : {
+            "name" : "Digitec Galaxus AG",
+            "email" : "helcenter.digitec.ch",
+            "address" : {
+                "street" : "Pfingstweidstrasse 60b",
+                "city" : "Zürich",
+                "npa" : 8005,
+                "country" : "Switzerland"
+            }
+        },
+        "articles" : [
+            {
+                "id" : "5882888",
+                "name" : "iXpand 32GB",
+                "brand" : "Sandisk",
+                "type" : "USB key",
+                "quantity" : "1",
+                "price" : 44.57,
+                "tva" : 7.7
+            },
+            {
+                "type" : "Account fees",
+                "quantity" : "1",
+                "price" : 1.89,
+                "tva" : 7.7
+            }
+        ],
+        "delivery" : {
+            "price" : 0,
+            "type" : "expedition"
+        }
+    }
+}

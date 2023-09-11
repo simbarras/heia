@@ -1,0 +1,31 @@
+# Author S. Rumley, 2021
+
+# This Dockerfile builds an image containing what's needed to :
+#   1) Build javanco
+#   2) Serve the display so that a VNC viewer can connect to the container
+#       with command : docker run -it -p5900:5900 <nameOfImage>
+
+# Build the image with command
+#    docker build -t <nameofimage> .
+
+FROM ubuntu:18.04
+RUN apt-get update
+RUN apt-get -y upgrade
+RUN apt autoremove --purge
+RUN apt-get update
+RUN apt-get -y install bash x11vnc xvfb openjdk-11-jdk vim ant ant-contrib  --fix-missing
+RUN mkdir ~/.vnc
+RUN touch ~/.vnc/passwd
+RUN x11vnc -storepasswd "perolles" ~/.vnc/passwd
+RUN bash -c 'echo "cd javanco" >> ~/.bashrc'
+RUN bash -c 'echo "ant run_cockpit" >> ~/.bashrc'
+ADD Docker_vnc/start.sh .
+RUN chmod +x /start.sh
+COPY ["div", "./javanco/div"]
+COPY ["src", "./javanco/src"]
+COPY ["lib", "./javanco/lib"]
+COPY ["lib_jni", "./javanco/lib_jni"]
+COPY ["build.xml", "./javanco/build.xml"]
+COPY ["default_build.xml", "./javanco/default_build.xml"]
+
+CMD ["./start.sh"]

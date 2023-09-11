@@ -1,0 +1,45 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-app-http
+  namespace: your-namespace
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: http-concsys-22-grp-microservice-abc.kube.isc.heia-fr.ch
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: whatever
+            port:
+              number: 8081
+  tls:
+    - hosts:
+        - http-concsys-22-grp-microservice-abc.kube.isc.heia-fr.ch
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-app-grpc
+  namespace: your-namespace
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: grpc-concsys-22-grp-microservice-abc.kube.isc.heia-fr.ch
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: another-one
+                port:
+                  number: 9002
+  tls:
+    - hosts:
+        - grpc-concsys-22-grp-microservice-abc.kube.isc.heia-fr.ch

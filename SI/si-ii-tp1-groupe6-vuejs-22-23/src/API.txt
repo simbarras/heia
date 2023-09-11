@@ -1,0 +1,34 @@
+API/V1 (01.11.22) TP SI
+
+(GET)   /games
+(POST)  /game/add
+
+body: {
+    date: Date (string),
+    location: string,
+    homeTeam: string,
+    awayTeam: string,
+    leagueid: number
+}
+
+(GET)   /players
+(POST)  /player/add/
+
+body: {
+    firstname: string,
+    lastname: string,
+    birthdate: Date (string),
+    favoriteTeam: string
+}
+
+(GET)   /leagues
+(GET)   /league/add/:name
+(GET)   /league/delete/:leagueid
+
+(POST)  /league/add/player
+(POST)  /league/delete/player
+
+body: {
+    leagueid: number,
+    playerid: number
+}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<network>
+  <main_description>
+    <layer id="physical">
+      <node id="0" pos_x="-56" pos_y="92"/>
+      <node id="1" pos_x="-60" pos_y="80"/>
+      <link orig="0" dest="1"/>
+      <node id="2" pos_x="-54" pos_y="69"/>
+      <link orig="1" dest="2"/>
+      <link orig="2" dest="0"/>
+      <node id="3" pos_x="-39" pos_y="90"/>
+      <link orig="0" dest="3"/>
+      <node id="4" pos_x="-43" pos_y="79"/>
+      <link orig="1" dest="4"/>
+      <node id="5" pos_x="-37" pos_y="68"/>
+      <link orig="2" dest="5"/>
+      <link orig="3" dest="4"/>
+      <link orig="4" dest="5"/>
+      <link orig="5" dest="3"/>
+      <node id="6" pos_x="-22" pos_y="90"/>
+      <link orig="3" dest="6"/>
+      <link orig="6" dest="0"/>
+      <node id="7" pos_x="-27" pos_y="79"/>
+      <link orig="4" dest="7"/>
+      <link orig="7" dest="1"/>
+      <node id="8" pos_x="-23" pos_y="68"/>
+      <link orig="5" dest="8"/>
+      <link orig="8" dest="2"/>
+      <link orig="6" dest="7"/>
+      <link orig="7" dest="8"/>
+      <link orig="8" dest="6"/>
+      <node id="9" pos_x="13" pos_y="59"/>
+      <link orig="0" dest="9"/>
+      <node id="10" pos_x="7" pos_y="45"/>
+      <link orig="1" dest="10"/>
+      <node id="11" pos_x="11" pos_y="33"/>
+      <link orig="2" dest="11"/>
+      <node id="12" pos_x="24" pos_y="58"/>
+      <link orig="3" dest="12"/>
+      <node id="13" pos_x="19" pos_y="45"/>
+      <link orig="4" dest="13"/>
+      <node id="14" pos_x="23" pos_y="32"/>
+      <link orig="5" dest="14"/>
+      <node id="15" pos_x="36" pos_y="56"/>
+      <link orig="6" dest="15"/>
+      <node id="16" pos_x="31" pos_y="44"/>
+      <link orig="7" dest="16"/>
+      <node id="17" pos_x="36" pos_y="32"/>
+      <link orig="8" dest="17"/>
+      <link orig="9" dest="10"/>
+      <link orig="9" dest="12"/>
+      <link orig="10" dest="11"/>
+      <link orig="10" dest="13"/>
+      <link orig="11" dest="9"/>
+      <link orig="11" dest="14"/>
+      <link orig="12" dest="13"/>
+      <link orig="12" dest="15"/>
+      <link orig="13" dest="14"/>
+      <link orig="13" dest="16"/>
+      <link orig="14" dest="12"/>
+      <link orig="14" dest="17"/>
+      <link orig="15" dest="9"/>
+      <link orig="15" dest="16"/>
+      <link orig="16" dest="10"/>
+      <link orig="16" dest="17"/>
+      <link orig="17" dest="11"/>
+      <link orig="17" dest="15"/>
+      <node id="18" pos_x="62" pos_y="26"/>
+      <link orig="9" dest="18"/>
+      <link orig="18" dest="0"/>
+      <node id="19" pos_x="58" pos_y="12"/>
+      <link orig="10" dest="19"/>
+      <link orig="19" dest="1"/>
+      <node id="20" pos_x="62" pos_y="0"/>
+      <link orig="11" dest="20"/>
+      <link orig="20" dest="2"/>
+      <node id="21" pos_x="79" pos_y="27"/>
+      <link orig="12" dest="21"/>
+      <link orig="21" dest="3"/>
+      <node id="22" pos_x="73" pos_y="13"/>
+      <link orig="13" dest="22"/>
+      <link orig="22" dest="4"/>
+      <node id="23" pos_x="79" pos_y="0"/>
+      <link orig="14" dest="23"/>
+      <link orig="23" dest="5"/>
+      <node id="24" pos_x="92" pos_y="26"/>
+      <link orig="15" dest="24"/>
+      <link orig="24" dest="6"/>
+      <node id="25" pos_x="88" pos_y="13"/>
+      <link orig="16" dest="25"/>
+      <link orig="25" dest="7"/>
+      <node id="26" pos_x="92" pos_y="-1"/>
+      <link orig="17" dest="26"/>
+      <link orig="26" dest="8"/>
+      <link orig="18" dest="19"/>
+      <link orig="18" dest="21"/>
+      <link orig="19" dest="20"/>
+      <link orig="19" dest="22"/>
+      <link orig="20" dest="18"/>
+      <link orig="20" dest="23"/>
+      <link orig="21" dest="22"/>
+      <link orig="21" dest="24"/>
+      <link orig="22" dest="23"/>
+      <link orig="22" dest="25"/>
+      <link orig="23" dest="21"/>
+      <link orig="23" dest="26"/>
+      <link orig="24" dest="18"/>
+      <link orig="24" dest="25"/>
+      <link orig="25" dest="19"/>
+      <link orig="25" dest="26"/>
+      <link orig="26" dest="20"/>
+      <link orig="26" dest="24"/>
+    </layer>
+  </main_description>
+  <graphical_data>
+    <startview width="270" height="152" pos_x="-138" pos_y="-20" sizeModificator="0.5076562"/>
+    <backgroundImage pos_x="-1" pos_y="-1" width="-1" height="-1"/>
+    <background color="java.awt.Color[r=255,g=255,b=255]"/>
+    <defaultValues labelFontSize="10.0"/>
+    <display type="native"/>
+  </graphical_data>
+</network>

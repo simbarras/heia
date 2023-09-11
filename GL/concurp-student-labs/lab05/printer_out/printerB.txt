@@ -1,0 +1,2 @@
+Printer b is on.
+Client_b #-1, 00:12:07:634985, file -1, line -1

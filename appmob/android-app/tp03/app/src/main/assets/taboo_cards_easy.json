@@ -1,0 +1,226 @@
+[
+    {
+        "word": "Vache",
+        "taboos": ["Animal", "Lait", "Pré", "Ferme"]
+    },
+    {
+        "word": "Chèvre", 
+        "taboos": ["Fromage", "Corne", "Pré", "Animal"]
+    },
+    {
+        "word": "Cochon",
+        "taboos": ["Animal", "Jambon", "Queue", "Boue"]
+    },
+    {
+        "word": "Baleine",
+        "taboos": ["Mer", "Animal", "Grosse", "Poisson"]
+    },
+    {
+        "word": "Chat",
+        "taboos": ["Animal", "Griffes", "Poil", "Domestique"]
+    },
+    {
+        "word": "Cheval",
+        "taboos": ["Animal", "Transport", "Galop", "Foin"]
+    },
+    {
+        "word": "Singe",
+        "taboos": ["Gorille", "Chimpanzé", "King-Kong", "Jungle"]
+    },
+    {
+        "word": "Araignée",
+        "taboos": ["Pattes", "Plafond", "Insecte", "Toile"]
+    },
+    {
+        "word": "Cahier",
+        "taboos": ["Ecrire", "Ligne", "Jour", "Couverture"]
+    },
+    {
+        "word": "Dictionnaire",
+        "taboos": ["Mot", "Vocabulaire", "Alphabétique", "Définition"]
+    },
+    {
+        "word": "Stylo",
+        "taboos": ["Ecrire", "Bille", "Plume", "Capuchon"]
+    },
+    {
+        "word": "Aimant",
+        "taboos": ["Accrocher", "Métal", "Affiches", "Rond"]
+    },
+    {
+        "word": "Compas",
+        "taboos": ["Tracer", "Cercle", "Rond", "Outil"]
+    },
+    {
+        "word": "Gomme",
+        "taboos": ["Effacer", "Crayon", "Blanche", "Plastique"]
+    },
+    {
+        "word": "Classeur",
+        "taboos": ["Feuilles", "Intercalaires", "Anneaux", "Perforatrice"]
+    },
+    {
+        "word": "Feutre",
+        "taboos": ["Colorier", "Capuchon", "Couleur", "Dessin"]
+    },
+    {
+        "word": "Chaise",
+        "taboos": ["Asseoir", "Pied", "Dossier", "Barreaux"]
+    },
+    {
+        "word": "Livre",
+        "taboos": ["Page", "Lire", "Histoire", "Roman"]
+    },
+    {
+        "word": "Drap",
+        "taboos": ["Tissus", "Couette", "Lit", "Dormir"]
+    },
+    {
+        "word": "Balais",
+        "taboos": ["Manche", "Miettes", "Brosse", "Sol"]
+    },
+    {
+        "word": "Vélo",
+        "taboos": ["Roue", "Pédale", "Guidon", "Bicyclette"]
+    },
+    {
+        "word": "Casserole",
+        "taboos": ["Cuisine", "Manche", "Cuire", "Eau"]
+    },
+    {
+        "word": "Tableau",
+        "taboos": ["Art", "Peinture", "Mur", "Musée"]
+    },
+    {
+        "word": "Clé",
+        "taboos": ["Ouvrir", "Porte", "Serrure", "Voiture"]
+    },
+    {
+        "word": "Banane",
+        "taboos": ["Fruit", "Jaune", "Singe", "Régime"]
+    },
+    {
+        "word": "Frites",
+        "taboos": ["Pomme de terre", "Friteuse", "Sel", "Bâtonnets"]
+    },
+    {
+        "word": "Camembert",
+        "taboos": ["Fromage", "Lait", "Vache", "Normandie"]
+    },
+    {
+        "word": "Pomme",
+        "taboos": ["Fruit", "Jus", "Golden", "Tarte"]
+    },
+    {
+        "word": "Jambon",
+        "taboos": ["Charcuterie", "Porc", "Rose", "Tranche"]
+    },
+    {
+        "word": "Salade",
+        "taboos": ["Laitue", "Vert", "Feuille", "Vinaigrette"]
+    },
+    {
+        "word": "Tomate",
+        "taboos": ["Légume", "Rouge", "Salade", "Sauce"]
+    },
+    {
+        "word": "Cacahuètes",
+        "taboos": ["Apéritif", "Singe", "Salé", "Gras"]
+    },
+    {
+        "word": "Téléphone", 
+        "taboos": ["Appeler", "Tactile", "iPhone", "Messages"]
+    },
+    {
+        "word": "Tablette",
+        "taboos": ["iPad", "Tactile", "Application", "Fragile"]
+    },
+    {
+        "word": "Ordinateur",
+        "taboos": ["Travail", "Ecran", "Souris", "Clavier"]
+    },
+    {
+        "word": "Télévision",
+        "taboos": ["Emission", "Regarder", "Ecran", "Télécommande"]
+    },
+    {
+        "word": "Console",
+        "taboos": ["Jeu", "Manette", "Télévision", "CD"]
+    },
+    {
+        "word": "GPS",
+        "taboos": ["Voiture", "Position", "Trajet", "Ecran"]
+    },
+    {
+        "word": "Imprimante",
+        "taboos": ["Documents", "Couleur", "Photocopie", "Encre"]
+    },
+    {
+        "word": "Vidéoprojecteur",
+        "taboos": ["Film", "Ecran", "Ordinateur", "Travail"]
+    },
+    {
+        "word": "McDonald",
+        "taboos": ["Hamburger", "Frittes", "Fast-food", "Nuggets"]
+    },
+    {
+        "word": "Décathlon",
+        "taboos": ["Magasin", "Sport", "Matériel", "Forme"]
+    },
+    {
+        "word": "Coca Cola",
+        "taboos": ["Boisson", "Gazeuse", "Soda", "Rouge"]
+    },
+    {
+        "word": "Nutella",
+        "taboos": ["Tartiner", "Chocolat", "Noisettes", "Pâte"]
+    },
+    {
+        "word": "Adidas",
+        "taboos": ["Sport", "Bande", "Jogging", "Baskets"]
+    },
+    {
+        "word": "Renault",
+        "taboos": ["Voiture", "Clio", "Mégane", "Française"]
+    },
+    {
+        "word": "Auchan",
+        "taboos": ["Magasin", "Courses", "Grande-surface", "Rouge"]
+    },
+    {
+        "word": "Panzani",
+        "taboos": ["Pâtes", "Sauce", "Spaghettis", "Coquilettes"]
+    },
+    {
+        "word": "Football",
+        "taboos": ["Club", "Ballon", "Gardien", "PSG"]
+    },
+    {
+        "word": "Tennis",
+        "taboos": ["Raquette", "Balle", "Jaune", "Roland Garros"]
+    },
+    {
+        "word": "Natation",
+        "taboos": ["Piscine", "Nager", "Plonger", "Maillot"]
+    },
+    {
+        "word": "Rugby",
+        "taboos": ["Ballon", "Ovale", "Mêlée", "Essai"]
+    },
+    {
+        "word": "Basket", 
+        "taboos": ["Ballon", "Panier", "Dribble", "Grand"]
+    },
+    {
+        "word": "Athlétisme",
+        "taboos": ["Course", "Saut", "Lancer", "Stade"]
+    },
+    {
+        "word": "Tir à l'arc",
+        "taboos": ["Arc", "Flèche", "Cible", "Viser"]
+    },
+    {
+        "word": "Danse",
+        "taboos": ["Chorégraphie", "Gala", "Spectacle", "Musique"]
+    }
+]

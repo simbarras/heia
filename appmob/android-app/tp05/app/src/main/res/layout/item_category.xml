@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="category"
+            type="ch.heiafr.tic.mobapp.tp05_trivia.model.data.Category"/>
+        <variable
+            name="listener"
+            type="ch.heiafr.tic.mobapp.tp05_trivia.ui.home.HomeAdapter.OnHomeAdapterEvents"/>
+    </data>
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:onClick="@{(view) -> listener.onCategoryClicked(view, category)}"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lines="2"
+        android:padding="16dp"
+        android:text="@{category.title}"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="General Knowledge" />
+
+</androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,226 @@
+[
+    {
+        "word": "Tête",
+        "taboos": ["Visage", "Figure", "Crane", "Cerveau"]
+    },
+    {
+        "word": "Pied",
+        "taboos": ["Orteils", "Marcher", "Talon", "Doigts"]
+    },
+    {
+        "word": "Ventre",
+        "taboos": ["Estomac", "Nombril", "Intestins", "Bidon"]
+    },
+    {
+        "word": "Nez",
+        "taboos": ["Odorat", "Sentir", "Milieu", "Odeurs"]
+    },
+    {
+        "word": "Moustache",
+        "taboos": ["Poil", "Visage", "Tondeuse", "Raser"]
+    },
+    {
+        "word": "Coeur",
+        "taboos": ["Organe", "Vital", "Pompe", "Sang"]
+    },
+    {
+        "word": "Sang",
+        "taboos": ["Rouge", "Liquide", "Chaud", "Veine"]
+    },
+    {
+        "word": "Oeil",
+        "taboos": ["Regard", "Cil", "Visage", "Paupière"]
+    },
+    {
+        "word": "Boulanger",
+        "taboos": ["Pain", "Farine", "Viennoiseries", "Boulangerie"]
+    },
+    {
+        "word": "Médecin",
+        "taboos": ["Soigner", "Patient", "Docteur", "Médicaments"]
+    },
+    {
+        "word": "Pompier",
+        "taboos": ["Incendie", "Blessés", "Secours", "18"]
+    },
+    {
+        "word": "Fleuriste",
+        "taboos": ["Fleur", "Rose", "Vase", "Bouquert"]
+    },
+    {
+        "word": "Infirmière",
+        "taboos": ["Seringue", "Soin", "Hôpital", "Pansement"]
+    },
+    {
+        "word": "Maitresse",
+        "taboos": ["Ecole", "Classe", "Elèves", "Leçon"]
+    },
+    {
+        "word": "Policier",
+        "taboos": ["Arrestation", "Amende", "Radar", "Gendarme"]
+    },
+    {
+        "word": "Maçon",
+        "taboos": ["Maison", "Construire", "Carrelage", "Artisan"]
+    },
+    {
+        "word": "Orthographe",
+        "taboos": ["Dictée", "Mots", "Homophones", "Accors"]
+    },
+    {
+        "word": "Géographie",
+        "taboos": ["Carte", "Monde", "France", "Climat"]
+    },
+    {
+        "word": "Histoire",
+        "taboos": ["Dates", "Personnages", "Période", "Guerre"]
+    },
+    {
+        "word": "Vocabulaire",
+        "taboos": ["Mot", "Dictionnaire", "Alphabétique", "Famille"]
+    },
+    {
+        "word": "Sport",
+        "taboos": ["Dehors", "Ballon", "Athlétisme", "Tenu"]
+    },
+    {
+        "word": "Sciences",
+        "taboos": ["Expérience", "Volcans", "Corps", "Plantations"]
+    },
+    {
+        "word": "Musique",
+        "taboos": ["Chorale", "Concert", "Chant", "Intervenante"]
+    },
+    {
+        "word": "Arts visuels",
+        "taboos": ["Dessin", "Peinture", "Oeuvre", "Feutres"]
+    },
+    {
+        "word": "Plage",
+        "taboos": ["Sable", "Mer", "Baignade", "Serviette"]
+    },
+    {
+        "word": "Soleil",
+        "taboos": ["Chaud", "Astre", "Eté", "Lumipre"]
+    },
+    {
+        "word": "Sport d'hiver",
+        "taboos": ["Ski", "Luge", "Montagne", "Neige"]
+    },
+    {
+        "word": "Camping",
+        "taboos": ["Tente", "Piscine", "Terrain", "Moustique"]
+    },
+    {
+        "word": "Voyage",
+        "taboos": ["Départ", "Pays", "Avion", "Séjour"]
+    },
+    {
+        "word": "Croisière",
+        "taboos": ["Voyage", "Bateau", "Paquebot", "Mer"]
+    },
+    {
+        "word": "Mer",
+        "taboos": ["Océan", "Plage", "Baignade", "Méditerranée"]
+    },
+    {
+        "word": "Hôtel",
+        "taboos": ["Chambre", "Clé", "Voyage", "Palace"]
+    },
+    {
+        "word": "Marteau",
+        "taboos": ["Enforcer", "Clou", "Taper", "Aie!"]
+    },
+    {
+        "word": "Mètre",
+        "taboos": ["Mesurer", "Ruban", "Centimètres", "Dérouler"]
+    },
+    {
+        "word": "Clou",
+        "taboos": ["Pointe", "Tête", "Marteau", "Rouille"]
+    },
+    {
+        "word": "Visseuse",
+        "taboos": ["Electrique", "Batterie", "Vis", "Clou"]
+    },
+    {
+        "word": "Pinceau",
+        "taboos": ["Peinture", "Poil", "Rouleau", "Couleur"]
+    },
+    {
+        "word": "Scie",
+        "taboos": ["Couper", "Bois", "Dents", "Métaux"]
+    },
+    {
+        "word": "Bois",
+        "taboos": ["Planche", "Clou", "Sapin", "Echarde"]
+    },
+    {
+        "word": "Tournevis",
+        "taboos": ["Vis", "TOurner", "Visseuse", "Manche"]
+    },
+    {
+        "word": "Tondeuse",
+        "taboos": ["Pelouse", "Couper", "Raser", "Electrique"]
+    },
+    {
+        "word": "Pelouse",
+        "taboos": ["Gazon", "Tondeuse", "Herbe", "Terrain"]
+    },
+    {
+        "word": "Pelle",
+        "taboos": ["Râteau", "Ramasser", "Balais", "Terre"]
+    },
+    {
+        "word": "Râteau",
+        "taboos": ["Dents", "Ratisser", "Manche", "Plage"]
+    },
+    {
+        "word": "Planter",
+        "taboos": ["Légumes", "Terre", "Graine", "Enforcer"]
+    },
+    {
+        "word": "Potager",
+        "taboos": ["Légumes", "Jardin", "Tomates", "Arroser"]
+    },
+    {
+        "word": "Arrsoir",
+        "taboos": ["Eau", "Fleur", "Plante", "Trous"]
+    },
+    {
+        "word": "Jardinière",
+        "taboos": ["Fleurs", "Bac", "Pot", "Balcon"]
+    },
+    {
+        "word": "Planète",
+        "taboos": ["Terre", "Mars", "Jupiter", "Sphère"]
+    },
+    {
+        "word": "Etoile",
+        "taboos": ["Astre", "Brillant", "Ciel", "Nuit"]
+    },
+    {
+        "word": "Soleil",
+        "taboos": ["Astre", "Système", "Chaleur", "Rayons"]
+    },
+    {
+        "word": "Navette",
+        "taboos": ["Spatiale", "Vaisseau", "Astronautes", "Ariane"]
+    },
+    {
+        "word": "Constellation",
+        "taboos": ["Groupe", "Etoile", "Forme", "Zodiaque"]
+    },
+    {
+        "word": "Système solaire",
+        "taboos": ["Soleil", "Planète", "Terre", "Lune"]
+    },
+    {
+        "word": "Voie lactée",
+        "taboos": ["Ciel", "Nuit", "Etoile", "Plafon"]
+    },
+    {
+        "word": "Lune",
+        "taboos": ["Terre", "Satellite", "Croissant", "Pleine"]
+    }
+]

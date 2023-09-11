@@ -1,0 +1,12 @@
+FROM registry.forge.hefr.ch/data-cockpit/javanco-legacy/mvn_ant_opt:latest
+COPY ["lib", "./javanco/lib"]
+COPY ["lib_jni", "./javanco/lib_jni"]
+COPY ["div", "./javanco/div"]
+COPY ["web", "./javanco/web"]
+COPY ["src", "./javanco/src"]
+COPY [".git" , "./javanco/.git"]
+COPY target/site ./javanco/web/cockpit_online/doc
+COPY build.xml default_build.xml ./javanco
+WORKDIR javanco
+RUN ant compile
+CMD ["ant", "run_cockpit_web"]

@@ -1,0 +1,1 @@
+java -cp lib/dom4j-1.6.1.jar;lib/kxml.jar;lib/log4j-1.2.14.jar;lib/simple-upload-0.3.4.jar;. -DJAVANCO_HOME=./ -Djava.security.policy=policy ch.epfl.javancoserver.server.JavancoServer

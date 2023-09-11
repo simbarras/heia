@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <APP>
+  namespace: cours-devops-tp3
+  labels:
+    app: <APP>
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: <APP>
+  template:
+    metadata:
+      labels:
+        app: <APP>
+    spec:
+      containers:
+      - name: <APP>
+        image: <IMAGE>
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: registry-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: <APP>
+  namespace: cours-devops-tp3
+spec:
+  ports:
+    - port: 8080
+  selector:
+    app: <APP>
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: <APP>
+  namespace: cours-devops-tp3
+spec:
+  rules:
+    - host: <HOST>.cours-devops.kube.isc.heia-fr.ch
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+                service:
+                  name: <APP>
+                  port:
+                    number: 8080

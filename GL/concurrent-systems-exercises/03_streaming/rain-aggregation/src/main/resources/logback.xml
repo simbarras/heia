@@ -1,0 +1,14 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date %thread %green(%level) [%cyan(%logger{10}):%magenta(%line)] %red(%method) | %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.apache.kafka" level="WARN" />
+    <logger name="org.apache.kafka.streams.internals.metrics" level="ERROR" />
+
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

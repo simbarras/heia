@@ -1,0 +1,1 @@
+export const API_URL = 'http://app.159.100.248.27.nip.io/api/v1';

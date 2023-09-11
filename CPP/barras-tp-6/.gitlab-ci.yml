@@ -1,0 +1,60 @@
+stages:
+  - build
+  - push
+  - deploy
+  - test
+
+image: buildpack-deps:buster
+
+build_GCC:
+  image: rikorose/gcc-cmake:gcc-9
+  stage: build
+  script:
+    - mkdir build_gcc
+    - cd build_gcc
+    - cmake ..
+    - make
+  artifacts:
+    paths:
+      - build_gcc/
+
+build_CLANG:
+  image: silkeh/clang
+  stage: build
+  script:
+    - mkdir build_clang
+    - cd build_clang
+    - cmake CMAKE_CXX_FLAGS=clang ..
+    - make
+  artifacts:
+    expire_in: 1 hrs
+    paths:
+      - build_clang/
+
+test_gcc:
+  stage: test
+  image: rikorose/gcc-cmake:gcc-9
+  script:
+    - build_gcc/unittests_tp6
+
+test_clang:
+  stage: test
+  image: silkeh/clang
+  script:
+    - ls -al build_clang
+    - build_clang/unittests_tp6
+
+docker_build:
+  stage: push
+  image: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY/simon.barras/barras-tp-6/cluster_cpp:latest .
+    - docker push $CI_REGISTRY/simon.barras/barras-tp-6/cluster_cpp:latest
+
+k3s_deployment:
+  stage: deploy
+  script:
+    - echo "Deploying on my k3s at cluster.simbarras.ch"

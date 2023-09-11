@@ -1,0 +1,31 @@
+image: python:3.9
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"
+  PLATFORMIO_CACHE_DIR: "$CI_PROJECT_DIR/.platformio-cache"
+
+cache:
+  paths:
+    - .pip-cache/
+    - .platformio-cache/
+
+stages:
+  - check
+  - test
+
+before_script:
+  - pip install -U platformio
+
+check-job:
+  stage: check
+  script:
+    - pio run -e DISCO_F
+    - pio check -e DISCO_F --skip-packages
+    - pio test --without-uploading --without-testing
+
+test-job:
+  stage: test
+  tags:
+    - embsys-bme
+  script:
+    - pio test -e DISCO_F --test-port /dev/ttyACM0

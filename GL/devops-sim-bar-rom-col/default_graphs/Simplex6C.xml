@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<network>
+  <main_description>
+    <layer id="physical">
+      <node id="0" pos_x="237" pos_y="619"/>
+      <node id="1" pos_x="185" pos_y="477"/>
+      <node id="2" pos_x="219" pos_y="300"/>
+      <node id="3" pos_x="384" pos_y="200"/>
+      <node id="4" pos_x="461" pos_y="447"/>
+      <node id="5" pos_x="807" pos_y="457"/>
+      <link orig="0" dest="4" capacity="10" length="1"/>
+      <link orig="1" dest="4" capacity="10" length="1"/>
+      <link orig="2" dest="4" capacity="10" length="1"/>
+      <link orig="3" dest="4" capacity="10" length="1"/>
+      <link orig="4" dest="5" capacity="7" length="1"/>
+      <link orig="5" dest="4" capacity="12" length="1"/>
+      <link orig="4" dest="0" capacity="10" length="1"/>
+      <link orig="0" dest="5" capacity="100" length="1"/>
+      <node id="6" pos_x="251" pos_y="111"/>
+      <node id="7" pos_x="643" pos_y="108"/>
+      <link orig="6" dest="7" capacity="1000" length="1"/>
+    </layer>
+  </main_description>
+  <graphical_data>
+    <backgroundImage pos_x="0" pos_y="0" width="0" height="0"/>
+    <startview sizeModificator="1.0" width="1099" height="737" pos_x="0" pos_y="-737"/>
+    <background color="java.awt.Color[r=255,g=255,b=255]"/>
+    <defaultValues labelFontSize="9.0"/>
+    <display width="1099" height="737"/>
+  </graphical_data>
+</network>

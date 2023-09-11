@@ -1,0 +1,125 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "Vehicles",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which animal features on the logo for Abarth, the motorsport division of Fiat?",
+      "correct_answer": "Scorpion",
+      "incorrect_answers": [
+        "Snake",
+        "Bull",
+        "Horse"
+      ]
+    },
+    {
+      "category": "Science & Nature",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "How many planets are in our Solar System?",
+      "correct_answer": "Eight",
+      "incorrect_answers": [
+        "Nine",
+        "Seven",
+        "Ten"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which film star has his statue in Leicester Square?",
+      "correct_answer": "Charlie Chaplin",
+      "incorrect_answers": [
+        "Paul Newman",
+        "Rowan Atkinson ",
+        "Alfred Hitchcock"
+      ]
+    },
+    {
+      "category": "Entertainment: Cartoon & Animations",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "The stop motion comedy show &quot;Robot Chicken&quot; was created by which of the following?",
+      "correct_answer": "Seth Green",
+      "incorrect_answers": [
+        "Seth MacFarlane",
+        "Seth Rogen",
+        "Seth Rollins"
+      ]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What was the original name of Crash Bandicoot?",
+      "correct_answer": "Willie Wombat",
+      "incorrect_answers": [
+        "Coco Bandicoot",
+        "Marvelous Mole",
+        "Wally Wombat"
+      ]
+    },
+    {
+      "category": "Science: Gadgets",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "In what year was the Oculus Rift revealed to the public through a Kickstarter campaign?",
+      "correct_answer": "2012",
+      "incorrect_answers": [
+        "2010",
+        "2011",
+        "2013"
+      ]
+    },
+    {
+      "category": "Science: Computers",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Released in 2001, the first edition of Apple&#039;s Mac OS X operating system (version 10.0) was given what animal code name?",
+      "correct_answer": "Cheetah",
+      "incorrect_answers": [
+        "Puma",
+        "Tiger",
+        "Leopard"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What company developed the vocaloid Hatsune Miku?",
+      "correct_answer": "Crypton Future Media",
+      "incorrect_answers": [
+        "Sega",
+        "Sony",
+        "Yamaha Corporation"
+      ]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What nuts are used in the production of marzipan?",
+      "correct_answer": "Almonds",
+      "incorrect_answers": [
+        "Peanuts",
+        "Walnuts",
+        "Pistachios"
+      ]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the name of the adventurer you meet at the mines in Stardew Valley?",
+      "correct_answer": "Marlon",
+      "incorrect_answers": [
+        "Marnie",
+        "Morris",
+        "Marvin"
+      ]
+    }
+  ]
+}

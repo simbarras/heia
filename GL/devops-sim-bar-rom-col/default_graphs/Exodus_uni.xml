@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<network>
+  <main_description>
+    <layer id="physical" channels="32" link_rate_unit="gbit" link_rate_value="10">
+      <node id="0" pos_x="198" pos_y="-625" label="SanJose-459"/>
+      <node id="1" pos_x="21" pos_y="-558" label="SanJose-460"/>
+      <node id="2" pos_x="-122" pos_y="-337" label="SanJose-471"/>
+      <node id="3" pos_x="-122" pos_y="-464" label="SanJose-472"/>
+      <node id="4" pos_x="417" pos_y="327" label="SantaClara-336"/>
+      <node id="5" pos_x="593" pos_y="-727" label="SantaClara-363"/>
+      <node id="6" pos_x="888" pos_y="-718" label="SantaClara-364"/>
+      <node id="7" pos_x="469" pos_y="-694" label="SantaClara-365"/>
+      <node id="8" pos_x="528" pos_y="-154" label="SantaClara-388"/>
+      <node id="9" pos_x="1152" pos_y="-636" label="SantaClara-389"/>
+      <node id="10" pos_x="1482" pos_y="541" label="SantaClara-403"/>
+      <node id="11" pos_x="920" pos_y="-105" label="SantaClara-404"/>
+      <node id="12" pos_x="1158" pos_y="636" label="SantaClara-405"/>
+      <node id="13" pos_x="319" pos_y="-59" label="SantaClara-429"/>
+      <node id="14" pos_x="633" pos_y="-329" label="SantaClara-430"/>
+      <node id="15" pos_x="525" pos_y="-418" label="SantaClara-431"/>
+      <node id="16" pos_x="1367" pos_y="-436" label="SantaClara-443"/>
+      <node id="17" pos_x="948" pos_y="-247" label="SantaClara-444"/>
+      <node id="18" pos_x="-299" pos_y="230" label="Weehawken-543"/>
+      <node id="19" pos_x="33" pos_y="173" label="Weehawken-544"/>
+      <node id="20" pos_x="-243" pos_y="-79" label="Weehawken-552"/>
+      <node id="21" pos_x="-1" pos_y="431" label="NewYork-293"/>
+      <node id="22" pos_x="-175" pos_y="262" label="NewYork-294"/>
+      <node id="23" pos_x="-446" pos_y="282" label="Atlanta-126"/>
+      <node id="24" pos_x="-284" pos_y="397" label="Atlanta-127"/>
+      <node id="25" pos_x="-647" pos_y="363" label="Atlanta-133"/>
+      <node id="26" pos_x="-601" pos_y="119" label="JerseyCity-244"/>
+      <node id="27" pos_x="-265" pos_y="37" label="JerseyCity-245"/>
+      <node id="28" pos_x="-464" pos_y="9" label="JerseyCity-261"/>
+      <node id="29" pos_x="-396" pos_y="-212" label="Oak-Brook-300"/>
+      <node id="30" pos_x="-420" pos_y="-379" label="Oak-Brook-301"/>
+      <node id="31" pos_x="-887" pos_y="-347" label="Oak-Brook-307"/>
+      <node id="32" pos_x="-778" pos_y="-132" label="Oak-Brook-308"/>
+      <node id="33" pos_x="-856" pos_y="-170" label="Oak-Brook-309"/>
+      <node id="34" pos_x="-896" pos_y="-239" label="Oak-Brook-310"/>
+      <node id="35" pos_x="-654" pos_y="-88" label="Oak-Brook-315"/>
+      <node id="36" pos_x="-144" pos_y="399" label="Herndon-193"/>
+      <node id="37" pos_x="154" pos_y="472" label="Herndon-206"/>
+      <node id="38" pos_x="217" pos_y="396" label="Herndon-208"/>
+      <node id="39" pos_x="282" pos_y="270" label="Herndon-495"/>
+      <node id="40" pos_x="-7" pos_y="-117" label="Herndon-496"/>
+      <node id="41" pos_x="77" pos_y="85" label="London-274"/>
+      <node id="42" pos_x="-45" pos_y="290" label="London-275"/>
+      <node id="43" pos_x="-100" pos_y="158" label="London-276"/>
+      <node id="44" pos_x="-557" pos_y="25" label="London-277"/>
+      <node id="45" pos_x="-999" pos_y="486" label="Toronto-537"/>
+      <node id="46" pos_x="-299" pos_y="-232" label="Toronto-538"/>
+      <node id="47" pos_x="-1027" pos_y="400" label="Waltham-555"/>
+      <node id="48" pos_x="-999" pos_y="211" label="Waltham-556"/>
+      <node id="49" pos_x="-874" pos_y="385" label="Waltham-568"/>
+      <node id="50" pos_x="-893" pos_y="230" label="Waltham-569"/>
+      <node id="51" pos_x="1283" pos_y="-236" label="PaloAlto-104"/>
+      <node id="52" pos_x="698" pos_y="-133" label="PaloAlto-317"/>
+      <node id="53" pos_x="720" pos_y="-715" label="PaloAlto-318"/>
+      <node id="54" pos_x="95" pos_y="257" label="Amsterdam-119"/>
+      <node id="55" pos_x="-570" pos_y="214" label="Frankfurt-184"/>
+      <node id="56" pos_x="164" pos_y="222" label="Frankfurt-185"/>
+      <node id="57" pos_x="1084" pos_y="402" label="Tukwila-508"/>
+      <node id="58" pos_x="1090" pos_y="500" label="Tukwila-509"/>
+      <node id="59" pos_x="1001" pos_y="443" label="Chicago-155"/>
+      <node id="60" pos_x="926" pos_y="494" label="Chicago-156"/>
+      <node id="61" pos_x="640" pos_y="560" label="ForthWorth-189"/>
+      <node id="62" pos_x="5" pos_y="905" label="ForthWorth-190"/>
+      <node id="63" pos_x="521" pos_y="808" label="ForthWorth-191"/>
+      <node id="64" pos_x="950" pos_y="704" label="Irvine-212"/>
+      <node id="65" pos_x="-142" pos_y="495" label="Irvine-213"/>
+      <node id="66" pos_x="-332" pos_y="589" label="Irvine-228"/>
+      <node id="67" pos_x="-221" pos_y="846" label="Irvine-229"/>
+      <node id="68" pos_x="-336" pos_y="744" label="Irvine-230"/>
+      <node id="69" pos_x="-467" pos_y="608" label="Irvine-231"/>
+      <node id="70" pos_x="-436" pos_y="478" label="Irvine-237"/>
+      <node id="71" pos_x="164" pos_y="936" label="Austin-136"/>
+      <node id="72" pos_x="767" pos_y="761" label="Austin-137"/>
+      <node id="73" pos_x="817" pos_y="650" label="ElSegundo-163"/>
+      <node id="74" pos_x="236" pos_y="742" label="ElSegundo-164"/>
+      <node id="75" pos_x="494" pos_y="339" label="Tokyo-525"/>
+      <node id="76" pos_x="401" pos_y="451" label="Tokyo-526"/>
+      <node id="77" pos_x="-633" pos_y="422" label="Miami-285"/>
+      <node id="78" pos_x="-549" pos_y="494" label="Miami-286"/>
+      <link orig="2" dest="17" cost_metric="4.5"/>
+      <link orig="2" dest="9" cost_metric="4.0"/>
+      <link orig="2" dest="3" cost_metric="3.5"/>
+      <link orig="2" dest="30" cost_metric="14.5"/>
+      <link orig="3" dest="14" cost_metric="2"/>
+      <link orig="3" dest="9" cost_metric="3.5"/>
+      <link orig="3" dest="15" cost_metric="2.5"/>
+      <link orig="18" dest="21" cost_metric="8"/>
+      <link orig="18" dest="24" cost_metric="18.5"/>
+      <link orig="18" dest="22" cost_metric="2.5"/>
+      <link orig="18" dest="19" cost_metric="2"/>
+      <link orig="18" dest="20" cost_metric="2"/>
+      <link orig="18" dest="29" cost_metric="12"/>
+      <link orig="18" dest="26" cost_metric="2"/>
+      <link orig="31" dest="35" cost_metric="2"/>
+      <link orig="29" dest="31" cost_metric="2"/>
+      <link orig="30" dest="31" cost_metric="2"/>
+      <link orig="36" dest="40" cost_metric="3"/>
+      <link orig="23" dest="36" cost_metric="4.5"/>
+      <link orig="24" dest="36" cost_metric="7.5"/>
+      <link orig="19" dest="27" cost_metric="2"/>
+      <link orig="19" dest="41" cost_metric="4"/>
+      <link orig="19" dest="42" cost_metric="4.5"/>
+      <link orig="19" dest="43" cost_metric="4"/>
+      <link orig="19" dest="20" cost_metric="2"/>
+      <link orig="19" dest="21" cost_metric="5"/>
+      <link orig="19" dest="39" cost_metric="4"/>
+      <link orig="32" dest="35" cost_metric="2"/>
+      <link orig="29" dest="32" cost_metric="2"/>
+      <link orig="30" dest="32" cost_metric="2"/>
+      <link orig="45" dest="47" cost_metric="1"/>
+      <link orig="29" dest="33" cost_metric="2"/>
+      <link orig="30" dest="33" cost_metric="2.5"/>
+      <link orig="29" dest="46" cost_metric="1"/>
+      <link orig="52" dest="53" cost_metric="2"/>
+      <link orig="51" dest="52" cost_metric="2.5"/>
+      <link orig="4" dest="52" cost_metric="2.5"/>
+      <link orig="8" dest="52" cost_metric="3"/>
+      <link orig="41" dest="54" cost_metric="2"/>
+      <link orig="42" dest="54" cost_metric="5.5"/>
+      <link orig="54" dest="56" cost_metric="1"/>
+      <link orig="57" dest="58" cost_metric="2"/>
+      <link orig="13" dest="57" cost_metric="7"/>
+      <link orig="57" dest="59" cost_metric="9"/>
+      <link orig="29" dest="34" cost_metric="2"/>
+      <link orig="30" dest="34" cost_metric="3.5"/>
+      <link orig="58" dest="59" cost_metric="6"/>
+      <link orig="8" dest="14" cost_metric="2"/>
+      <link orig="8" dest="9" cost_metric="2.5"/>
+      <link orig="1" dest="8" cost_metric="3"/>
+      <link orig="17" dest="51" cost_metric="2.5"/>
+      <link orig="7" dest="51" cost_metric="2"/>
+      <link orig="10" dest="51" cost_metric="2"/>
+      <link orig="9" dest="16" cost_metric="4"/>
+      <link orig="9" dest="10" cost_metric="3"/>
+      <link orig="29" dest="35" cost_metric="2"/>
+      <link orig="30" dest="35" cost_metric="2.5"/>
+      <link orig="20" dest="29" cost_metric="13"/>
+      <link orig="30" dest="59" cost_metric="2"/>
+      <link orig="59" dest="60" cost_metric="2.5"/>
+      <link orig="29" dest="60" cost_metric="2"/>
+      <link orig="60" dest="61" cost_metric="7"/>
+      <link orig="61" dest="66" cost_metric="17"/>
+      <link orig="61" dest="72" cost_metric="4"/>
+      <link orig="61" dest="62" cost_metric="2"/>
+      <link orig="10" dest="61" cost_metric="16"/>
+      <link orig="61" dest="63" cost_metric="3.5"/>
+      <link orig="39" dest="40" cost_metric="2"/>
+      <link orig="38" dest="39" cost_metric="5"/>
+      <link orig="26" dest="28" cost_metric="4"/>
+      <link orig="26" dest="55" cost_metric="1"/>
+      <link orig="26" dest="27" cost_metric="2"/>
+      <link orig="26" dest="49" cost_metric="5"/>
+      <link orig="26" dest="44" cost_metric="1"/>
+      <link orig="26" dest="50" cost_metric="2"/>
+      <link orig="13" dest="40" cost_metric="22.5"/>
+      <link orig="64" dest="73" cost_metric="1"/>
+      <link orig="11" dest="75" cost_metric="2.5"/>
+      <link orig="75" dest="76" cost_metric="2"/>
+      <link orig="11" dest="65" cost_metric="10"/>
+      <link orig="65" dest="66" cost_metric="4"/>
+      <link orig="65" dest="74" cost_metric="2"/>
+      <link orig="27" dest="28" cost_metric="3"/>
+      <link orig="27" dest="41" cost_metric="2"/>
+      <link orig="22" dest="27" cost_metric="2.5"/>
+      <link orig="27" dest="42" cost_metric="2.5"/>
+      <link orig="27" dest="43" cost_metric="2"/>
+      <link orig="4" dest="76" cost_metric="2.5"/>
+      <link orig="1" dest="76" cost_metric="2"/>
+      <link orig="47" dest="48" cost_metric="2"/>
+      <link orig="47" dest="49" cost_metric="2"/>
+      <link orig="29" dest="47" cost_metric="13"/>
+      <link orig="29" dest="48" cost_metric="10"/>
+      <link orig="48" dest="50" cost_metric="7"/>
+      <link orig="21" dest="37" cost_metric="2"/>
+      <link orig="37" dest="38" cost_metric="2"/>
+      <link orig="13" dest="14" cost_metric="2"/>
+      <link orig="13" dest="15" cost_metric="5.5"/>
+      <link orig="0" dest="13" cost_metric="2"/>
+      <link orig="10" dest="13" cost_metric="4.5"/>
+      <link orig="21" dest="38" cost_metric="4"/>
+      <link orig="23" dest="24" cost_metric="3"/>
+      <link orig="24" dest="78" cost_metric="2.5"/>
+      <link orig="24" dest="62" cost_metric="3.5"/>
+      <link orig="24" dest="25" cost_metric="2"/>
+      <link orig="23" dest="25" cost_metric="4"/>
+      <link orig="77" dest="78" cost_metric="8"/>
+      <link orig="21" dest="77" cost_metric="5"/>
+      <link orig="62" dest="66" cost_metric="14"/>
+      <link orig="62" dest="67" cost_metric="16"/>
+      <link orig="62" dest="71" cost_metric="1"/>
+      <link orig="62" dest="63" cost_metric="2.5"/>
+      <link orig="0" dest="1" cost_metric="6"/>
+      <link orig="21" dest="22" cost_metric="5.5"/>
+      <link orig="11" dest="14" cost_metric="4.5"/>
+      <link orig="6" dest="14" cost_metric="5.5"/>
+      <link orig="4" dest="14" cost_metric="2.5"/>
+      <link orig="14" dest="16" cost_metric="3.5"/>
+      <link orig="5" dest="15" cost_metric="2"/>
+      <link orig="6" dest="15" cost_metric="2"/>
+      <link orig="7" dest="15" cost_metric="4"/>
+      <link orig="15" dest="16" cost_metric="4"/>
+      <link orig="5" dest="53" cost_metric="2"/>
+      <link orig="6" dest="53" cost_metric="2"/>
+      <link orig="66" dest="67" cost_metric="2"/>
+      <link orig="66" dest="70" cost_metric="2"/>
+      <link orig="66" dest="68" cost_metric="3"/>
+      <link orig="66" dest="69" cost_metric="2"/>
+      <link orig="67" dest="74" cost_metric="3"/>
+      <link orig="49" dest="50" cost_metric="2"/>
+      <link orig="1" dest="16" cost_metric="2.5"/>
+      <link orig="11" dest="73" cost_metric="5"/>
+      <link orig="12" dest="73" cost_metric="3"/>
+      <link orig="73" dest="74" cost_metric="2"/>
+      <link orig="72" dest="73" cost_metric="16"/>
+      <link orig="68" dest="74" cost_metric="2"/>
+      <link orig="69" dest="74" cost_metric="3"/>
+      <link orig="10" dest="74" cost_metric="9"/>
+      <link orig="16" dest="74" cost_metric="6"/>
+      <link orig="10" dest="12" cost_metric="5"/>
+      <link orig="10" dest="11" cost_metric="2"/>
+      <link orig="10" dest="17" cost_metric="2.5"/>
+      <link orig="11" dest="17" cost_metric="4.5"/>
+      <link orig="11" dest="16" cost_metric="3"/>
+      <link orig="69" dest="70" cost_metric="3"/>
+      <link orig="16" dest="17" cost_metric="2.5"/>
+      <link orig="29" dest="30" cost_metric="2.5"/>
+    </layer>
+  </main_description>
+</network>

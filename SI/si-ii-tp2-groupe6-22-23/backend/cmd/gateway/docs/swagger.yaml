@@ -1,0 +1,227 @@
+definitions:
+  helper.Drink:
+    properties:
+      alcohol:
+        type: number
+      capacity:
+        type: number
+      country:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      price:
+        type: number
+      producer:
+        type: string
+    type: object
+  helper.Rating:
+    properties:
+      author:
+        type: string
+      comment:
+        type: string
+      date:
+        type: string
+      drinkId:
+        type: integer
+      id:
+        type: integer
+      rating:
+        type: integer
+      title:
+        type: string
+    type: object
+  helper.RatingInfo:
+    properties:
+      average:
+        type: number
+      count:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /drink:
+    post:
+      consumes:
+      - application/json
+      description: Create a new drink
+      parameters:
+      - description: Drink to add
+        in: body
+        name: drink
+        required: true
+        schema:
+          $ref: '#/definitions/helper.Drink'
+      - description: Use MQTT for the request
+        in: query
+        name: mqtt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/helper.Drink'
+  /drink/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a drink by id
+      parameters:
+      - description: Drink ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Use MQTT for the request
+        in: query
+        name: mqtt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+    get:
+      consumes:
+      - application/json
+      description: get a drink by id
+      parameters:
+      - description: Drink ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Use MQTT for the request
+        in: query
+        name: mqtt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/helper.Drink'
+    put:
+      consumes:
+      - application/json
+      description: Update a drink by id
+      parameters:
+      - description: Drink ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Drink to update
+        in: body
+        name: drink
+        required: true
+        schema:
+          $ref: '#/definitions/helper.Drink'
+      - description: Use MQTT for the request
+        in: query
+        name: mqtt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: object
+  /drinks:
+    get:
+      consumes:
+      - application/json
+      description: get all drink available
+      parameters:
+      - description: Use MQTT for the request
+        in: query
+        name: mqtt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/helper.Drink'
+            type: array
+  /rating:
+    post:
+      consumes:
+      - application/json
+      description: add a rating for a drink
+      parameters:
+      - description: Rating to add
+        in: body
+        name: rating
+        required: true
+        schema:
+          $ref: '#/definitions/helper.Rating'
+      - description: Use MQTT for the request
+        in: query
+        name: mqtt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/helper.Rating'
+  /ratings/{id}:
+    get:
+      consumes:
+      - application/json
+      description: get all ratings for a drink
+      parameters:
+      - description: Drink id
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Use MQTT for the request
+        in: query
+        name: mqtt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/helper.Rating'
+            type: array
+  /ratings/info/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get number and average ratings for a drink
+      parameters:
+      - description: Drink id
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Use MQTT for the request
+        in: query
+        name: mqtt
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/helper.RatingInfo'
+swagger: "2.0"

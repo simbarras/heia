@@ -1,0 +1,160 @@
+stages:
+  - test
+  - build
+  - deploy
+  - publish
+  - functional test
+
+variables:
+  IMAGE_NAME_TP01: "$CI_REGISTRY_IMAGE/tp01-kubernetes"
+  IMAGE_NAME_TP02: "$CI_REGISTRY_IMAGE/tp02-microservices"
+
+# TP1
+tp01 test:
+  stage: test
+  only:
+    - master
+    - tp01-kubernetes
+  image: golang:alpine
+  script:
+    - cd 01_kubernetes/fibonacci-application-go/fibonacci
+    - go test -v
+
+tp01 build:
+  stage: deploy
+  only:
+    - master
+    - tp01-kubernetes
+  image: docker:19.03.12
+  services:
+    - name: docker:19.03.12-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - DOCKER_BUILDKIT=1 docker build --network host -t $IMAGE_NAME_TP01:$CI_COMMIT_SHA -t $IMAGE_NAME_TP01:latest -f 01_kubernetes/fibonacci-application-go/dockerfile .
+    - docker push $IMAGE_NAME_TP01:latest
+    - docker push $IMAGE_NAME_TP01:$CI_COMMIT_SHA
+
+tp01 deploy:
+  stage: publish
+  only:
+    - master
+    - tp01-kubernetes
+  image: bitnami/kubectl:latest
+  script:
+    - cat $KUBE_CONFIG > ~/.kube/config
+    - kubectl apply -f 01_kubernetes/my-fibonacci.yaml -n concsys-22-usr-simon-barras
+    - kubectl set image deployment/fibonacci fibonacci=$IMAGE_NAME_TP01:$CI_COMMIT_SHA -n concsys-22-usr-simon-barras
+
+# TP2
+tp02 test:
+  stage: test
+  only:
+    - master
+    - tp02-microservices
+  image: node:14.15.4
+  script:
+    - cd 02_microservices
+    - npm install --save-dev
+    - echo "npx nyc --reporter cobertura mocha -r ts-node/register --exit 'lib/index.test.ts'"
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: 02_microservices/coverage/cobertura-coverage.xml
+
+tp02 build:
+  stage: deploy
+  only:
+    - master
+    - tp02-microservices
+  image: docker:19.03.12
+  services:
+    - name: docker:19.03.12-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - cd 02_microservices
+    - DOCKER_BUILDKIT=1 docker build --network host --target grpc-svc -t $IMAGE_NAME_TP02/grpc:$CI_COMMIT_SHA -t $IMAGE_NAME_TP02/grpc:latest .
+    - DOCKER_BUILDKIT=1 docker build --network host --target graphql-svc -t $IMAGE_NAME_TP02/graphql:$CI_COMMIT_SHA -t $IMAGE_NAME_TP02/graphql:latest .
+    - docker push $IMAGE_NAME_TP02/grpc:latest
+    - docker push $IMAGE_NAME_TP02/graphql:latest
+    - docker push $IMAGE_NAME_TP02/grpc:$CI_COMMIT_SHA
+    - docker push $IMAGE_NAME_TP02/graphql:$CI_COMMIT_SHA
+
+tp02 deploy:
+  stage: publish
+  only:
+    - master
+    - tp02-microservices
+  image: bitnami/kubectl:latest
+  script:
+    - cat $KUBE_CONFIG > ~/.kube/config
+    - kubectl apply -f 02_microservices/my-graphql.yaml -n concsys-22-grp-ex2-bar-ter
+    - kubectl apply -f 02_microservices/my-grpc.yaml -n concsys-22-grp-ex2-bar-ter
+    - kubectl set image deployment/graphql graphql=$IMAGE_NAME_TP02/graphql:$CI_COMMIT_SHA -n concsys-22-grp-ex2-bar-ter
+    - kubectl set image deployment/grpc grpc=$IMAGE_NAME_TP02/grpc:$CI_COMMIT_SHA -n concsys-22-grp-ex2-bar-ter
+    - sleep 30
+    - kubectl -n concsys-22-grp-ex2-bar-ter wait --timeout=60s --for=condition=available deployment/graphql
+    - kubectl -n concsys-22-grp-ex2-bar-ter wait --timeout=60s --for=condition=available deployment/grpc
+
+tp02 functional test:
+  stage: functional test
+  allow_failure: true
+  only:
+    - master
+    - tp02-microservices
+  image: ubuntu:latest
+  script:
+    - apt-get update && apt-get install -y curl
+    - chmod +x 02_microservices/functional_test.sh
+    - /bin/bash ./02_microservices/functional_test.sh
+
+# TP3
+tp03 build:
+  stage: build
+  only:
+    - master
+    - tp3-stream
+  image: maven:3-openjdk-18
+  before_script:
+    - "cd 03_streaming/distributed-store"
+  script:
+    - "mvn package"
+  artifacts:
+    paths:
+      - "03_streaming/distributed-store/target/*"
+
+
+tp03 deploy:
+  stage: deploy
+  only:
+    - master
+    - tp3-stream
+  image:
+    entrypoint:
+      - ""
+    name: "docker:19.03.12"
+  services:
+    - "docker:19.03.12-dind"
+  before_script:
+    - "export IMAGE_NAME='distributed-store-app'"
+    - "export DOCKERFILE='Dockerfile'"
+    - "cd 03_streaming/distributed-store"
+  script:
+    - "docker login $CI_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD"
+    - "docker build -f $DOCKERFILE -t $CI_REGISTRY_IMAGE/$IMAGE_NAME:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE/$IMAGE_NAME:latest ."
+    - "docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:latest"
+    - "docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$CI_COMMIT_SHORT_SHA"
+
+tp03 publish:
+  stage: publish
+  only:
+    - master
+    - tp3-stream
+  image: gaetancollaud/kubectl
+  script:
+    - cd 03_streaming/distributed-store/deploy
+    - cat $KUBE_CONFIG > ~/.kube/config
+    - sh ./setup.sh $CI_COMMIT_SHORT_SHA

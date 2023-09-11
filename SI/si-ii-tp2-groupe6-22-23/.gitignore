@@ -1,0 +1,4 @@
+***.iml
+***.idea/
+frontend/node_modules/
+frontend/.svelte-kit/

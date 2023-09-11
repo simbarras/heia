@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFrag">
+
+    <fragment
+        android:id="@+id/homeFrag"
+        android:name="tic.heiafr.ch.tp04_taboo.ui.HomeFrag"
+        android:label="@string/taboo"
+        tools:layout="@layout/activity_home">
+        <action
+            android:id="@+id/action_homeFrag_to_playFrag"
+            app:destination="@id/playFrag"
+            app:popUpTo="@id/homeFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/playFrag"
+        android:name="tic.heiafr.ch.tp04_taboo.ui.PlayFrag"
+        android:label="@string/guess"
+        tools:layout="@layout/activity_play">
+        <action
+            android:id="@+id/action_playFrag_to_confirmFrag"
+            app:destination="@id/confirmFrag"
+            app:popUpTo="@id/homeFrag" />
+        <argument
+            android:name="isHard"
+            app:argType="boolean" />
+        <argument
+            android:name="teamsString"
+            app:argType="string[]" />
+        <argument
+            android:name="numberOfCards"
+            app:argType="integer" />
+        <argument
+            android:name="turnDuration"
+            app:argType="integer" />
+        <argument
+            android:name="numberOfPass"
+            app:argType="integer" />
+        <argument
+            android:name="errorPenality"
+            app:argType="integer" />
+        <argument
+            android:name="code_new_game"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/endFrag"
+        android:name="tic.heiafr.ch.tp04_taboo.ui.EndFrag"
+        android:label="@string/result"
+        tools:layout="@layout/activity_end">
+        <action
+            android:id="@+id/action_endFrag_to_homeFrag"
+            app:destination="@id/homeFrag"
+            app:popUpTo="@id/homeFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmFrag"
+        android:name="tic.heiafr.ch.tp04_taboo.ui.ConfirmFrag"
+        android:label="@string/confirm">
+        <action
+            android:id="@+id/action_confirmFrag_to_playFrag"
+            app:destination="@id/playFrag"
+            app:popUpTo="@id/homeFrag" />
+        <action
+            android:id="@+id/action_confirmFrag_to_endFrag"
+            app:destination="@id/endFrag"
+            app:popUpTo="@id/homeFrag" />
+    </fragment>
+</navigation>

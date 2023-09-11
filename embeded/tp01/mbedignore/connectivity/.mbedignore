@@ -1,0 +1,17 @@
+cellular/*
+drivers/802.15.4_RF/*
+drivers/ble/*
+drivers/cellular/*
+drivers/emac/*
+drivers/lora/*
+drivers/mbedtls/*
+drivers/nfc/*
+drivers/wifi/*
+FEATURE_BLE/*
+libraries/*
+lorawan/*
+lwipstack/*
+mbedtls/*
+nanostack/*
+netsocket/*
+nfc/*

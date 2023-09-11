@@ -1,0 +1,5 @@
+cmake-build-debug/
+.gitlab-ci.yml
+.gitignore
+.git/
+README.md

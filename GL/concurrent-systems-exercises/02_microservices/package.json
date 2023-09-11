@@ -1,0 +1,47 @@
+{
+  "name": "microservices",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "nyc --reporter=text mocha -r ts-node/register --exit 'lib/index.test.ts'",
+    "test:grpc": "nyc --reporter=text mocha -r ts-node/register --exit 'grpc-svc/grpc.test.ts'",
+    "test:graphql": "nyc --reporter=text mocha -r ts-node/register --exit 'graphql-svc/graphql.test.ts'",
+    "start": "concurrently \"npm run start:graphql\" \"npm run start:grpc\" --raw",
+    "start:graphql": "node ./build/graphql-svc/app.js",
+    "start:grpc": "node ./build/grpc-svc/app.js",
+    "build": "webpack",
+    "dev": "concurrently \"npm run dev:graphql\" \"npm run dev:grpc\" --raw",
+    "dev:graphql": "nodemon --watch ./graphql-svc/index.ts --exec \"ts-node\" ./graphql-svc/index.ts",
+    "dev:grpc": "nodemon --watch ./grpc-svc/index.ts --exec \"ts-node\" ./grpc-svc/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.7.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.6.0",
+    "mongodb": "^4.11.0",
+    "save-dev": "0.0.1-security"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/express": "^4.17.14",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.11.9",
+    "@types/uuid": "^8.3.4",
+    "chai": "^4.3.7",
+    "concurrently": "^7.5.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "mocha": "^10.1.0",
+    "nodemon": "^2.0.20",
+    "nyc": "^15.1.0",
+    "ts-loader": "^9.4.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

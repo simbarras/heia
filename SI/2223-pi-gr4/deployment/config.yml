@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pi-gr4
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: regcred
+  namespace: pi-gr4
+type: docker-registry
+data:
+  docker-server: cmVnaXN0cnkuZm9yZ2UuaGVmci5jaA== #registry.forge.hefr.ch
+  docker-username: azhz #k8s
+  docker-password: Z2xwYXQtM0hTUXhBQnQ5VXBKeEQtR0ZQOVA= #glpat-3HSQxABt9UpJxD-GFP9P

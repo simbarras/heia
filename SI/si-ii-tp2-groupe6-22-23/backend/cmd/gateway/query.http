@@ -1,0 +1,17 @@
+GET {{base}}/drinks
+
+###
+GET {{base}}/drink/2596996162
+
+###
+POST {{base}}/drink
+Content-Type: application/json
+
+{
+  "name": "string",
+  "alcohol": 0,
+  "producer": "string",
+  "price": 0,
+  "country": "string",
+  "capacity": 0
+}

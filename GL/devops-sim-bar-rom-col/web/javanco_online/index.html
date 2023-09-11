@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- Design by <a href="http://www.minimalistic-design.net">Minimalistic Design</a></div> -->
+<!-- Coding by Christophe Trefois for TCOM (trefex@gmail.com) @ EPFL -->
+	<head>
+		<title>Javanco Web Interface</title>
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+		<script type="text/javascript" src="scripts/jquery-1.1.2.pack.js"></script>
+		<script type="text/javascript" src="scripts/jquery.form.js"></script>
+		<script type="text/javascript" src="scripts/overlib.js"></script>
+		<script type="text/javascript" src="scripts/jquery.inplace.js"></script>
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	</head>
+	<body>
+		<div id="header">
+		<h1>Javanco Web Interface &nbsp; <img id="loading" src="loading.gif" style="display:none;"></h1>
+		 <div id="menu">Refresh if you want an updated version of the graph
+		  <ul id="nav">
+		   <li><a href="">Home</a></li>
+		   <li><a id="refresh_a">Refresh</a></li>
+		   <li><a href="action?DO=GETFILE">Save Network</a></li>
+		  </ul>
+		 </div>
+		</div>
+		<div id="content">
+			<input type="button" value="Create New Graph" class="buttonNew" style="background-color:#fed;"/>
+			<input type="button" value="Upload New File" class="buttonAdd"  style="background-color:#fed;"/>
+			<input type="button" value="Execute Groovy" class="buttonGroovy"  style="background-color:#fed;"/>
+			<br />
+			<div id="right" class="right" style="display:none;">
+				<br />
+				<form method=POST ectype="multipart/form-data" action="FileUploadEngine" id="form">
+				File to upload: <input type=FILE name="fileToUpload" id="fileToUpload"><br /> <br />
+				<input type=SUBMIT value="Submit" id="buttonUpload" />
+				</form>
+			</div>
+
+
+			<div id="right" class="executeGroovy" style="display:none;">
+			<p></p>
+				<form METHOD=POST ACTION="action?DO=EXECGROOVY" class="execForm">
+				<textarea name="statement" cols=70 rows=15></textarea><br /> <br />
+				<INPUT TYPE=SUBMIT VALUE="Submit" id="buttonExec" />
+				</FORM>
+			</div>
+			
+			<div id="right" class="newGraph" style="display:none;">	
+				<form METHOD=POST ACTION="action?DO=NEWGRAPH" id="formName">
+				<INPUT TYPE="text" NAME="name" id="name"><br /> <br />
+				<INPUT TYPE=SUBMIT VALUE="Submit" id="buttonSubmitName" />
+				</form>
+			</div>
+
+			<div id="interface_container" class="interface_container">
+				<table width="100%" border="0" cellpadding="0" cellspacing="2">
+				  <tr>
+				    <td height="419" colspan="3" valign="top">
+				    	<div id="image_cont"></div>
+				    </td>
+				    <td width="380" valign="top">
+				    	<div class="element_container_attr_list">
+				    	</div>
+    				</td>
+	  			</tr>
+				  <tr>
+				    <td width="137" height="45" valign="top">
+				    	<div align="center">Move
+				    		<p> 
+								<input name="SCROLL_LEFT" type="button" class="item_modifier" value="Left" />
+								<input name="SCROLL_RIGHT" type="button" class="item_modifier" value="Right" />
+				      		</p><p>
+							    <input name="SCROLL_UP" type="button" class="item_modifier" value="Up " />
+								<input name="SCROLL_DOWN" type="button" class="item_modifier" value="Down" />
+							</p>
+							<p>View<br /><br />
+								<input name="VIEW_BEST_FIT" type="button" class="item_modifier" value="Best Fit" />
+								<input name="VIEW_NATIVE" type="button" class="item_modifier" value="Native" />
+							</p>
+						</div>
+					</td>
+				    <td width="98" valign="top">
+				    	<div align="center">Node Size
+				    		<p>
+						    	<input type="button" class="item_modifier" value="-" name="SIZE_INCREASE" />
+						    	<input type="button" class="item_modifier" value="+" name="SIZE_DECREASE" />
+				    		</p>
+				    	</div>
+				      	<div align="center">Zoom
+				        	<p>
+				                <input type="button" class="item_modifier" value="-" name="ZOOM_OUT" />
+				                <input type="button" class="item_modifier" value="+" name="ZOOM_IN" />
+			           	 	</p>
+			          	</div>
+			        	<p>&nbsp;</p>
+			        </td>
+				    <td colspan="2" align="left" valign="top">
+				    	<div class="element_container">
+				    	<form method=POST action="action?DO=NEWNODE" class="formNode">
+				    	<fieldset><legend>Add Node</legend>
+						<div class="element_label">&nbsp;</div>
+						<div class="element_input">&nbsp;</div>
+						<div class="element_label">X:</div>
+						<div class="element_input"><input type="text" name="p1" size="3" /></div>
+						<div class="element_label">Y:</div>
+						<div class="element_input"><input type="text" name="p2" size="3" /></div>
+						<div class="element_label"><input type=submit class="button-standard" id="submit" value="Add Node"></div>
+						</fieldset>
+						</form>
+					  </div>
+			 			<div class="element_container">
+						<form method=post action="action?DO=NEWLINK" class="formNewLink">
+						<fieldset><legend>Add Link</legend>
+				 		 <div class="element_label">&nbsp;</div>
+				 		 <div class="element_input">&nbsp;</div>
+						 <div class="element_label"> Orig:</div>
+						 <div class="element_input"> <input type="text" name="p1" size="3" /></div>
+						 <div class="element_label">Dest:</div>
+						 <div class="element_input"><input type="text" name="p2" size="3" /></div>
+						 <div class="element_input"> <input type=submit class="button-standard" value="Add Link"></div>
+						 </fieldset>
+						</form>
+					  </div>
+							</td>
+			      </tr>
+				  <tr>
+			        <td height="45" colspan="4" valign="top"><p>
+			        	<form METHOD=POST ACTION="action?DO=EXECGROOVY" class="execForm">
+			          		<input name="statement" type="text" value="Type your Groovy Statement Here" onfocus="this.value='';" size="100">
+			    		</p></form>
+			    	</td>
+			      </tr>  
+				  <tr>
+				    <td></td>
+				    <td>&nbsp;</td>
+				    <td width="268" valign="top">&nbsp;</td>
+				    <td>&nbsp;</td>
+				  </tr>
+				</table>
+			</div>
+			<div id="right">
+				<div class="box">
+					<h2>Information</h2>
+					<div class="fileInfo"></div>
+				</div></div>
+				<div id="right">
+				<div class="box">
+					<h2>Errors</h2>
+					<div class="errorBox"></div>
+				</div>
+			</div>
+			<div id="right" class="mainContent">
+			<!-- Textual Graph Representation and Pseudo Console -->
+			</div>
+		</div>
+		<!-- Import Site Functions Here, they must be loaded after Document has finished loading !! -->
+		<script type="text/javascript" src="scripts/functions.js"></script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+{
+    "bill" : {
+        "id" : "0723541615",
+        "date" : "2020-11-27",
+        "amount" : 399,
+        "devise" : "CHF",
+        "payed" : true,
+        "client" : {
+            "number" : "0005086909",
+            "name" : "Collaud",
+            "surname" : "Roman",
+            "address" : {
+                "street" : "Rts de la Bataille 26",
+                "city" : "Saint-Aubin",
+                "npa" : 1566,
+                "country" : "Switzerland"
+            }
+        },
+        "sender" : {
+            "name" : "Microspot.ch - Geschäftsbereich der Coop Genossenschaft",
+            "email" : "support@microsoft.ch",
+            "address" : {
+                "street" : "Bernstrasse 90",
+                "city" : "Jegenstorf",
+                "npa" : 3303,
+                "country" : "Switzerland"
+            }
+        },
+        "articles" : [
+            {
+                "id" : "0002383918",
+                "name" : "SE",
+                "brand" : "Apple",
+                "type" : "iPhone",
+                "quantity" : "1",
+                "price" : 370.47,
+                "tva" : 7.7
+            }
+        ],
+        "delivery" : {
+            "price" : 0,
+            "type": "expedition"
+        }
+    }
+}

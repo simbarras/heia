@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<network>
+  <main_description>
+    <layer id="physical">
+      <node id="0" pos_x="-27" pos_y="6"/>
+      <node id="1" pos_x="-4" pos_y="6"/>
+      <link orig="0" dest="1"/>
+      <node id="2" pos_x="-27" pos_y="-11"/>
+      <link orig="0" dest="2"/>
+      <node id="3" pos_x="-4" pos_y="-11"/>
+      <link orig="1" dest="3"/>
+      <link orig="2" dest="3"/>
+      <node id="4" pos_x="-18" pos_y="-2"/>
+      <link orig="0" dest="4"/>
+      <node id="5" pos_x="5" pos_y="-2"/>
+      <link orig="1" dest="5"/>
+      <node id="6" pos_x="-18" pos_y="-19"/>
+      <link orig="2" dest="6"/>
+      <node id="7" pos_x="5" pos_y="-19"/>
+      <link orig="3" dest="7"/>
+      <link orig="4" dest="5"/>
+      <link orig="4" dest="6"/>
+      <link orig="5" dest="7"/>
+      <link orig="6" dest="7"/>
+      <node id="8" pos_x="17" pos_y="25"/>
+      <link orig="0" dest="8" link_curve_start="-35" link_curve_end="-35" link_curve_start_angle="-1" link_curve_end_angle="-1"/>
+      <node id="9" pos_x="35" pos_y="25"/>
+      <link orig="1" dest="9" link_curve_start="-44" link_curve_end="-44" link_curve_start_angle="-1" link_curve_end_angle="-1"/>
+      <node id="10" pos_x="17" pos_y="7"/>
+      <link orig="2" dest="10" link_curve_start="80" link_curve_end="80" link_curve_start_angle="-1" link_curve_end_angle="-1"/>
+      <node id="11" pos_x="35" pos_y="7"/>
+      <link orig="3" dest="11" link_curve_start="96" link_curve_end="96" link_curve_start_angle="-1" link_curve_end_angle="-1"/>
+      <node id="12" pos_x="26" pos_y="17"/>
+      <link orig="4" dest="12" link_curve_start="-58" link_curve_end="-58" link_curve_start_angle="-1" link_curve_end_angle="-1"/>
+      <node id="13" pos_x="47" pos_y="17"/>
+      <link orig="5" dest="13" link_curve_start="-71" link_curve_end="-71" link_curve_start_angle="-1" link_curve_end_angle="-1"/>
+      <node id="14" pos_x="26" pos_y="-1"/>
+      <link orig="6" dest="14" link_curve_start="37" link_curve_end="37" link_curve_start_angle="-1" link_curve_end_angle="-1"/>
+      <node id="15" pos_x="47" pos_y="-1"/>
+      <link orig="7" dest="15" link_curve_start="38" link_curve_end="38" link_curve_start_angle="-1" link_curve_end_angle="-1"/>
+      <link orig="8" dest="9"/>
+      <link orig="8" dest="10"/>
+      <link orig="8" dest="12"/>
+      <link orig="9" dest="11"/>
+      <link orig="9" dest="13"/>
+      <link orig="10" dest="11"/>
+      <link orig="10" dest="14"/>
+      <link orig="11" dest="15"/>
+      <link orig="12" dest="13"/>
+      <link orig="12" dest="14"/>
+      <link orig="13" dest="15"/>
+      <link orig="14" dest="15"/>
+    </layer>
+  </main_description>
+  <graphical_data>
+    <startview width="192" height="96" pos_x="-81" pos_y="-51" sizeModificator="1.0"/>
+    <backgroundImage pos_x="-1" pos_y="-1" width="-1" height="-1"/>
+    <background color="java.awt.Color[r=255,g=255,b=255]"/>
+    <defaultValues labelFontSize="10.0"/>
+    <display type="native"/>
+  </graphical_data>
+</network>

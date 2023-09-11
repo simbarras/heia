@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+  <title>ADVJ Websocket Chat</title>
+  <link rel="stylesheet" href="media/chat.css">
+  <script src="media/chat.js" defer></script>
+</head>
+<body>
+
+  <div id="wrapper">
+
+    <!-- HEADER -->
+    <div id="header">
+      WebSocket Chat
+      <img src="media/chat.png">
+    </div>
+
+    <!-- STATUS -->
+    <div id="status">
+      Nickname: <input type="text" id="inputNickname" placeholder="enter nickname" required>
+      <button id="btnConnect">connect</button>
+      <span id="spanStatus">
+        <div id="divStatusDot"></div>
+        <span id="spanStatusMsg">idle</span>
+      </span>
+    </div>
+
+    <!-- MAIN -->
+    <div id="main">
+      <div id="divUsers">
+        Active users:
+        <ul id="ulUserList">none</ul>
+      </div>
+      <div id="divBoard">
+        <div id="divMessages">
+          Messages:
+          <ul id="ulMsgList">none</ul>
+        </div>
+        <div id="divSendMessage">
+          <input type="text" id="inputMsg" placeholder="type message..">
+          <button id="btnSend">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+      ADVJ Lab / &copy; 2023 R. Scheurer (HEIA-FR)
+      <span id="spanGroupNames">Barras-Terreaux</span>
+    </div>
+
+  </div><!-- wrapper -->
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rating-mqtt
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rating-mqtt
+  template:
+    metadata:
+      labels:
+        app: rating-mqtt
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - image: registry.forge.hefr.ch/si-ii-tp-groupe6-22-23/si-ii-tp2-groupe6-22-23/rating-mqtt:${TAG}
+          name: rating-mqtt
+

@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Invoice";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="container-fluid">
+    <div class="row mt-4 justify-content-between">
+        <div class="col"><button type="button" onclick="window.location='/'" class="btn btn-light"><i class="bi bi-arrow-left arrow-left-icon"></i>Back to invoices</button></div>
+        <div class="col d-none d-sm-flex justify-content-end">
+            <button type="button" class="btn btn-light btn-download" onclick="event.cancelBubble=true;window.location='/Home/Download/Download/@Model.Id/json'">JSON<i class="bi bi-file-earmark-arrow-down icon-download"></i></button>
+            <button type="button" class="btn btn-light btn-download" onclick="event.cancelBubble=true;window.location='/Home/Download/Download/@Model.Id/xml'">XML<i class="bi bi-file-earmark-arrow-down icon-download"></i></button>
+        </div>
+    </div>
+    <hr class="my-3">
+    <div class="row">
+        <h2>Facture n°@Model.Id</h2>
+        <div class="col-md-6 mt-3">
+            <table id="invoice-informations" class="table-sm">
+                <tbody>
+                    <tr><th>Invoice date</th><td>@Model.Date</td></tr>
+                    <tr><th>Client number</th><td>@Model.Client.Number</td></tr>
+                    <tr><th>Client</th><td>@Model.Client.Name @Model.Client.Surname</td></tr>
+                    <tr><th>Delivery address</th><td>@Model.Client.Name @Model.Client.Surname,
+                            @Model.Client.Address.Street, @Model.Client.Address.Npa
+                             @Model.Client.Address.City,
+                            @Model.Client.Address.Country</td></tr>
+                    <tr><th>Delivery type</th><td>@Model.Delivery.Type</td></tr>
+                    <tr><th>Currency</th><td>@Model.Devise</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6 mt-3">
+            <h4>@Model.Client.Name @Model.Client.Surname</h4>
+            <h4>@Model.Client.Address.Street</h4>
+            <h4>@Model.Client.Address.Npa @Model.Client.Address.City</h4>
+            <h4>@Model.Client.Address.Country</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-4">
+            <h5>Articles</h5>
+            <table class="table">
+            <thead>
+            <tr class="table-primary">
+                <th scope="col">Article number</th>
+                <th scope="col" class="d-none d-sm-table-cell">Description</th>
+                <th scope="col" class="d-none d-md-table-cell">Quantity</th>
+                <th scope="col" class="d-none d-md-table-cell">TVA</th>
+                <th scope="col">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach(var article in @Model.Articles) {
+                <tr>
+                    <th scope="row">@Model.Id</th>
+                    <td class="d-none d-sm-table-cell">@article.Type, @article.Name, @article.Brand</td>
+                    <td class="d-none d-md-table-cell">@article.Quantity</td>
+                    <td class="d-none d-md-table-cell">@article.Tva</td>
+                    <td>@article.Price @Model.Devise</td>
+                </tr>
+                }
+                <tr class="table-secondary">
+                    <th colspan="4" class="d-none d-md-table-cell">Total</th>
+                    <th colspan="2" class="d-none d-sm-table-cell d-md-none">Total</th>
+                    <th class="d-sm-none">Total</th>
+                    <th class="align-items-end">@Model.Amount, @Model.Devise</th>
+
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row mt-4 justify-content-between d-sm-none">
+        <div class="col d-flex">
+            <button type="button" class="btn btn-light btn-download" onclick="event.cancelBubble=true;window.location='/Home/Download/Download/@Model.Id/json'">JSON<i class="bi bi-file-earmark-arrow-down icon-download"></i></button>
+            <button type="button" class="btn btn-light btn-download" onclick="event.cancelBubble=true;window.location='/Home/Download/Download/@Model.Id/xml'">XML<i class="bi bi-file-earmark-arrow-down icon-download"></i></button>
+        </div>
+    </div>
+    <hr class="my-5">
+</div>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<network>
+  <main_description>
+    <layer id="physical" channels="32" link_rate_unit="gbit" link_rate_value="10">
+      <node id="0" pos_x="233" pos_y="-194"/>
+      <node id="1" pos_x="87" pos_y="-122"/>
+      <node id="2" pos_x="12" pos_y="-292"/>
+      <node id="3" pos_x="88" pos_y="-485"/>
+      <node id="4" pos_x="355" pos_y="-478"/>
+      <node id="5" pos_x="672" pos_y="-437"/>
+      <node id="6" pos_x="720" pos_y="-224"/>
+      <node id="7" pos_x="794" pos_y="-169"/>
+      <node id="8" pos_x="745" pos_y="-23"/>
+      <node id="9" pos_x="674" pos_y="-44"/>
+      <node id="10" pos_x="672" pos_y="-121"/>
+      <node id="11" pos_x="581" pos_y="-193"/>
+      <node id="12" pos_x="478" pos_y="-236"/>
+      <node id="13" pos_x="355" pos_y="-243"/>
+      <link orig="12" dest="13"/>
+      <link orig="0" dest="2"/>
+      <link orig="0" dest="9"/>
+      <link orig="0" dest="13"/>
+      <link orig="1" dest="2"/>
+      <link orig="1" dest="3"/>
+      <link orig="1" dest="11"/>
+      <link orig="2" dest="3"/>
+      <link orig="3" dest="4"/>
+      <link orig="4" dest="5"/>
+      <link orig="4" dest="6"/>
+      <link orig="4" dest="13"/>
+      <link orig="5" dest="10"/>
+      <link orig="6" dest="7"/>
+      <link orig="6" dest="8"/>
+      <link orig="7" dest="10"/>
+      <link orig="7" dest="9"/>
+      <link orig="8" dest="9"/>
+      <link orig="8" dest="10"/>
+      <link orig="10" dest="11"/>
+      <link orig="11" dest="12"/>
+    </layer>
+  </main_description>
+  <graphical_data>
+    <startview width="1099" height="737" pos_x="-88" pos_y="-541" sizeModificator="1.0"/>
+    <backgroundImage pos_x="-1" pos_y="-1" width="-1" height="-1"/>
+    <background color="java.awt.Color[r=255,g=255,b=255]"/>
+    <defaultValues labelFontSize="10.0"/>
+    <display type="native" width="1099" height="737"/>
+  </graphical_data>
+</network>
